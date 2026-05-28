@@ -22,22 +22,23 @@
             overflow-x: hidden;
         }
 
-        /* --- 3 SANİYELİK VIP UYARI KUTUSU --- */
+        /* --- 3 SANİYELİK NEON BEYAZ VIP UYARI KUTUSU --- */
         .vip-alert-toast {
             display: none;
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: #ff3333;
-            color: #fff;
+            background: #0a0a0a;
+            color: #ffffff;
             padding: 15px 30px;
             border-radius: 8px;
             font-weight: 600;
             font-size: 14px;
             z-index: 1000000;
-            box-shadow: 0 0 20px rgba(255, 51, 51, 0.6);
-            border: 1px solid #ffffff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            border: 2px solid #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
             text-align: center;
         }
 
@@ -85,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(5px);
             z-index: 100000;
             justify-content: center;
@@ -100,13 +101,13 @@
             width: 100%;
             max-width: 400px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
             position: relative;
         }
 
         .store-box h2 {
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
             font-size: 20px;
             font-weight: 600;
@@ -127,9 +128,10 @@
         }
 
         .store-close-btn:hover {
-            background: #ff3333;
-            border-color: #ff3333;
-            color: #fff;
+            background: #ffffff;
+            border-color: #ffffff;
+            color: #000000;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         /* --- GİRİŞ EKRANI --- */
@@ -238,7 +240,8 @@
         }
 
         .error-msg {
-            color: #ff3333;
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
             margin-top: 15px;
             font-size: 14px;
             display: none;
@@ -312,7 +315,7 @@
             margin-bottom: 15px;
         }
 
-        /* TEK KATEGORİ VIP STİLİ */
+        /* TEK KATEGORİ NEON BEYAZ STİLİ */
         .sidebar-section h3 {
             font-size: 13px;
             text-transform: uppercase;
@@ -326,13 +329,13 @@
             user-select: none;
             border-radius: 6px;
             transition: background 0.2s;
-            color: #ff3333;
-            text-shadow: 0 0 10px rgba(255, 51, 51, 0.8);
-            border: 1px dashed rgba(255, 51, 51, 0.3);
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            border: 1px dashed rgba(255, 255, 255, 0.4);
         }
 
         .sidebar-section h3:hover {
-            background: rgba(255, 51, 51, 0.05);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .sidebar-section h3 .title-left {
@@ -351,7 +354,7 @@
         }
 
         .section-content {
-            max-height: 2000px; /* Bütün elemanlar sığsın diye büyüttüm */
+            max-height: 2000px; 
             overflow: hidden;
             transition: max-height 0.3s ease-out;
             padding: 5px 0;
@@ -363,15 +366,16 @@
         }
 
         .sidebar-section .menu-item {
-            color: #ff9999;
+            color: #cccccc;
         }
         .sidebar-section .menu-item i {
-            color: #ff3333;
+            color: #ffffff;
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
         }
         .sidebar-section .menu-item:hover {
-            background: rgba(255, 51, 51, 0.1);
-            color: #ff3333;
-            box-shadow: 0 0 8px rgba(255, 51, 51, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
         }
 
         .menu-item {
@@ -439,15 +443,15 @@
             padding: 15px;
             background: #0a0a0a;
             border-radius: 12px;
-            border: 1px dashed #ff3333;
-            box-shadow: 0 0 15px rgba(255, 51, 51, 0.1);
+            border: 1px dashed #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
         }
 
         .vip-text {
             font-size: 26px;
             font-weight: 600;
-            color: #ff3333;
-            text-shadow: 0 0 10px rgba(255, 51, 51, 0.6);
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             letter-spacing: 1px;
         }
 
@@ -544,7 +548,7 @@
 </head>
 <body>
 
-    <!-- 3 SANİYELİK VIP SATIN ALMA UYARISI -->
+    <!-- 3 SANİYELİK NEON BEYAZ VIP SATIN ALMA UYARISI -->
     <div class="vip-alert-toast" id="vipAlertToast">
         VIP SATIN ALMAK IÇIN STOREYE GIRINIZ
     </div>
@@ -599,7 +603,7 @@
             </div>
         </nav>
 
-        <!-- Yan Menü (Sidebar) - HER ŞEY TEK KATEGORİDE -->
+        <!-- Yan Menü (Sidebar) - HER ŞEY TEK KATEGORİDE (NEON BEYAZ) -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-section" id="allSolutionsSec">
                 <h3 onclick="toggleCategory('allSolutionsSec')">
@@ -607,7 +611,6 @@
                     <i class="fas fa-chevron-down chevron-icon"></i>
                 </h3>
                 <div class="section-content">
-                    <!-- Tüm Özellikler Tek Listede Sıralandı -->
                     <div class="menu-item" onclick="handleMenuClick('Ad Soyad Çözümleri', 'fa-user-tag', 'adsoyad')"><i class="fas fa-user-tag"></i> Ad soyad çözümleri</div>
                     <div class="menu-item" onclick="handleMenuClick('Aile Çözümleri', 'fa-users', 'tc')"><i class="fas fa-users"></i> Aile Çözümleri</div>
                     <div class="menu-item" onclick="handleMenuClick('Telefon Çözümleri', 'fa-phone', 'telefon')"><i class="fas fa-phone"></i> Telefon Çözümleri</div>
@@ -677,7 +680,7 @@
 
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("ADMIN PANEL YÖNETİCİSİ 👑", "#ff3333", "1px dashed #ff3333");
+                openPanel("ADMIN PANEL YÖNETİCİSİ 👑", "#ffffff", "2px dashed #ffffff");
                 return;
             }
 
@@ -688,7 +691,7 @@
         // Ücretsiz Giriş Kontrolü
         function loginAsFree() {
             currentLoginMode = "free";
-            openPanel("DENEME HESABI (FREE) ⚡", "#ffcc00", "1px dashed #ffcc00");
+            openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px dashed #444444");
         }
 
         // Paneli Açma Temel Fonksiyonu
@@ -704,12 +707,18 @@
             vipText.innerHTML = statusText;
             vipText.style.color = textColor;
             vipBorder.style.border = borderStyle;
+            if (currentLoginMode === "luxy") {
+                vipText.style.textShadow = "0 0 10px rgba(255, 255, 255, 0.8)";
+                vipBorder.style.boxShadow = "0 0 15px rgba(255, 255, 255, 0.15)";
+            } else {
+                vipText.style.textShadow = "none";
+                vipBorder.style.boxShadow = "none";
+            }
         }
 
         // Menü Tıklama Kontrolü
         function handleMenuClick(title, iconClass, type) {
             if (currentLoginMode === "free") {
-                // Free girişte 3 saniyelik hata kutusu çıkar
                 const toast = document.getElementById('vipAlertToast');
                 toast.style.display = 'block';
                 
@@ -720,7 +729,6 @@
                 return;
             }
 
-            // luxy giriş yaptıysa sorunsuz açar
             openAction(title, iconClass, type);
         }
 
@@ -735,8 +743,8 @@
             const smsBombGroup = document.getElementById('smsBombGroup');
             
             titleElement.innerHTML = `<i class="${iconClass}"></i> ${title}`;
-            titleElement.style.color = "#ff3333";
-            titleElement.style.textShadow = "0 0 8px rgba(255, 51, 51, 0.4)";
+            titleElement.style.color = "#ffffff";
+            titleElement.style.textShadow = "0 0 8px rgba(255, 255, 255, 0.5)";
 
             textarea.style.display = 'none'; 
             textarea.value = '';
