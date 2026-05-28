@@ -22,6 +22,25 @@
             overflow-x: hidden;
         }
 
+        /* --- 3 SANİYELİK VIP UYARI KUTUSU --- */
+        .vip-alert-toast {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff3333;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1000000;
+            box-shadow: 0 0 20px rgba(255, 51, 51, 0.6);
+            border: 1px solid #ffffff;
+            text-align: center;
+        }
+
         /* --- STORE BUTONU --- */
         .store-floating-btn {
             display: none; 
@@ -113,7 +132,7 @@
             color: #fff;
         }
 
-        /* --- GİRİŞ EKRANI (FREE GİRİŞ) --- */
+        /* --- GİRİŞ EKRANI (ÇİFT SEÇENEKLİ) --- */
         .login-container {
             display: flex;
             justify-content: center;
@@ -129,26 +148,50 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             text-align: center;
         }
 
         .login-card h2 {
-            margin-bottom: 10px;
+            margin-bottom: 24px;
             font-weight: 600;
             color: #ffffff;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
         }
 
-        .login-card p {
-            color: #888888;
-            font-size: 14px;
-            margin-bottom: 30px;
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
         }
 
-        .free-login-btn {
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888888;
+        }
+
+        .input-group input {
             width: 100%;
-            padding: 15px;
+            padding: 12px 12px 12px 45px;
+            background: #121212;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
             background: #ffffff;
             border: none;
             border-radius: 8px;
@@ -157,17 +200,47 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .login-btn:hover {
+            background: #dddddd;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .divider {
+            color: #555555;
+            font-size: 13px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .free-login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #121212;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
         .free-login-btn:hover {
-            background: #dddddd;
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+            background: #1a1a1a;
+            border-color: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .error-msg {
+            color: #ff3333;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
         }
 
         /* --- PANEL EKRANI --- */
@@ -251,6 +324,8 @@
             user-select: none;
             border-radius: 6px;
             transition: background 0.2s;
+            color: #ff3333;
+            text-shadow: 0 0 10px rgba(255, 51, 51, 0.8);
         }
 
         .sidebar-section h3 .title-left {
@@ -280,14 +355,6 @@
             padding: 0;
         }
 
-        /* TÜM MENÜLER VIP TASARIMINA GEÇTİ */
-        .sidebar-section h3 {
-            color: #ff3333;
-            text-shadow: 0 0 10px rgba(255, 51, 51, 0.8);
-        }
-        .sidebar-section h3:hover {
-            background: rgba(255, 51, 51, 0.05);
-        }
         .sidebar-section .menu-item {
             color: #ff9999;
         }
@@ -470,6 +537,11 @@
 </head>
 <body>
 
+    <!-- 3 SANİYELİK VIP SATIN ALMA UYARISI -->
+    <div class="vip-alert-toast" id="vipAlertToast">
+        VIP SATIN ALMAK IÇIN STOREYE GIRINIZ
+    </div>
+
     <!-- STORE BUTONU -->
     <div class="store-floating-btn" id="storeFloatingBtn" onclick="openStoreModal()">
         <i class="fas fa-shopping-cart"></i> STORE
@@ -483,13 +555,28 @@
         </div>
     </div>
 
-    <!-- GİRİŞ EKRANI (FREE GİRİŞ) -->
+    <!-- GİRİŞ EKRANI (ÇİFT GİRİŞ SEÇENEĞİ) -->
     <div class="login-container" id="loginScreen">
         <div class="login-card">
-            <h2>Angel Panel</h2>
-            <p>Herkes İçin Tam Erişim Sürümü</p>
-            <button class="free-login-btn" onclick="freeLogin()">
-                <i class="fas fa-unlock-alt"></i> Ücretsiz Giriş Yap
+            <h2>Angel Panel Giriş</h2>
+            
+            <!-- Normal Şifreli Giriş -->
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" placeholder="Kullanıcı Adı">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Şifre">
+            </div>
+            <button class="login-btn" onclick="checkNormalLogin()">Giriş Yap</button>
+            <div class="error-msg" id="loginError">Hatalı kullanıcı adı veya şifre!</div>
+
+            <div class="divider">──────── VEYA ────────</div>
+
+            <!-- Ücretsiz Şifresiz Giriş -->
+            <button class="free-login-btn" onclick="loginAsFree()">
+                <i class="fas fa-unlock-alt"></i> Ücretsiz Giriş Yap (Free)
             </button>
         </div>
     </div>
@@ -505,7 +592,7 @@
             </div>
         </nav>
 
-        <!-- Yan Menü (Sidebar) - Tüm Başlıklar VIP Çözümü Oldu -->
+        <!-- Yan Menü (Sidebar) -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-section" id="secFree">
                 <h3 onclick="toggleCategory('secFree')">
@@ -513,7 +600,7 @@
                     <i class="fas fa-chevron-down chevron-icon"></i>
                 </h3>
                 <div class="section-content">
-                    <div class="menu-item" onclick="openAction('Ad Soyad Çözümleri', 'fa-user-tag', 'adsoyad')"><i class="fas fa-user-tag"></i> Ad soyad çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('Ad Soyad Çözümleri', 'fa-user-tag', 'adsoyad')"><i class="fas fa-user-tag"></i> Ad soyad çözümleri</div>
                 </div>
             </div>
 
@@ -523,21 +610,21 @@
                     <i class="fas fa-chevron-down chevron-icon"></i>
                 </h3>
                 <div class="section-content">
-                    <div class="menu-item" onclick="openAction('Aile Çözümleri', 'fa-users', 'tc')"><i class="fas fa-users"></i> Aile Çözümleri</div>
-                    <div class="menu-item" onclick="openAction('Telefon Çözümleri', 'fa-phone', 'telefon')"><i class="fas fa-phone"></i> Telefon Çözümleri</div>
-                    <div class="menu-item" onclick="openAction('Sağlık Çözümleri', 'fa-heartbeat', 'tc')"><i class="fas fa-heartbeat"></i> Sağlık Çözümleri</div>
-                    <div class="menu-item" onclick="openAction('Vesika Çözümleri', 'fa-id-card-alt', 'tc')"><i class="fas fa-id-card-alt"></i> Vesika çözümleri</div>
-                    <div class="menu-item" onclick="openAction('İş Yeri Çözümleri', 'fa-briefcase', 'tc')"><i class="fas fa-briefcase"></i> İş yeri çözümleri</div>
-                    <div class="menu-item" onclick="openAction('Adres Çözümleri', 'fa-map-marker-alt', 'tc')"><i class="fas fa-map-marker-alt"></i> Adres çözümleri</div>
-                    <div class="menu-item" onclick="openAction('Kimlik Oluşturucu', 'fa-passport', 'tc')"><i class="fas fa-passport"></i> Kimlik oluşturucu</div>
-                    <div class="menu-item" onclick="openAction('E Devlet Çözümleri', 'fa-university', 'tc')"><i class="fas fa-university"></i> E Devlet Çözümleri</div>
-                    <div class="menu-item" onclick="openAction('E Okul Çözümleri', 'fa-graduation-cap', 'tc')"><i class="fas fa-graduation-cap"></i> E Okul Çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('Aile Çözümleri', 'fa-users', 'tc')"><i class="fas fa-users"></i> Aile Çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('Telefon Çözümleri', 'fa-phone', 'telefon')"><i class="fas fa-phone"></i> Telefon Çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('Sağlık Çözümleri', 'fa-heartbeat', 'tc')"><i class="fas fa-heartbeat"></i> Sağlık Çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('Vesika Çözümleri', 'fa-id-card-alt', 'tc')"><i class="fas fa-id-card-alt"></i> Vesika çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('İş Yeri Çözümleri', 'fa-briefcase', 'tc')"><i class="fas fa-briefcase"></i> İş yeri çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('Adres Çözümleri', 'fa-map-marker-alt', 'tc')"><i class="fas fa-map-marker-alt"></i> Adres çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fa-passport', 'tc')"><i class="fas fa-passport"></i> Kimlik oluşturucu</div>
+                    <div class="menu-item" onclick="handleMenuClick('E Devlet Çözümleri', 'fa-university', 'tc')"><i class="fas fa-university"></i> E Devlet Çözümleri</div>
+                    <div class="menu-item" onclick="handleMenuClick('E Okul Çözümleri', 'fa-graduation-cap', 'tc')"><i class="fas fa-graduation-cap"></i> E Okul Çözümleri</div>
                     
-                    <div class="menu-item" onclick="openAction('Sms Bomb', 'fa-bomb', 'smsbomb')"><i class="fas fa-bomb"></i> Sms Bomb</div>
-                    <div class="menu-item" onclick="openAction('Tiktok Sızma', 'fa-brands fa-tiktok', 'nick')"><i class="fa-brands fa-tiktok"></i> Tiktok Sızma</div>
-                    <div class="menu-item" onclick="openAction('Instagram Sızma', 'fa-brands fa-instagram', 'nick')"><i class="fa-brands fa-instagram"></i> Instagram Sızma</div>
-                    <div class="menu-item" onclick="openAction('Whatsapp Sızma', 'fa-brands fa-whatsapp', 'nick')"><i class="fa-brands fa-whatsapp"></i> Whatsapp Sızma</div>
-                    <div class="menu-item" onclick="openAction('Discord Sızma', 'fa-brands fa-discord', 'nick')"><i class="fa-brands fa-discord"></i> Discord Sızma</div>
+                    <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fa-bomb', 'smsbomb')"><i class="fas fa-bomb"></i> Sms Bomb</div>
+                    <div class="menu-item" onclick="handleMenuClick('Tiktok Sızma', 'fa-brands fa-tiktok', 'nick')"><i class="fa-brands fa-tiktok"></i> Tiktok Sızma</div>
+                    <div class="menu-item" onclick="handleMenuClick('Instagram Sızma', 'fa-brands fa-instagram', 'nick')"><i class="fa-brands fa-instagram"></i> Instagram Sızma</div>
+                    <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fa-brands fa-whatsapp', 'nick')"><i class="fa-brands fa-whatsapp"></i> Whatsapp Sızma</div>
+                    <div class="menu-item" onclick="handleMenuClick('Discord Sızma', 'fa-brands fa-discord', 'nick')"><i class="fa-brands fa-discord"></i> Discord Sızma</div>
                 </div>
             </div>
         </div>
@@ -582,30 +669,65 @@
     </div>
 
     <script>
-        function freeLogin() {
-            // Şifresiz giriş fonksiyonu
+        // Giriş Modu Takibi: "luxy" veya "free"
+        let currentLoginMode = ""; 
+
+        // LUX-Y Normal Giriş Kontrolü
+        function checkNormalLogin() {
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value;
+            const error = document.getElementById('loginError');
+
+            if (user === "luxy" && pass === "dmax") {
+                currentLoginMode = "luxy";
+                openPanel("ADMIN PANEL YÖNETİCİSİ 👑", "#ff3333", "1px dashed #ff3333");
+                return;
+            }
+
+            error.style.display = 'block';
+            setTimeout(() => { error.style.display = 'none'; }, 3000);
+        }
+
+        // Ücretsiz Giriş Kontrolü
+        function loginAsFree() {
+            currentLoginMode = "free";
+            openPanel("DENEME HESABI (FREE) ⚡", "#ffcc00", "1px dashed #ffcc00");
+        }
+
+        // Paneli Açma Temel Fonksiyonu
+        function openPanel(statusText, textColor, borderStyle) {
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('panelScreen').style.display = 'block';
             document.getElementById('actionContainer').style.display = 'none';
             document.getElementById('storeFloatingBtn').style.display = 'flex';
+
+            const vipText = document.getElementById('panelVipText');
+            const vipBorder = document.getElementById('vipBorder');
+            
+            vipText.innerHTML = statusText;
+            vipText.style.color = textColor;
+            vipBorder.style.border = borderStyle;
         }
 
-        function openStoreModal() {
-            document.getElementById('storeModal').style.display = 'flex';
+        // Tıklama Yönetimi (İstediğin Mantık Burada Çalışıyor Kanka)
+        function handleMenuClick(title, iconClass, type) {
+            if (currentLoginMode === "free") {
+                // Free giriş yapıldıysa 3 saniyelik uyarı gösterir, işlem alanı açılmaz
+                const toast = document.getElementById('vipAlertToast');
+                toast.style.display = 'block';
+                
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 3000); // Tam 3 Saniye
+                
+                return;
+            }
+
+            // Eğer luxy giriş yaptıysa her şeye tıklayıp girebilir
+            openAction(title, iconClass, type);
         }
 
-        function closeStoreModal() { 
-            document.getElementById('storeModal').style.display = 'none'; 
-        }
-
-        function toggleSidebar() { 
-            document.getElementById('sidebar').classList.toggle('active'); 
-        }
-        
-        function toggleCategory(id) { 
-            document.getElementById(id).classList.toggle('collapsed'); 
-        }
-
+        // İşlem Sayfasını Açma Fonksiyonu (Sadece Luxy Görebilir)
         function openAction(title, iconClass, type) {
             const container = document.getElementById('actionContainer');
             const titleElement = document.getElementById('actionTitle');
@@ -646,12 +768,19 @@
 
         function submitAction() {
             alert("İşlem başarıyla gönderildi!");
-            
-            // Input alanlarını temizle
             document.getElementById('actionInput').value = '';
             const allInputs = document.querySelectorAll('.input-form-group input');
             allInputs.forEach(input => input.value = '');
         }
+
+        function openStoreModal() { document.getElementById('storeModal').style.display = 'flex'; }
+        function closeStoreModal() { document.getElementById('storeModal').style.display = 'none'; }
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
+        function toggleCategory(id) { document.getElementById(id).classList.toggle('collapsed'); }
+
+        document.getElementById('password').addEventListener('keypress', function(e) { 
+            if (e.key === 'Enter') checkNormalLogin(); 
+        });
 
         window.onclick = function(event) {
             if (event.target == document.getElementById('storeModal')) closeStoreModal();
