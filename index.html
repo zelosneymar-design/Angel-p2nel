@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Panel</title>
+    <!-- Google Fonts ve FontAwesome İkonları -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- SAĞ ALT STORE BUTONU --- */
+        .store-floating-btn {
+            display: none; 
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #121212; 
+            color: #ffffff;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            z-index: 9999;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.4); 
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s ease;
+            user-select: none;
+        }
+
+        .store-floating-btn i {
+            color: #ffffff;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
+        }
+
+        .store-floating-btn:hover {
+            transform: scale(1.08) translateY(-3px);
+            background: #1a1a1a; 
+            border-color: #ffffff;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+            text-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+
+        /* --- STORE MODAL PENCERESİ --- */
+        .store-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 100000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .store-box {
+            background: #0a0a0a;
+            border: 2px solid #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .store-box h2 {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .store-close-btn {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background: #222222;
+            border: 1px solid #444444;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .store-close-btn:hover {
+            background: #ff3333;
+            border-color: #ff3333;
+            color: #fff;
+        }
+
+        /* --- GİRİŞ EKRANI --- */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000000;
+        }
+
+        .login-card {
+            background: #0a0a0a;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-card h2 {
+            margin-bottom: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888888;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 12px 12px 45px;
+            background: #121212;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #ffffff;
+            border: none;
+            border-radius: 8px;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .login-btn:hover {
+            background: #dddddd;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .error-msg {
+            color: #ff3333;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* --- PANEL EKRANI --- */
+        .panel-container {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: #0a0a0a;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #222222;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-btn {
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 20px;
+            transition: 0.2s;
+        }
+
+        .menu-btn:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .navbar h1 {
+            font-size: 20px;
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: -300px;
+            top: 65px;
+            width: 280px;
+            height: calc(100vh - 65px);
+            background: #0a0a0a;
+            border-right: 1px solid #222222;
+            transition: 0.3s ease;
+            overflow-y: auto;
+            z-index: 99;
+            padding: 20px 10px;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-section {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .sidebar-section h3 .title-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-section h3 .chevron-icon {
+            font-size: 11px;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-section.collapsed .chevron-icon {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 5px 0;
+        }
+
+        .sidebar-section.collapsed .section-content {
+            max-height: 0;
+            padding: 0;
+        }
+
+        /* FREE KATEGORİ */
+        .section-free h3 {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+        .section-free h3:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .section-free .menu-item {
+            color: #cccccc;
+        }
+        .section-free .menu-item:hover {
+            background: #1f1f1f;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+        }
+
+        /* VIP KATEGORİ */
+        .section-vip h3 {
+            color: #ff3333;
+            text-shadow: 0 0 10px rgba(255, 51, 51, 0.8);
+        }
+        .section-vip h3:hover {
+            background: rgba(255, 51, 51, 0.05);
+        }
+        .section-vip .menu-item {
+            color: #ff9999;
+        }
+        .section-vip .menu-item i {
+            color: #ff3333;
+        }
+        .section-vip .menu-item:hover {
+            background: rgba(255, 51, 51, 0.1);
+            color: #ff3333;
+            box-shadow: 0 0 8px rgba(255, 51, 51, 0.4);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 14px;
+        }
+
+        .menu-item i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 65px;
+            padding: 40px 20px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Üye Kartı */
+        .stats-card {
+            background: #0a0a0a;
+            border: 1px solid #222222;
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .stats-card h2 {
+            font-size: 15px;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .stats-number {
+            font-size: 48px;
+            font-weight: 600;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        /* VIP Metin Kutusu */
+        .vip-text-container {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 15px;
+            background: #0a0a0a;
+            border-radius: 12px;
+            border: 1px dashed #ff3333;
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.1);
+        }
+
+        .vip-text {
+            font-size: 26px;
+            font-weight: 600;
+            color: #ff3333;
+            text-shadow: 0 0 10px rgba(255, 51, 51, 0.6);
+            letter-spacing: 1px;
+        }
+
+        /* İşlem Alanı */
+        .action-container {
+            background: #0a0a0a;
+            border: 1px solid #222222;
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            display: none;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .action-container h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        }
+
+        .action-container textarea {
+            width: 100%;
+            height: 80px;
+            background: #121212;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            color: #fff;
+            padding: 12px;
+            font-size: 15px;
+            outline: none;
+            resize: none;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .action-container textarea:focus {
+            border-color: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+        }
+
+        .input-form-group {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #121212;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-form-group input:focus {
+            border-color: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #ffffff;
+            border: none;
+            border-radius: 8px;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .submit-btn:hover {
+            background: #dddddd;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STORE BUTONU -->
+    <div class="store-floating-btn" id="storeFloatingBtn" onclick="openStoreModal()">
+        <i class="fas fa-shopping-cart"></i> STORE
+    </div>
+
+    <!-- STORE MODAL -->
+    <div class="store-modal" id="storeModal">
+        <div class="store-box">
+            <h2>ŞUANLIK VIP SATILMIYOR</h2>
+            <button class="store-close-btn" onclick="closeStoreModal()">Kapat</button>
+        </div>
+    </div>
+
+    <!-- GİRİŞ EKRANI -->
+    <div class="login-container" id="loginScreen">
+        <div class="login-card">
+            <h2>Angel Panel Giriş</h2>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" placeholder="Kullanıcı Adı">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Şifre">
+            </div>
+            <button class="login-btn" onclick="checkLogin()">Giriş Yap</button>
+            <div class="error-msg" id="loginError">Hatalı kullanıcı adı veya şifre!</div>
+        </div>
+    </div>
+
+    <!-- PANEL EKRANI -->
+    <div class="panel-container" id="panelScreen">
+        <nav class="navbar">
+            <div class="nav-left">
+                <button class="menu-btn" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Angel Panel</h1>
+            </div>
+        </nav>
+
+        <!-- Yan Menü (Sidebar) -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-section section-free" id="secFree">
+                <h3 onclick="toggleCategory('secFree')">
+                    <span class="title-left">FREE ÇÖZÜMLER</span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="openAction('Ad Soyad Çözümleri', 'fa-user-tag', 'adsoyad')"><i class="fas fa-user-tag"></i> Ad soyad çözümleri</div>
+                </div>
+            </div>
+
+            <div class="sidebar-section section-vip" id="secVip">
+                <h3 onclick="toggleCategory('secVip')">
+                    <span class="title-left">Vip Çözümleri <i class="fas fa-shield-alt"></i></span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="openAction('Aile Çözümleri', 'fa-users', 'tc')"><i class="fas fa-users"></i> Aile Çözümleri</div>
+                    <div class="menu-item" onclick="openAction('Telefon Çözümleri', 'fa-phone', 'telefon')"><i class="fas fa-phone"></i> Telefon Çözümleri</div>
+                    <div class="menu-item" onclick="openAction('Sağlık Çözümleri', 'fa-heartbeat', 'tc')"><i class="fas fa-heartbeat"></i> Sağlık Çözümleri</div>
+                    <div class="menu-item" onclick="openAction('Vesika Çözümleri', 'fa-id-card-alt', 'tc')"><i class="fas fa-id-card-alt"></i> Vesika çözümleri</div>
+                    <div class="menu-item" onclick="openAction('İş Yeri Çözümleri', 'fa-briefcase', 'tc')"><i class="fas fa-briefcase"></i> İş yeri çözümleri</div>
+                    <div class="menu-item" onclick="openAction('Adres Çözümleri', 'fa-map-marker-alt', 'tc')"><i class="fas fa-map-marker-alt"></i> Adres çözümleri</div>
+                    <div class="menu-item" onclick="openAction('Kimlik Oluşturucu', 'fa-passport', 'tc')"><i class="fas fa-passport"></i> Kimlik oluşturucu</div>
+                    <div class="menu-item" onclick="openAction('E Devlet Çözümleri', 'fa-university', 'tc')"><i class="fas fa-university"></i> E Devlet Çözümleri</div>
+                    <div class="menu-item" onclick="openAction('E Okul Çözümleri', 'fa-graduation-cap', 'tc')"><i class="fas fa-graduation-cap"></i> E Okul Çözümleri</div>
+                    
+                    <div class="menu-item" onclick="openAction('Sms Bomb', 'fa-bomb', 'smsbomb')"><i class="fas fa-bomb"></i> Sms Bomb</div>
+                    <div class="menu-item" onclick="openAction('Tiktok Sızma', 'fa-brands fa-tiktok', 'nick')"><i class="fa-brands fa-tiktok"></i> Tiktok Sızma</div>
+                    <div class="menu-item" onclick="openAction('Instagram Sızma', 'fa-brands fa-instagram', 'nick')"><i class="fa-brands fa-instagram"></i> Instagram Sızma</div>
+                    <div class="menu-item" onclick="openAction('Whatsapp Sızma', 'fa-brands fa-whatsapp', 'nick')"><i class="fa-brands fa-whatsapp"></i> Whatsapp Sızma</div>
+                    <div class="menu-item" onclick="openAction('Discord Sızma', 'fa-brands fa-discord', 'nick')"><i class="fa-brands fa-discord"></i> Discord Sızma</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ana İçerik -->
+        <main class="main-content">
+            <div class="stats-card">
+                <h2>Toplam Üye Sayısı</h2>
+                <div class="stats-number">27</div>
+            </div>
+
+            <div class="vip-text-container" id="vipBorder">
+                <div class="vip-text" id="panelVipText">ADMIN PANEL YÖNETİCİSİ 👑</div>
+            </div>
+
+            <div class="action-container" id="actionContainer">
+                <h2 id="actionTitle"><i class="fas fa-terminal"></i> İşlem Başlığı</h2>
+                
+                <textarea id="actionInput" placeholder=""></textarea>
+                
+                <div class="input-form-group" id="adSoyadGroup">
+                    <input type="text" placeholder="İsim">
+                    <input type="text" placeholder="2. İsmi (varsa)">
+                    <input type="text" placeholder="Soy İsim">
+                </div>
+
+                <div class="input-form-group" id="telefonGroup">
+                    <input type="text" placeholder="Gsm'den TC Bulma">
+                    <input type="text" placeholder="TC'den Gsm Bulma">
+                </div>
+
+                <div class="input-form-group" id="smsBombGroup">
+                    <input type="text" placeholder="Numarayı Yazın">
+                    <input type="text" placeholder="Göndermek istediğiniz Sms Sayısı">
+                </div>
+
+                <button class="submit-btn" onclick="submitAction()">
+                    <i class="fas fa-paper-plane"></i> Gönder
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const ADMIN_AUTH = {
+            user: "luxy",
+            pass: "123prr"
+        };
+
+        function checkLogin() {
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value;
+            const error = document.getElementById('loginError');
+
+            if (user === ADMIN_AUTH.user && pass === ADMIN_AUTH.pass) {
+                setupPanelDesign();
+                return;
+            }
+
+            error.style.display = 'block';
+            setTimeout(() => { error.style.display = 'none'; }, 3000);
+        }
+
+        function setupPanelDesign() {
+            const storeBtn = document.getElementById('storeFloatingBtn');
+
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('panelScreen').style.display = 'block';
+            document.getElementById('actionContainer').style.display = 'none';
+
+            storeBtn.style.display = 'flex';
+        }
+
+        function openStoreModal() {
+            document.getElementById('storeModal').style.display = 'flex';
+        }
+
+        function closeStoreModal() { 
+            document.getElementById('storeModal').style.display = 'none'; 
+        }
+
+        function toggleSidebar() { 
+            document.getElementById('sidebar').classList.toggle('active'); 
+        }
+        
+        function toggleCategory(id) { 
+            document.getElementById(id).classList.toggle('collapsed'); 
+        }
+
+        function openAction(title, iconClass, type) {
+            const container = document.getElementById('actionContainer');
+            const titleElement = document.getElementById('actionTitle');
+            const textarea = document.getElementById('actionInput');
+            
+            const adSoyadGroup = document.getElementById('adSoyadGroup');
+            const telefonGroup = document.getElementById('telefonGroup');
+            const smsBombGroup = document.getElementById('smsBombGroup');
+            
+            titleElement.innerHTML = `<i class="${iconClass}"></i> ${title}`;
+            titleElement.style.color = "#ff3333";
+            titleElement.style.textShadow = "0 0 8px rgba(255, 51, 51, 0.4)";
+
+            textarea.style.display = 'none'; 
+            textarea.value = '';
+            adSoyadGroup.style.display = 'none'; 
+            telefonGroup.style.display = 'none'; 
+            smsBombGroup.style.display = 'none';
+            
+            clearInputs(adSoyadGroup); 
+            clearInputs(telefonGroup); 
+            clearInputs(smsBombGroup);
+
+            if (type === 'adsoyad') adSoyadGroup.style.display = 'flex';
+            else if (type === 'telefon') telefonGroup.style.display = 'flex';
+            else if (type === 'smsbomb') smsBombGroup.style.display = 'flex';
+            else if (type === 'tc') { textarea.style.display = 'block'; textarea.placeholder = "Kişinin TC'sini Yazınız."; } 
+            else if (type === 'nick') { textarea.style.display = 'block'; textarea.placeholder = "Kişinin Nicknamesini Yazınız"; }
+            
+            container.style.display = 'block';
+            if(window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('active');
+        }
+
+        function clearInputs(groupElement) {
+            const inputs = groupElement.getElementsByTagName('input');
+            for(let i=0; i<inputs.length; i++) inputs[i].value = '';
+        }
+
+        function submitAction() {
+            document.getElementById('actionInput').value = '';
+            const allInputs = document.querySelectorAll('.input-form-group input');
+            allInputs.forEach(input => input.value = '');
+            alert("İşlem başarıyla gönderildi!");
+        }
+
+        document.getElementById('password').addEventListener('keypress', function(e) { 
+            if (e.key === 'Enter') checkLogin(); 
+        });
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('storeModal')) closeStoreModal();
+        }
+    </script>
+</body>
+</html>
+
