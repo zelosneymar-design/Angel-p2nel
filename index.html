@@ -22,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* --- 3 SANİYELİK NEON BEYAZ VIP UYARI KUTUSU --- */
+        /* --- VIP UYARI KUTUSU (TOAST) --- */
         .vip-alert-toast {
             display: none;
             position: fixed;
@@ -37,12 +37,12 @@
             font-size: 14px;
             z-index: 1000000;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-            border: 1px solid #ffffff; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #ffffff; /* KESİNTİSİZ İNCE ÇİZGİ */
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
             text-align: center;
         }
 
-        /* --- STORE BUTONU --- */
+        /* --- STORE FLOATING BUTTON --- */
         .store-floating-btn {
             display: none; 
             position: fixed;
@@ -58,7 +58,7 @@
             z-index: 9999;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.4); /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid rgba(255, 255, 255, 0.4); /* KESİNTİSİZ İNCE ÇİZGİ */
             align-items: center;
             gap: 10px;
             transition: 0.3s ease;
@@ -95,7 +95,7 @@
 
         .store-box {
             background: #0a0a0a;
-            border: 1px solid #ffffff; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #ffffff; /* KESİNTİSİZ İNCE ÇİZGİ */
             border-radius: 16px;
             padding: 40px;
             width: 100%;
@@ -118,7 +118,7 @@
             width: 100%;
             padding: 10px;
             background: #222222;
-            border: 1px solid #444444; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #444444; /* KESİNTİSİZ İNCE ÇİZGİ */
             border-radius: 8px;
             color: #ffffff;
             font-size: 14px;
@@ -148,7 +148,7 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-            border: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #222222; /* KESİNTİSİZ İNCE ÇİZGİ */
             width: 100%;
             max-width: 420px;
             text-align: center;
@@ -179,7 +179,7 @@
             padding: 12px;
             padding-left: 45px;
             background: #121212;
-            border: 1px solid #333333; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #333333; /* KESİNTİSİZ İNCE ÇİZGİ */
             border-radius: 8px;
             color: #fff;
             font-size: 16px;
@@ -217,7 +217,7 @@
             color: #555555;
             font-size: 13px;
             margin: 25px 0;
-            border-top: 1px solid #222222; /* BAŞTAN SONA BİRLEŞİK İNCE ÇİZGİ */
+            border-top: 1px solid #222222; /* KESİNTİSİZ İNCE ÇİZGİ */
             padding-top: 15px;
             text-align: center;
         }
@@ -226,7 +226,7 @@
             width: 100%;
             padding: 12px;
             background: #121212;
-            border: 1px solid #333333; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #333333; /* KESİNTİSİZ İNCE ÇİZGİ */
             border-radius: 8px;
             color: #ffffff;
             font-size: 15px;
@@ -261,7 +261,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
+            border-bottom: 1px solid #222222; /* KESİNTİSİZ İNCE ÇİZGİ */
             position: fixed;
             width: 100%;
             top: 0;
@@ -294,7 +294,7 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
-        /* Sidebar */
+        /* --- SIDEBAR --- */
         .sidebar {
             position: fixed;
             left: -300px;
@@ -302,7 +302,7 @@
             width: 280px;
             height: calc(100vh - 65px);
             background: #0a0a0a;
-            border-right: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
+            border-right: 1px solid #222222; /* KESİNTİSİZ İNCE ÇİZGİ */
             transition: 0.3s ease;
             overflow-y: auto;
             z-index: 99;
@@ -314,15 +314,14 @@
         }
 
         .sidebar-section {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
-        /* TEK KATEGORİ NEON BEYAZ STİLİ */
+        /* KATEGORİ BAŞLIKLARI - BİRLEŞİK DÜZ ÇİZGİLİ */
         .sidebar-section h3 {
             font-size: 13px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
             padding: 12px 10px;
             display: flex;
             align-items: center;
@@ -333,7 +332,7 @@
             transition: background 0.2s;
             color: #ffffff;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.4); /* DÜZ BİRLEŞİK ÇİZGİ */
+            border: 1px solid rgba(255, 255, 255, 0.4); /* KESİNTİSİZ İNCE ÇİZGİ */
         }
 
         .sidebar-section h3:hover {
@@ -351,33 +350,21 @@
             transition: transform 0.3s ease;
         }
 
+        /* Kapalıyken Ok İşareti Dönsün */
         .sidebar-section.collapsed .chevron-icon {
             transform: rotate(-90deg);
         }
 
         .section-content {
-            max-height: 2000px; 
+            max-height: 500px; 
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            padding: 5px 0;
+            padding: 2px 0;
         }
 
         .sidebar-section.collapsed .section-content {
             max-height: 0;
             padding: 0;
-        }
-
-        .sidebar-section .menu-item {
-            color: #cccccc;
-        }
-        .sidebar-section .menu-item i {
-            color: #ffffff;
-            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
-        }
-        .sidebar-section .menu-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
         }
 
         .menu-item {
@@ -386,19 +373,28 @@
             padding: 12px 15px;
             text-decoration: none;
             border-radius: 8px;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
             cursor: pointer;
             transition: 0.2s;
             font-size: 14px;
+            color: #cccccc;
         }
 
         .menu-item i {
             margin-right: 12px;
             width: 20px;
             text-align: center;
+            color: #ffffff;
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
         }
 
-        /* Main Content */
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        }
+
+        /* --- ANA İÇERİK --- */
         .main-content {
             margin-top: 65px;
             padding: 40px 20px;
@@ -408,10 +404,9 @@
             align-items: center;
         }
 
-        /* Üye Kartı */
         .stats-card {
             background: #0a0a0a;
-            border: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #222222; /* KESİNTİSİZ İNCE ÇİZGİ */
             border-radius: 16px;
             padding: 30px;
             width: 100%;
@@ -436,7 +431,7 @@
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
 
-        /* VIP Metin Kutusu */
+        /* VIP Üst Bildirim */
         .vip-text-container {
             width: 100%;
             max-width: 500px;
@@ -445,7 +440,7 @@
             padding: 15px;
             background: #0a0a0a;
             border-radius: 12px;
-            border: 1px solid #ffffff; /* DÜZ BİRLEŞİK ÇİZGİ */
+            border: 1px solid #ffffff; /* KESİNTİSİZ İNCE ÇİZGİ */
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
         }
 
@@ -457,10 +452,10 @@
             letter-spacing: 1px;
         }
 
-        /* İşlem Alanı */
+        /* İşlem Giriş Alanları */
         .action-container {
             background: #0a0a0a;
-            border: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #222222; /* KESİNTİSİZ İNCE ÇİZGİ */
             border-radius: 16px;
             padding: 30px;
             width: 100%;
@@ -482,9 +477,9 @@
 
         .action-container textarea {
             width: 100%;
-            height: 80px;
+            height: 90px;
             background: #121212;
-            border: 1px solid #333333; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #333333; /* KESİNTİSİZ İNCE ÇİZGİ */
             border-radius: 8px;
             color: #fff;
             padding: 12px;
@@ -500,6 +495,7 @@
             box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
         }
 
+        /* Özel Form İnput Grupları */
         .input-form-group {
             display: none;
             flex-direction: column;
@@ -511,7 +507,7 @@
             width: 100%;
             padding: 12px;
             background: #121212;
-            border: 1px solid #333333; /* BİRLEŞİK İNCE ÇİZGİ */
+            border: 1px solid #333333; /* KESİNTİSİZ İNCE ÇİZGİ */
             border-radius: 8px;
             color: #fff;
             font-size: 15px;
@@ -550,7 +546,7 @@
 </head>
 <body>
 
-    <!-- 3 SANİYELİK NEON BEYAZ VIP SATIN ALMA UYARISI -->
+    <!-- VIP SATIN ALMA TOAST METNİ -->
     <div class="vip-alert-toast" id="vipAlertToast">
         VIP SATIN ALMAK IÇIN STOREYE GIRINIZ
     </div>
@@ -573,7 +569,6 @@
         <div class="login-card">
             <h2>Angel Panel Giriş</h2>
             
-            <!-- Normal Giriş -->
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" id="username" placeholder="Kullanıcı Adı">
@@ -587,14 +582,13 @@
 
             <div class="divider">VEYA</div>
 
-            <!-- Ücretsiz Giriş -->
             <button class="free-login-btn" onclick="loginAsFree()">
                 <i class="fas fa-unlock-alt"></i> Ücretsiz Giriş Yap (Free)
             </button>
         </div>
     </div>
 
-    <!-- PANEL EKRANI -->
+    <!-- PANEL ANA EKRANI -->
     <div class="panel-container" id="panelScreen">
         <nav class="navbar">
             <div class="nav-left">
@@ -605,34 +599,125 @@
             </div>
         </nav>
 
-        <!-- Yan Menü (Sidebar) - TÜM SORGULAR BURADA -->
+        <!-- YAN MENÜ (SIDEBAR) - GENİŞLETİLEBİLİR KATEGORİ SİSTEMİ -->
         <div class="sidebar" id="sidebar">
-            <div class="sidebar-section" id="allSolutionsSec">
-                <h3 onclick="toggleCategory('allSolutionsSec')">
-                    <span class="title-left">TÜM VIP ÇÖZÜMLER <i class="fas fa-shield-alt"></i></span>
+            
+            <!-- 1. Ad Soyad Çözümleri -->
+            <div class="sidebar-section" id="catAdSoyad">
+                <h3 onclick="toggleCategory('catAdSoyad')">
+                    <span class="title-left">Ad Soyad Çözümleri <i class="fas fa-user-tag"></i></span>
                     <i class="fas fa-chevron-down chevron-icon"></i>
                 </h3>
                 <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('Ad Soyad Çözümleri', 'fa-user-tag', 'adsoyad')"><i class="fas fa-user-tag"></i> Ad soyad çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('Aile Çözümleri', 'fa-users', 'tc')"><i class="fas fa-users"></i> Aile Çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('Telefon Çözümleri', 'fa-phone', 'telefon')"><i class="fas fa-phone"></i> Telefon Çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('Sağlık Çözümleri', 'fa-heartbeat', 'tc')"><i class="fas fa-heartbeat"></i> Sağlık Çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('Vesika Çözümleri', 'fa-id-card-alt', 'tc')"><i class="fas fa-id-card-alt"></i> Vesika çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('İş Yeri Çözümleri', 'fa-briefcase', 'tc')"><i class="fas fa-briefcase"></i> İş yeri çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('Adres Çözümleri', 'fa-map-marker-alt', 'tc')"><i class="fas fa-map-marker-alt"></i> Adres çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fa-passport', 'tc')"><i class="fas fa-passport"></i> Kimlik oluşturucu</div>
-                    <div class="menu-item" onclick="handleMenuClick('E Devlet Çözümleri', 'fa-university', 'tc')"><i class="fas fa-university"></i> E Devlet Çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('E Okul Çözümleri', 'fa-graduation-cap', 'tc')"><i class="fas fa-graduation-cap"></i> E Okul Çözümleri</div>
-                    <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fa-bomb', 'smsbomb')"><i class="fas fa-bomb"></i> Sms Bomb</div>
-                    <div class="menu-item" onclick="handleMenuClick('Tiktok Sızma', 'fa-brands fa-tiktok', 'nick')"><i class="fa-brands fa-tiktok"></i> Tiktok Sızma</div>
-                    <div class="menu-item" onclick="handleMenuClick('Instagram Sızma', 'fa-brands fa-instagram', 'nick')"><i class="fa-brands fa-instagram"></i> Instagram Sızma</div>
-                    <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fa-brands fa-whatsapp', 'nick')"><i class="fa-brands fa-whatsapp"></i> Whatsapp Sızma</div>
-                    <div class="menu-item" onclick="handleMenuClick('Discord Sızma', 'fa-brands fa-discord', 'nick')"><i class="fa-brands fa-discord"></i> Discord Sızma</div>
+                    <div class="menu-item" onclick="handleMenuClick('Ad Soyad Sorgu', 'fa-user-tag', 'adsoyad')">
+                        <i class="fas fa-user-tag"></i> Ad Soyad Sorgu
+                    </div>
                 </div>
             </div>
+
+            <!-- 2. Aile Çözümleri -->
+            <div class="sidebar-section" id="catAile">
+                <h3 onclick="toggleCategory('catAile')">
+                    <span class="title-left">Aile Çözümleri <i class="fas fa-users"></i></span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="handleMenuClick('Aile Sorgu', 'fa-users', 'tc')">
+                        <i class="fas fa-users"></i> Aile Sorgu
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Telefon Çözümleri -->
+            <div class="sidebar-section" id="catTelefon">
+                <h3 onclick="toggleCategory('catTelefon')">
+                    <span class="title-left">Telefon Çözümleri <i class="fas fa-phone"></i></span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="handleMenuClick('Telefon Sorgu', 'fa-phone', 'telefon')">
+                        <i class="fas fa-phone"></i> Telefon Sorgu
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Sağlık Çözümleri -->
+            <div class="sidebar-section" id="catSaglik">
+                <h3 onclick="toggleCategory('catSaglik')">
+                    <span class="title-left">Sağlık Çözümleri <i class="fas fa-heartbeat"></i></span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="handleMenuClick('Sağlık Sorgu', 'fa-heartbeat', 'tc')">
+                        <i class="fas fa-heartbeat"></i> Sağlık Sorgu
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Vesika Çözümleri -->
+            <div class="sidebar-section" id="catVesika">
+                <h3 onclick="toggleCategory('catVesika')">
+                    <span class="title-left">Vesika Çözümleri <i class="fas fa-id-card-alt"></i></span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="handleMenuClick('Vesika Sorgu', 'fa-id-card-alt', 'tc')">
+                        <i class="fas fa-id-card-alt"></i> Vesika Sorgu
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. İş Yeri Çözümleri -->
+            <div class="sidebar-section" id="catIsyeri">
+                <h3 onclick="toggleCategory('catIsyeri')">
+                    <span class="title-left">İş Yeri Çözümleri <i class="fas fa-briefcase"></i></span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="handleMenuClick('İş Yeri Sorgu', 'fa-briefcase', 'tc')">
+                        <i class="fas fa-briefcase"></i> İş yeri Sorgu
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Adres Çözümleri -->
+            <div class="sidebar-section" id="catAdres">
+                <h3 onclick="toggleCategory('catAdres')">
+                    <span class="title-left">Adres Çözümleri <i class="fas fa-map-marker-alt"></i></span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="handleMenuClick('Hane Sorgu', 'fa-map-marker-alt', 'tc')">
+                        <i class="fas fa-map-marker-alt"></i> Hane Sorgu
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Diğer İşlemler Bölümü -->
+            <div class="sidebar-section" id="catDiger">
+                <h3 onclick="toggleCategory('catDiger')">
+                    <span class="title-left">Diğer İşlemler <i class="fas fa-tools"></i></span>
+                    <i class="fas fa-chevron-down chevron-icon"></i>
+                </h3>
+                <div class="section-content">
+                    <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fa-passport', 'disabled')">
+                        <i class="fas fa-passport"></i> Kimlik Oluşturucu
+                    </div>
+                    <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fa-brands fa-whatsapp', 'whatsapp')">
+                        <i class="fa-brands fa-whatsapp"></i> Whatsapp Sızma
+                    </div>
+                    <div class="menu-item" onclick="handleMenuClick('Galeri Sızma', 'fa-images', 'disabled')">
+                        <i class="fas fa-images"></i> Galeri Sızma
+                    </div>
+                    <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fa-bomb', 'smsbomb')">
+                        <i class="fas fa-bomb"></i> Sms Bomb
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Ana İçerik -->
+        <!-- ANA İÇERİK ALANI -->
         <main class="main-content">
             <div class="stats-card">
                 <h2>Toplam Üye Sayısı</h2>
@@ -643,38 +728,44 @@
                 <div class="vip-text" id="panelVipText">VIP FULL ACCESS AKTİF 👑</div>
             </div>
 
+            <!-- Dinamik Sorgu Gösterim Alanı -->
             <div class="action-container" id="actionContainer">
                 <h2 id="actionTitle"><i class="fas fa-terminal"></i> İşlem Başlığı</h2>
                 
+                <!-- Genel Amaçlı Metin Alanı -->
                 <textarea id="actionInput" placeholder=""></textarea>
                 
+                <!-- Ad Soyad Özel İnput Grubu -->
                 <div class="input-form-group" id="adSoyadGroup">
-                    <input type="text" placeholder="İsim">
-                    <input type="text" placeholder="2. İsmi (varsa)">
-                    <input type="text" placeholder="Soy İsim">
+                    <input type="text" id="adInput" placeholder="İsim">
+                    <input type="text" id="ad2Input" placeholder="2. İsmi (varsa)">
+                    <input type="text" id="soyadInput" placeholder="Soy İsim">
                 </div>
 
+                <!-- Telefon Özel İnput Grubu -->
                 <div class="input-form-group" id="telefonGroup">
-                    <input type="text" placeholder="Gsm'den TC Bulma">
-                    <input type="text" placeholder="TC'den Gsm Bulma">
+                    <input type="text" id="gsmTcInput" placeholder="Gsm'den TC Bulma">
+                    <input type="text" id="tcGsmInput" placeholder="TC'den Gsm Bulma">
                 </div>
 
+                <!-- Sms Bomb Özel İnput Grubu -->
                 <div class="input-form-group" id="smsBombGroup">
-                    <input type="text" placeholder="Numarayı Yazın">
-                    <input type="text" placeholder="Göndermek istediğiniz Sms Sayısı">
+                    <input type="text" id="bombNumInput" placeholder="Numarayı Yazın">
+                    <input type="text" id="bombCountInput" placeholder="Göndermek istediğiniz Sms Sayısı">
                 </div>
 
-                <button class="submit-btn" onclick="submitAction()">
+                <button class="submit-btn" id="submitBtn" onclick="submitAction()">
                     <i class="fas fa-paper-plane"></i> Gönder
                 </button>
             </div>
         </main>
     </div>
 
+    <!-- SCRIPT YAPISI -->
     <script>
         let currentLoginMode = ""; 
 
-        // Normal Giriş Kontrolü
+        // Normal Giriş Doğrulama
         function checkNormalLogin() {
             const user = document.getElementById('username').value.trim();
             const pass = document.getElementById('password').value;
@@ -690,13 +781,13 @@
             setTimeout(() => { error.style.display = 'none'; }, 3000);
         }
 
-        // Ücretsiz Giriş Kontrolü
+        // Ücretsiz Giriş Modu
         function loginAsFree() {
             currentLoginMode = "free";
             openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px solid #444444");
         }
 
-        // Paneli Açma Temel Fonksiyonu
+        // Panel Ekran Değişimi
         function openPanel(statusText, textColor, borderStyle) {
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('panelScreen').style.display = 'block';
@@ -709,6 +800,7 @@
             vipText.innerHTML = statusText;
             vipText.style.color = textColor;
             vipBorder.style.border = borderStyle;
+            
             if (currentLoginMode === "luxy") {
                 vipText.style.textShadow = "0 0 10px rgba(255, 255, 255, 0.8)";
                 vipBorder.style.boxShadow = "0 0 15px rgba(255, 255, 255, 0.15)";
@@ -718,27 +810,23 @@
             }
         }
 
-        // Menü Tıklama Kontrolü
+        // Menü Tıklama Kontrolü (Free kullanıcı engeli)
         function handleMenuClick(title, iconClass, type) {
             if (currentLoginMode === "free") {
                 const toast = document.getElementById('vipAlertToast');
                 toast.style.display = 'block';
-                
-                setTimeout(() => {
-                    toast.style.display = 'none';
-                }, 3000); 
-                
+                setTimeout(() => { toast.style.display = 'none'; }, 3000); 
                 return;
             }
-
             openAction(title, iconClass, type);
         }
 
-        // İşlem Sayfasını Açma Fonksiyonu
+        // İnput ve Arayüz Kontrol Paneli
         function openAction(title, iconClass, type) {
             const container = document.getElementById('actionContainer');
             const titleElement = document.getElementById('actionTitle');
             const textarea = document.getElementById('actionInput');
+            const submitBtn = document.getElementById('submitBtn');
             
             const adSoyadGroup = document.getElementById('adSoyadGroup');
             const telefonGroup = document.getElementById('telefonGroup');
@@ -748,50 +836,78 @@
             titleElement.style.color = "#ffffff";
             titleElement.style.textShadow = "0 0 8px rgba(255, 255, 255, 0.5)";
 
+            // Her şeyi sıfırla ve gizle
             textarea.style.display = 'none'; 
             textarea.value = '';
+            textarea.placeholder = '';
+            textarea.readOnly = false;
+            submitBtn.style.display = 'flex';
+            
             adSoyadGroup.style.display = 'none'; 
             telefonGroup.style.display = 'none'; 
             smsBombGroup.style.display = 'none';
             
-            clearInputs(adSoyadGroup); 
-            clearInputs(telefonGroup); 
-            clearInputs(smsBombGroup);
+            clearAllInputs();
 
-            if (type === 'adsoyad') adSoyadGroup.style.display = 'flex';
-            else if (type === 'telefon') telefonGroup.style.display = 'flex';
-            else if (type === 'smsbomb') smsBombGroup.style.display = 'flex';
-            else if (type === 'tc') { textarea.style.display = 'block'; textarea.placeholder = "Kişinin TC'sini Yazınız."; } 
-            else if (type === 'nick') { textarea.style.display = 'block'; textarea.placeholder = "Kişinin Nicknamesini Yazınız"; }
+            // ÖZELLİK DURUM KONTROLLERİ
+            if (type === 'disabled') {
+                // Çalışmayan özellik kilidi (Kimlik Oluşturucu ve Galeri Sızma)
+                textarea.style.display = 'block';
+                textarea.value = "Bu Özellik Şu Anda Çalışmıyor";
+                textarea.readOnly = true;
+                submitBtn.style.display = 'none'; // Gönder butonunu gizle
+            } else if (type === 'adsoyad') {
+                adSoyadGroup.style.display = 'flex';
+            } else if (type === 'telefon') {
+                telefonGroup.style.display = 'flex';
+            } else if (type === 'smsbomb') {
+                smsBombGroup.style.display = 'flex';
+            } else if (type === 'whatsapp') {
+                textarea.style.display = 'block';
+                textarea.placeholder = "Kişinin Numarasını Yazınız";
+            } else if (type === 'tc') {
+                textarea.style.display = 'block';
+                textarea.placeholder = "Kişinin TC'sini Yazınız.";
+            } else {
+                textarea.style.display = 'block';
+                textarea.placeholder = "Gerekli bilgiyi giriniz...";
+            }
             
             container.style.display = 'block';
             if(window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('active');
         }
 
-        function clearInputs(groupElement) {
-            const inputs = groupElement.getElementsByTagName('input');
-            for(let i=0; i<inputs.length; i++) inputs[i].value = '';
+        function clearAllInputs() {
+            const inputs = document.querySelectorAll('.input-form-group input');
+            inputs.forEach(input => input.value = '');
         }
 
         function submitAction() {
             alert("İşlem başarıyla gönderildi!");
             document.getElementById('actionInput').value = '';
-            const allInputs = document.querySelectorAll('.input-form-group input');
-            allInputs.forEach(input => input.value = '');
+            clearAllInputs();
         }
 
+        // Temel Arayüz Fonksiyonları
         function openStoreModal() { document.getElementById('storeModal').style.display = 'flex'; }
         function closeStoreModal() { document.getElementById('storeModal').style.display = 'none'; }
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
-        function toggleCategory(id) { document.getElementById(id).classList.toggle('collapsed'); }
+        
+        // Kategori Aç/Kapat Mantığı
+        function toggleCategory(id) { 
+            document.getElementById(id).classList.toggle('collapsed'); 
+        }
 
+        // Enter ile Giriş Kontrolü
         document.getElementById('password').addEventListener('keypress', function(e) { 
             if (e.key === 'Enter') checkNormalLogin(); 
         });
 
+        // Dışarı tıklayınca Store Modal kapatma
         window.onclick = function(event) {
             if (event.target == document.getElementById('storeModal')) closeStoreModal();
         }
     </script>
 </body>
 </html>
+
