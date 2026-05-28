@@ -36,8 +36,8 @@
             font-weight: 600;
             font-size: 14px;
             z-index: 1000000;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-            border: 2px solid #ffffff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            border: 1px solid #ffffff; /* BİRLEŞİK İNCE ÇİZGİ */
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
             text-align: center;
         }
@@ -56,9 +56,9 @@
             font-size: 15px;
             cursor: pointer;
             z-index: 9999;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.4); 
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4); /* BİRLEŞİK İNCE ÇİZGİ */
             align-items: center;
             gap: 10px;
             transition: 0.3s ease;
@@ -74,8 +74,8 @@
             transform: scale(1.08) translateY(-3px);
             background: #1a1a1a; 
             border-color: #ffffff;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
-            text-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 12px rgba(255, 255, 255, 1);
         }
 
         /* --- STORE MODAL PENCERESİ --- */
@@ -95,13 +95,13 @@
 
         .store-box {
             background: #0a0a0a;
-            border: 2px solid #ffffff;
+            border: 1px solid #ffffff; /* BİRLEŞİK İNCE ÇİZGİ */
             border-radius: 16px;
             padding: 40px;
             width: 100%;
             max-width: 400px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
             position: relative;
         }
 
@@ -118,7 +118,7 @@
             width: 100%;
             padding: 10px;
             background: #222222;
-            border: 1px solid #444444;
+            border: 1px solid #444444; /* BİRLEŞİK İNCE ÇİZGİ */
             border-radius: 8px;
             color: #ffffff;
             font-size: 14px;
@@ -147,8 +147,8 @@
             background: #0a0a0a;
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+            border: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
             width: 100%;
             max-width: 420px;
             text-align: center;
@@ -179,7 +179,7 @@
             padding: 12px;
             padding-left: 45px;
             background: #121212;
-            border: 1px solid #333333;
+            border: 1px solid #333333; /* BİRLEŞİK İNCE ÇİZGİ */
             border-radius: 8px;
             color: #fff;
             font-size: 16px;
@@ -189,7 +189,7 @@
 
         .input-group input:focus {
             border-color: #ffffff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         .login-btn {
@@ -203,28 +203,30 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
             margin-bottom: 15px;
         }
 
         .login-btn:hover {
             background: #dddddd;
             transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
         .divider {
             color: #555555;
             font-size: 13px;
-            margin: 15px 0;
-            position: relative;
+            margin: 25px 0;
+            border-top: 1px solid #222222; /* BAŞTAN SONA BİRLEŞİK İNCE ÇİZGİ */
+            padding-top: 15px;
+            text-align: center;
         }
 
         .free-login-btn {
             width: 100%;
             padding: 12px;
             background: #121212;
-            border: 1px solid #333333;
+            border: 1px solid #333333; /* BİRLEŞİK İNCE ÇİZGİ */
             border-radius: 8px;
             color: #ffffff;
             font-size: 15px;
@@ -259,7 +261,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #222222;
+            border-bottom: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
             position: fixed;
             width: 100%;
             top: 0;
@@ -300,7 +302,7 @@
             width: 280px;
             height: calc(100vh - 65px);
             background: #0a0a0a;
-            border-right: 1px solid #222222;
+            border-right: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
             transition: 0.3s ease;
             overflow-y: auto;
             z-index: 99;
@@ -331,7 +333,7 @@
             transition: background 0.2s;
             color: #ffffff;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            border: 1px dashed rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.4); /* DÜZ BİRLEŞİK ÇİZGİ */
         }
 
         .sidebar-section h3:hover {
@@ -409,13 +411,13 @@
         /* Üye Kartı */
         .stats-card {
             background: #0a0a0a;
-            border: 1px solid #222222;
+            border: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
             border-radius: 16px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.02);
             margin-bottom: 20px;
         }
 
@@ -443,7 +445,7 @@
             padding: 15px;
             background: #0a0a0a;
             border-radius: 12px;
-            border: 1px dashed #ffffff;
+            border: 1px solid #ffffff; /* DÜZ BİRLEŞİK ÇİZGİ */
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
         }
 
@@ -458,7 +460,7 @@
         /* İşlem Alanı */
         .action-container {
             background: #0a0a0a;
-            border: 1px solid #222222;
+            border: 1px solid #222222; /* BİRLEŞİK İNCE ÇİZGİ */
             border-radius: 16px;
             padding: 30px;
             width: 100%;
@@ -482,7 +484,7 @@
             width: 100%;
             height: 80px;
             background: #121212;
-            border: 1px solid #333333;
+            border: 1px solid #333333; /* BİRLEŞİK İNCE ÇİZGİ */
             border-radius: 8px;
             color: #fff;
             padding: 12px;
@@ -509,7 +511,7 @@
             width: 100%;
             padding: 12px;
             background: #121212;
-            border: 1px solid #333333;
+            border: 1px solid #333333; /* BİRLEŞİK İNCE ÇİZGİ */
             border-radius: 8px;
             color: #fff;
             font-size: 15px;
@@ -537,7 +539,7 @@
             justify-content: center;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         }
 
         .submit-btn:hover {
@@ -583,7 +585,7 @@
             <button class="login-btn" onclick="checkNormalLogin()">Giriş Yap</button>
             <div class="error-msg" id="loginError">Hatalı kullanıcı adı veya şifre!</div>
 
-            <div class="divider">──────── VEYA ────────</div>
+            <div class="divider">VEYA</div>
 
             <!-- Ücretsiz Giriş -->
             <button class="free-login-btn" onclick="loginAsFree()">
@@ -603,7 +605,7 @@
             </div>
         </nav>
 
-        <!-- Yan Menü (Sidebar) - HER ŞEY TEK KATEGORİDE (NEON BEYAZ) -->
+        <!-- Yan Menü (Sidebar) - TÜM SORGULAR BURADA -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-section" id="allSolutionsSec">
                 <h3 onclick="toggleCategory('allSolutionsSec')">
@@ -680,7 +682,7 @@
 
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("ADMIN PANEL YÖNETİCİSİ 👑", "#ffffff", "2px dashed #ffffff");
+                openPanel("ADMIN PANEL YÖNETİCİSİ 👑", "#ffffff", "1px solid #ffffff");
                 return;
             }
 
@@ -691,7 +693,7 @@
         // Ücretsiz Giriş Kontrolü
         function loginAsFree() {
             currentLoginMode = "free";
-            openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px dashed #444444");
+            openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px solid #444444");
         }
 
         // Paneli Açma Temel Fonksiyonu
@@ -793,4 +795,3 @@
     </script>
 </body>
 </html>
-
