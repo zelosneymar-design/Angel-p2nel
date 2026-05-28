@@ -132,7 +132,7 @@
             color: #fff;
         }
 
-        /* --- GİRİŞ EKRANI (ÇİFT SEÇENEKLİ) --- */
+        /* --- GİRİŞ EKRANI --- */
         .login-container {
             display: flex;
             justify-content: center;
@@ -174,7 +174,8 @@
 
         .input-group input {
             width: 100%;
-            padding: 12px 12px 12px 45px;
+            padding: 12px;
+            padding-left: 45px;
             background: #121212;
             border: 1px solid #333333;
             border-radius: 8px;
@@ -311,12 +312,13 @@
             margin-bottom: 15px;
         }
 
+        /* TEK KATEGORİ VIP STİLİ */
         .sidebar-section h3 {
             font-size: 13px;
             text-transform: uppercase;
             margin-bottom: 5px;
             letter-spacing: 1px;
-            padding: 10px;
+            padding: 12px 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -326,6 +328,11 @@
             transition: background 0.2s;
             color: #ff3333;
             text-shadow: 0 0 10px rgba(255, 51, 51, 0.8);
+            border: 1px dashed rgba(255, 51, 51, 0.3);
+        }
+
+        .sidebar-section h3:hover {
+            background: rgba(255, 51, 51, 0.05);
         }
 
         .sidebar-section h3 .title-left {
@@ -344,7 +351,7 @@
         }
 
         .section-content {
-            max-height: 1000px;
+            max-height: 2000px; /* Bütün elemanlar sığsın diye büyüttüm */
             overflow: hidden;
             transition: max-height 0.3s ease-out;
             padding: 5px 0;
@@ -555,12 +562,12 @@
         </div>
     </div>
 
-    <!-- GİRİŞ EKRANI (ÇİFT GİRİŞ SEÇENEĞİ) -->
+    <!-- GİRİŞ EKRANI -->
     <div class="login-container" id="loginScreen">
         <div class="login-card">
             <h2>Angel Panel Giriş</h2>
             
-            <!-- Normal Şifreli Giriş -->
+            <!-- Normal Giriş -->
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" id="username" placeholder="Kullanıcı Adı">
@@ -574,7 +581,7 @@
 
             <div class="divider">──────── VEYA ────────</div>
 
-            <!-- Ücretsiz Şifresiz Giriş -->
+            <!-- Ücretsiz Giriş -->
             <button class="free-login-btn" onclick="loginAsFree()">
                 <i class="fas fa-unlock-alt"></i> Ücretsiz Giriş Yap (Free)
             </button>
@@ -592,24 +599,16 @@
             </div>
         </nav>
 
-        <!-- Yan Menü (Sidebar) -->
+        <!-- Yan Menü (Sidebar) - HER ŞEY TEK KATEGORİDE -->
         <div class="sidebar" id="sidebar">
-            <div class="sidebar-section" id="secFree">
-                <h3 onclick="toggleCategory('secFree')">
-                    <span class="title-left">Temel Çözümler <i class="fas fa-shield-alt"></i></span>
+            <div class="sidebar-section" id="allSolutionsSec">
+                <h3 onclick="toggleCategory('allSolutionsSec')">
+                    <span class="title-left">TÜM VIP ÇÖZÜMLER <i class="fas fa-shield-alt"></i></span>
                     <i class="fas fa-chevron-down chevron-icon"></i>
                 </h3>
                 <div class="section-content">
+                    <!-- Tüm Özellikler Tek Listede Sıralandı -->
                     <div class="menu-item" onclick="handleMenuClick('Ad Soyad Çözümleri', 'fa-user-tag', 'adsoyad')"><i class="fas fa-user-tag"></i> Ad soyad çözümleri</div>
-                </div>
-            </div>
-
-            <div class="sidebar-section" id="secVip">
-                <h3 onclick="toggleCategory('secVip')">
-                    <span class="title-left">Gelişmiş Çözümler <i class="fas fa-shield-alt"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
                     <div class="menu-item" onclick="handleMenuClick('Aile Çözümleri', 'fa-users', 'tc')"><i class="fas fa-users"></i> Aile Çözümleri</div>
                     <div class="menu-item" onclick="handleMenuClick('Telefon Çözümleri', 'fa-phone', 'telefon')"><i class="fas fa-phone"></i> Telefon Çözümleri</div>
                     <div class="menu-item" onclick="handleMenuClick('Sağlık Çözümleri', 'fa-heartbeat', 'tc')"><i class="fas fa-heartbeat"></i> Sağlık Çözümleri</div>
@@ -619,7 +618,6 @@
                     <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fa-passport', 'tc')"><i class="fas fa-passport"></i> Kimlik oluşturucu</div>
                     <div class="menu-item" onclick="handleMenuClick('E Devlet Çözümleri', 'fa-university', 'tc')"><i class="fas fa-university"></i> E Devlet Çözümleri</div>
                     <div class="menu-item" onclick="handleMenuClick('E Okul Çözümleri', 'fa-graduation-cap', 'tc')"><i class="fas fa-graduation-cap"></i> E Okul Çözümleri</div>
-                    
                     <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fa-bomb', 'smsbomb')"><i class="fas fa-bomb"></i> Sms Bomb</div>
                     <div class="menu-item" onclick="handleMenuClick('Tiktok Sızma', 'fa-brands fa-tiktok', 'nick')"><i class="fa-brands fa-tiktok"></i> Tiktok Sızma</div>
                     <div class="menu-item" onclick="handleMenuClick('Instagram Sızma', 'fa-brands fa-instagram', 'nick')"><i class="fa-brands fa-instagram"></i> Instagram Sızma</div>
@@ -669,10 +667,9 @@
     </div>
 
     <script>
-        // Giriş Modu Takibi: "luxy" veya "free"
         let currentLoginMode = ""; 
 
-        // LUX-Y Normal Giriş Kontrolü
+        // Normal Giriş Kontrolü
         function checkNormalLogin() {
             const user = document.getElementById('username').value.trim();
             const pass = document.getElementById('password').value;
@@ -709,25 +706,25 @@
             vipBorder.style.border = borderStyle;
         }
 
-        // Tıklama Yönetimi (İstediğin Mantık Burada Çalışıyor Kanka)
+        // Menü Tıklama Kontrolü
         function handleMenuClick(title, iconClass, type) {
             if (currentLoginMode === "free") {
-                // Free giriş yapıldıysa 3 saniyelik uyarı gösterir, işlem alanı açılmaz
+                // Free girişte 3 saniyelik hata kutusu çıkar
                 const toast = document.getElementById('vipAlertToast');
                 toast.style.display = 'block';
                 
                 setTimeout(() => {
                     toast.style.display = 'none';
-                }, 3000); // Tam 3 Saniye
+                }, 3000); 
                 
                 return;
             }
 
-            // Eğer luxy giriş yaptıysa her şeye tıklayıp girebilir
+            // luxy giriş yaptıysa sorunsuz açar
             openAction(title, iconClass, type);
         }
 
-        // İşlem Sayfasını Açma Fonksiyonu (Sadece Luxy Görebilir)
+        // İşlem Sayfasını Açma Fonksiyonu
         function openAction(title, iconClass, type) {
             const container = document.getElementById('actionContainer');
             const titleElement = document.getElementById('actionTitle');
