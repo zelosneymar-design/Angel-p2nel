@@ -22,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* --- SAĞ ALT STORE BUTONU --- */
+        /* --- STORE BUTONU --- */
         .store-floating-btn {
             display: none; 
             position: fixed;
@@ -510,6 +510,73 @@
             background: #dddddd;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
+
+        /* --- Sadece Luxy'nin Göreceği Log Bölümü --- */
+        .admin-logs-section {
+            display: none;
+            width: 100%;
+            max-width: 500px;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(255,0,0,0.1);
+        }
+
+        .admin-logs-section h2 {
+            font-size: 16px;
+            color: #ff3333;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(255,51,51,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .clear-logs-btn {
+            background: none;
+            border: 1px solid #ff3333;
+            color: #ff3333;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .clear-logs-btn:hover {
+            background: #ff3333;
+            color: #fff;
+        }
+
+        .logs-wrapper {
+            max-height: 200px;
+            overflow-y: auto;
+            text-align: left;
+            background: #111;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+
+        .log-line {
+            font-size: 12px;
+            font-family: monospace;
+            padding: 5px 0;
+            border-bottom: 1px solid #222;
+            color: #aaa;
+            word-break: break-all;
+        }
+
+        .log-line span.username {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .log-line span.action {
+            color: #00ffcc;
+        }
     </style>
 </head>
 <body>
@@ -628,22 +695,35 @@
                     <i class="fas fa-paper-plane"></i> Gönder
                 </button>
             </div>
+
+            <!-- GİZLİ LOG PANELİ (SADECE LUXY GÖREBİLİR) -->
+            <div class="admin-logs-section" id="adminLogsSection">
+                <h2>Kullanıcı Sorgu Günlüğü (LOGS) <button class="clear-logs-btn" onclick="clearLogs()">Temizle</button></h2>
+                <div class="logs-wrapper" id="logsWrapper">
+                    <div class="log-line">Henüz kayıtlı sorgu yok...</div>
+                </div>
+            </div>
         </main>
     </div>
 
     <script>
-        const ADMIN_AUTH = {
-            user: "luxy",
-            pass: "123prr"
+        // Hesap Veritabanı (Luxy şifresi dmax olarak güncellendi kanka)
+        const ACCOUNTS = {
+            "luxy": { pass: "dmax", role: "superadmin" },
+            "qwx": { pass: "brainrot", role: "user" }
         };
+
+        let currentLoggedInUser = "";
+        let currentActiveMenuTitle = "";
 
         function checkLogin() {
             const user = document.getElementById('username').value.trim();
             const pass = document.getElementById('password').value;
             const error = document.getElementById('loginError');
 
-            if (user === ADMIN_AUTH.user && pass === ADMIN_AUTH.pass) {
-                setupPanelDesign();
+            if (ACCOUNTS[user] && ACCOUNTS[user].pass === pass) {
+                currentLoggedInUser = user;
+                setupPanelDesign(ACCOUNTS[user].role);
                 return;
             }
 
@@ -651,14 +731,30 @@
             setTimeout(() => { error.style.display = 'none'; }, 3000);
         }
 
-        function setupPanelDesign() {
+        function setupPanelDesign(role) {
             const storeBtn = document.getElementById('storeFloatingBtn');
+            const logPanel = document.getElementById('adminLogsSection');
+            const vipText = document.getElementById('panelVipText');
+            const vipBorder = document.getElementById('vipBorder');
 
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('panelScreen').style.display = 'block';
             document.getElementById('actionContainer').style.display = 'none';
 
             storeBtn.style.display = 'flex';
+
+            if (role === "superadmin") {
+                vipText.innerHTML = "ADMIN PANEL YÖNETİCİSİ 👑";
+                vipBorder.style.border = "1px dashed #ff3333";
+                vipText.style.color = "#ff3333";
+                logPanel.style.display = 'block';
+                renderLogs();
+            } else {
+                vipText.innerHTML = "DENEME HESABI MASTER 🔥";
+                vipBorder.style.border = "1px dashed #ffcc00";
+                vipText.style.color = "#ffcc00";
+                logPanel.style.display = 'none';
+            }
         }
 
         function openStoreModal() {
@@ -678,6 +774,7 @@
         }
 
         function openAction(title, iconClass, type) {
+            currentActiveMenuTitle = title;
             const container = document.getElementById('actionContainer');
             const titleElement = document.getElementById('actionTitle');
             const textarea = document.getElementById('actionInput');
@@ -716,10 +813,71 @@
         }
 
         function submitAction() {
+            let queryData = [];
+            
+            const textarea = document.getElementById('actionInput');
+            if (textarea.style.display !== 'none' && textarea.value.trim() !== "") {
+                queryData.push(textarea.value.trim());
+            }
+
+            const activeGroups = document.querySelectorAll('.input-form-group');
+            activeGroups.forEach(group => {
+                if (group.style.display !== 'none') {
+                    const inputs = group.querySelectorAll('input');
+                    inputs.forEach(input => {
+                        if (input.value.trim() !== "") {
+                            queryData.push(`${input.placeholder}: ${input.value.trim()}`);
+                        }
+                    });
+                }
+            });
+
+            const queryText = queryData.length > 0 ? queryData.join(" | ") : "Boş sorgu yapmaya çalıştı";
+
+            const newLog = {
+                time: new Date().toLocaleTimeString(),
+                user: currentLoggedInUser,
+                menu: currentActiveMenuTitle || "Genel",
+                query: queryText
+            };
+
+            let logs = JSON.parse(localStorage.getItem('panelLogs')) || [];
+            logs.unshift(newLog);
+            localStorage.setItem('panelLogs', JSON.stringify(logs));
+
             document.getElementById('actionInput').value = '';
             const allInputs = document.querySelectorAll('.input-form-group input');
             allInputs.forEach(input => input.value = '');
+
             alert("İşlem başarıyla gönderildi!");
+            
+            if (currentLoggedInUser === "luxy") {
+                renderLogs();
+            }
+        }
+
+        function renderLogs() {
+            const wrapper = document.getElementById('logsWrapper');
+            let logs = JSON.parse(localStorage.getItem('panelLogs')) || [];
+            
+            if (logs.length === 0) {
+                wrapper.innerHTML = '<div class="log-line">Henüz kayıtlı sorgu yok...</div>';
+                return;
+            }
+
+            wrapper.innerHTML = logs.map(log => `
+                <div class="log-line">
+                    [${log.time}] <span class="username">@${log.user}</span> -> 
+                    <span class="action">[${log.menu}]</span> aranan: <b>${log.query}</b>
+                </div>
+            `).join('');
+        }
+
+        function clearLogs() {
+            if(confirm("Tüm log geçmişini silmek istediğine emin misin?")) {
+                localStorage.removeItem('panelLogs');
+                renderLogs();
+            }
         }
 
         document.getElementById('password').addEventListener('keypress', function(e) { 
