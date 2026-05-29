@@ -283,6 +283,7 @@
             width: 100%;
             top: 0;
             z-index: 100;
+            height: 110px; /* Büyük profil alanı taşmasın diye yükseltildi */
         }
 
         .nav-left {
@@ -312,46 +313,46 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
 
-        /* --- SAĞ ÜST KURUCU PROFiL ALANI --- */
+        /* --- SAĞ ÜST BÜYÜTÜLMÜŞ PROFiL ALANI --- */
         .nav-right-profile {
-            display: none; /* Sadece luxy girişinde aktif olacak */
+            display: none; 
             flex-direction: column;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
-            gap: 2px;
+            gap: 5px;
         }
 
         .founder-badge {
-            font-size: 12px;
+            font-size: 16px; /* Yazı boyutu büyütüldü */
             font-weight: 600;
             color: #ffffff;
-            letter-spacing: 2px;
+            letter-spacing: 3px; /* Harf boşlukları açıldı */
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.6); /* Beyaz Neon Yazı */
+            text-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.7);
             animation: neonPulse 2s infinite alternate;
         }
 
         .founder-avatar {
-            width: 35px;
-            height: 35px;
+            width: 65px; /* Fotoğraf boyutu büyütüldü */
+            height: 65px; /* Fotoğraf boyutu büyütüldü */
             border-radius: 50px;
             border: 2px solid #ffffff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
             object-fit: cover;
         }
 
         @keyframes neonPulse {
-            from { text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.4); }
-            to { text-shadow: 0 0 14px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.7); }
+            from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 18px rgba(255, 255, 255, 0.4); }
+            to { text-shadow: 0 0 18px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8); }
         }
 
         /* --- SIDEBAR --- */
         .sidebar {
             position: fixed;
             left: -300px;
-            top: 65px;
+            top: 110px; /* Navbar boyutuna göre ayarlandı */
             width: 280px;
-            height: calc(100vh - 65px);
+            height: calc(100vh - 110px);
             background: #0a0a0a;
             border-right: 1px solid #141414;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -415,7 +416,7 @@
 
         /* --- ANA İÇERİK --- */
         .main-content {
-            margin-top: 65px;
+            margin-top: 110px; /* Navbar boyutuna göre ayarlandı */
             padding: 50px 20px;
             transition: 0.3s;
             display: flex;
@@ -492,11 +493,10 @@
             gap: 12px;
         }
 
-        /* Dinamik Sorgu Logosu Stili */
         .action-container h2 i {
             font-size: 22px;
             color: #ffffff;
-            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8)); /* Logoların parlama sorunu çözüldü */
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
         }
 
         .action-container textarea {
@@ -622,7 +622,7 @@
                 <h1>Angel Panel</h1>
             </div>
 
-            <!-- SAĞ ÜST KÖŞE KURUCU NEON PANEL ALANI -->
+            <!-- SAĞ ÜST KÖŞE BÜYÜTÜLMÜŞ KURUCU NEON PANEL ALANI -->
             <div class="nav-right-profile" id="founderProfileArea">
                 <span class="founder-badge">KURUCU</span>
                 <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Kurucu">
@@ -758,7 +758,7 @@
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
                 openPanel("Admin Hesabı 👑", "#ffffff", "1px solid #ffffff");
-                document.getElementById('founderProfileArea').style.display = 'flex'; // Sağ üst alanı göster
+                document.getElementById('founderProfileArea').style.display = 'flex'; 
                 return;
             }
 
@@ -770,7 +770,7 @@
         function loginAsFree() {
             currentLoginMode = "free";
             openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px solid #444444");
-            document.getElementById('founderProfileArea').style.display = 'none'; // Sağ üst alanı gizle
+            document.getElementById('founderProfileArea').style.display = 'none'; 
         }
 
         // Panel Ekran Değişimi
@@ -807,7 +807,7 @@
             openAction(title, iconClass, type);
         }
 
-        // İnput ve Arayüz Kontrol Paneli Bulma Sınıfı (Logo sorunu tamamen çözüldü)
+        // İnput ve Arayüz Kontrol Paneli Bulma Sınıfı
         function openAction(title, iconClass, type) {
             const container = document.getElementById('actionContainer');
             const titleElement = document.getElementById('actionTitle');
@@ -818,7 +818,6 @@
             const telefonGroup = document.getElementById('telefonGroup');
             const smsBombGroup = document.getElementById('smsBombGroup');
             
-            // Dinamik olarak gelen tüm logoları (iconClass) h2 içerisine hatasız basıyoruz
             titleElement.innerHTML = `<i class="${iconClass}"></i> ${title}`;
 
             // Her şeyi sıfırla ve gizle
