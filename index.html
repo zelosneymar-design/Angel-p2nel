@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel Panel</title>
     <!-- Google Fonts ve FontAwesome İkonları -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -17,7 +17,7 @@
         }
 
         body {
-            background-color: #000000;
+            background-color: #050505;
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -36,7 +36,7 @@
             font-weight: 600;
             font-size: 14px;
             z-index: 1000000;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
             border: 1px solid #ffffff;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
             text-align: center;
@@ -140,25 +140,28 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #000000;
+            background: radial-gradient(circle at center, #111111 0%, #000000 100%);
         }
 
         .login-card {
             background: #0a0a0a;
             padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-            border: 1px solid #222222;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.03);
+            border: 1px solid #1f1f1f;
             width: 100%;
             max-width: 420px;
             text-align: center;
+            backdrop-filter: blur(10px);
         }
 
         .login-card h2 {
-            margin-bottom: 24px;
+            margin-bottom: 30px;
             font-weight: 600;
+            font-size: 24px;
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
         }
 
         .input-group {
@@ -171,63 +174,77 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #888888;
+            color: #666666;
+            transition: 0.3s;
         }
 
         .input-group input {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             padding-left: 45px;
-            background: #121212;
-            border: 1px solid #333333;
-            border-radius: 8px;
+            background: #111111;
+            border: 1px solid #252525;
+            border-radius: 10px;
             color: #fff;
-            font-size: 16px;
+            font-size: 15px;
             outline: none;
             transition: 0.3s;
         }
 
         .input-group input:focus {
             border-color: #ffffff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+
+        .input-group input:focus + i {
+            color: #ffffff;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
         }
 
         .login-btn {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: #ffffff;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             color: #000000;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
             margin-bottom: 15px;
         }
 
         .login-btn:hover {
-            background: #dddddd;
+            background: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
         }
 
         .divider {
-            color: #555555;
-            font-size: 13px;
+            color: #444444;
+            font-size: 12px;
+            font-weight: 600;
             margin: 25px 0;
-            border-top: 1px solid #222222;
-            padding-top: 15px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #1f1f1f;
         }
 
         .free-login-btn {
             width: 100%;
-            padding: 12px;
-            background: #121212;
-            border: 1px solid #333333;
-            border-radius: 8px;
+            padding: 14px;
+            background: #111111;
+            border: 1px solid #252525;
+            border-radius: 10px;
             color: #ffffff;
             font-size: 15px;
             font-weight: 600;
@@ -236,9 +253,9 @@
         }
 
         .free-login-btn:hover {
-            background: #1a1a1a;
+            background: #161616;
             border-color: #ffffff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
         .error-msg {
@@ -257,11 +274,11 @@
 
         .navbar {
             background: #0a0a0a;
-            padding: 15px 20px;
+            padding: 15px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #222222;
+            border-bottom: 1px solid #141414;
             position: fixed;
             width: 100%;
             top: 0;
@@ -274,7 +291,7 @@
         }
 
         .menu-btn {
-            font-size: 24px;
+            font-size: 22px;
             background: none;
             border: none;
             color: #fff;
@@ -289,9 +306,43 @@
         }
 
         .navbar h1 {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 600;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- SAĞ ÜST KURUCU PROFiL ALANI --- */
+        .nav-right-profile {
+            display: none; /* Sadece luxy girişinde aktif olacak */
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        .founder-badge {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.6); /* Beyaz Neon Yazı */
+            animation: neonPulse 2s infinite alternate;
+        }
+
+        .founder-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            object-fit: cover;
+        }
+
+        @keyframes neonPulse {
+            from { text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.4); }
+            to { text-shadow: 0 0 14px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.7); }
         }
 
         /* --- SIDEBAR --- */
@@ -302,11 +353,11 @@
             width: 280px;
             height: calc(100vh - 65px);
             background: #0a0a0a;
-            border-right: 1px solid #222222;
-            transition: 0.3s ease;
+            border-right: 1px solid #141414;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-y: auto;
             z-index: 99;
-            padding: 20px 10px;
+            padding: 25px 12px;
         }
 
         .sidebar.active {
@@ -318,48 +369,54 @@
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            color: #666666;
-            letter-spacing: 1.5px;
-            margin: 20px 0 8px 10px;
+            color: #444444;
+            letter-spacing: 2px;
+            margin: 25px 0 10px 12px;
             user-select: none;
         }
         .menu-group-title:first-child {
             margin-top: 5px;
         }
 
-        /* Çizgisiz Düz Tuş Tasarımı */
+        /* Çizgisiz Yeni Modern Tuş Tasarımı */
         .menu-item {
             display: flex;
             align-items: center;
             padding: 12px 15px;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 3px;
+            border-radius: 10px;
+            margin-bottom: 4px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.2s all;
             font-size: 14px;
-            color: #cccccc;
-            border: none; /* Çizgiler tamamen kaldırıldı */
+            color: #aaaaaa;
+            border: none;
         }
 
         .menu-item i {
-            margin-right: 12px;
+            margin-right: 14px;
             width: 20px;
             text-align: center;
             color: #ffffff;
-            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+            font-size: 15px;
+            opacity: 0.8;
+            transition: 0.2s;
         }
 
         .menu-item:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.05);
             color: #ffffff;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-item:hover i {
+            opacity: 1;
+            filter: drop-shadow(0 0 5px #ffffff);
+            transform: scale(1.1);
         }
 
         /* --- ANA İÇERİK --- */
         .main-content {
             margin-top: 65px;
-            padding: 40px 20px;
+            padding: 50px 20px;
             transition: 0.3s;
             display: flex;
             flex-direction: column;
@@ -368,83 +425,88 @@
 
         .stats-card {
             background: #0a0a0a;
-            border: 1px solid #222222;
-            border-radius: 16px;
+            border: 1px solid #141414;
+            border-radius: 20px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.02);
-            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
         }
 
         .stats-card h2 {
-            font-size: 15px;
-            color: #888888;
+            font-size: 13px;
+            color: #555555;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
         }
 
         .stats-number {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 600;
             color: #ffffff;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
-        /* VIP Üst Bildirim */
+        /* Üst Durum Bildirimi */
         .vip-text-container {
             width: 100%;
             max-width: 500px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             text-align: center;
-            padding: 15px;
+            padding: 16px;
             background: #0a0a0a;
-            border-radius: 12px;
+            border-radius: 14px;
             border: 1px solid #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
         .vip-text {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 600;
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         /* İşlem Giriş Alanları */
         .action-container {
             background: #0a0a0a;
-            border: 1px solid #222222;
-            border-radius: 16px;
-            padding: 30px;
+            border: 1px solid #141414;
+            border-radius: 20px;
+            padding: 35px;
             width: 100%;
             max-width: 500px;
             display: none;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             margin-bottom: 20px;
         }
 
         .action-container h2 {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 19px;
+            margin-bottom: 25px;
             color: #ffffff;
             display: flex;
             align-items: center;
-            gap: 10px;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+            gap: 12px;
+        }
+
+        /* Dinamik Sorgu Logosu Stili */
+        .action-container h2 i {
+            font-size: 22px;
+            color: #ffffff;
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8)); /* Logoların parlama sorunu çözüldü */
         }
 
         .action-container textarea {
             width: 100%;
-            height: 90px;
-            background: #121212;
-            border: 1px solid #333333;
-            border-radius: 8px;
+            height: 100px;
+            background: #111111;
+            border: 1px solid #222222;
+            border-radius: 10px;
             color: #fff;
-            padding: 12px;
+            padding: 14px;
             font-size: 15px;
             outline: none;
             resize: none;
@@ -454,7 +516,7 @@
 
         .action-container textarea:focus {
             border-color: #ffffff;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
         }
 
         /* Özel Form İnput Grupları */
@@ -467,10 +529,10 @@
 
         .input-form-group input {
             width: 100%;
-            padding: 12px;
-            background: #121212;
-            border: 1px solid #333333;
-            border-radius: 8px;
+            padding: 14px;
+            background: #111111;
+            border: 1px solid #222222;
+            border-radius: 10px;
             color: #fff;
             font-size: 15px;
             outline: none;
@@ -479,15 +541,15 @@
 
         .input-form-group input:focus {
             border-color: #ffffff;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: #ffffff;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             color: #000000;
             font-size: 16px;
             font-weight: 600;
@@ -496,13 +558,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            gap: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
         }
 
         .submit-btn:hover {
-            background: #dddddd;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+            background: #e5e5e5;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
         }
     </style>
 </head>
@@ -510,7 +572,7 @@
 
     <!-- VIP SATIN ALMA TOAST METNİ -->
     <div class="vip-alert-toast" id="vipAlertToast">
-        VIP SATIN ALMAK IÇIN STOREYE GIRINIZ
+        VIP SATIN ALMAK İÇİN STORE'A GİRİNİZ
     </div>
 
     <!-- STORE BUTONU -->
@@ -521,7 +583,7 @@
     <!-- STORE MODAL -->
     <div class="store-modal" id="storeModal">
         <div class="store-box">
-            <h2>ŞUANLIK VIP SATILMIYOR</h2>
+            <h2>ŞU ANLIK VIP SATILMIYOR</h2>
             <button class="store-close-btn" onclick="closeStoreModal()">Kapat</button>
         </div>
     </div>
@@ -559,39 +621,45 @@
                 </button>
                 <h1>Angel Panel</h1>
             </div>
+
+            <!-- SAĞ ÜST KÖŞE KURUCU NEON PANEL ALANI -->
+            <div class="nav-right-profile" id="founderProfileArea">
+                <span class="founder-badge">KURUCU</span>
+                <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Kurucu">
+            </div>
         </nav>
 
-        <!-- YAN MENÜ (SIDEBAR) - AYRI GRUPLANMIŞ DÜZ LİSTE -->
+        <!-- YAN MENÜ (SIDEBAR) -->
         <div class="sidebar" id="sidebar">
             
             <!-- ÇÖZÜMLER GRUBU -->
             <div class="menu-group-title">Çözümler</div>
             
-            <div class="menu-item" onclick="handleMenuClick('Ad Soyad Sorgu', 'fa-user-tag', 'adsoyad')">
+            <div class="menu-item" onclick="handleMenuClick('Ad Soyad Sorgu', 'fas fa-user-tag', 'adsoyad')">
                 <i class="fas fa-user-tag"></i> Ad Soyad Sorgu
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Aile Sorgu', 'fa-users', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('Aile Sorgu', 'fas fa-users', 'tc')">
                 <i class="fas fa-users"></i> Aile Sorgu
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Telefon Sorgu', 'fa-phone', 'telefon')">
+            <div class="menu-item" onclick="handleMenuClick('Telefon Sorgu', 'fas fa-phone', 'telefon')">
                 <i class="fas fa-phone"></i> Telefon Sorgu
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Sağlık Sorgu', 'fa-heartbeat', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('Sağlık Sorgu', 'fas fa-heartbeat', 'tc')">
                 <i class="fas fa-heartbeat"></i> Sağlık Sorgu
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Vesika Sorgu', 'fa-id-card-alt', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('Vesika Sorgu', 'fas fa-id-card-alt', 'tc')">
                 <i class="fas fa-id-card-alt"></i> Vesika Sorgu
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('İş Yeri Sorgu', 'fa-briefcase', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('İş Yeri Sorgu', 'fas fa-briefcase', 'tc')">
                 <i class="fas fa-briefcase"></i> İş yeri Sorgu
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Hane Sorgu', 'fa-map-marker-alt', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('Hane Sorgu', 'fas fa-map-marker-alt', 'tc')">
                 <i class="fas fa-map-marker-alt"></i> Hane Sorgu
             </div>
 
@@ -599,23 +667,23 @@
             <!-- SIZMALAR GRUBU -->
             <div class="menu-group-title">Sızmalar</div>
 
-            <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fa-brands fa-whatsapp', 'whatsapp')">
-                <i class="fa-brands fa-whatsapp"></i> Whatsapp Sızma
+            <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fab fa-whatsapp', 'whatsapp')">
+                <i class="fab fa-whatsapp"></i> Whatsapp Sızma
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Tiktok Sızma', 'fa-brands fa-tiktok', 'nick')">
-                <i class="fa-brands fa-tiktok"></i> Tiktok Sızma
+            <div class="menu-item" onclick="handleMenuClick('Tiktok Sızma', 'fab fa-tiktok', 'nick')">
+                <i class="fab fa-tiktok"></i> Tiktok Sızma
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Instagram Sızma', 'fa-brands fa-instagram', 'nick')">
-                <i class="fa-brands fa-instagram"></i> Instagram Sızma
+            <div class="menu-item" onclick="handleMenuClick('Instagram Sızma', 'fab fa-instagram', 'nick')">
+                <i class="fab fa-instagram"></i> Instagram Sızma
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Discord Sızma', 'fa-brands fa-discord', 'nick')">
-                <i class="fa-brands fa-discord"></i> Discord Sızma
+            <div class="menu-item" onclick="handleMenuClick('Discord Sızma', 'fab fa-discord', 'nick')">
+                <i class="fab fa-discord"></i> Discord Sızma
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Galeri Sızma', 'fa-images', 'disabled')">
+            <div class="menu-item" onclick="handleMenuClick('Galeri Sızma', 'fas fa-images', 'disabled')">
                 <i class="fas fa-images"></i> Galeri Sızma
             </div>
 
@@ -623,11 +691,11 @@
             <!-- DİĞER İŞLEMLER GRUBU -->
             <div class="menu-group-title">Diğer İşlemler</div>
 
-            <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fa-passport', 'disabled')">
+            <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fas fa-passport', 'disabled')">
                 <i class="fas fa-passport"></i> Kimlik Oluşturucu
             </div>
 
-            <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fa-bomb', 'smsbomb')">
+            <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fas fa-bomb', 'smsbomb')">
                 <i class="fas fa-bomb"></i> Sms Bomb
             </div>
 
@@ -641,12 +709,12 @@
             </div>
 
             <div class="vip-text-container" id="vipBorder">
-                <div class="vip-text" id="panelVipText">VIP FULL ACCESS AKTİF 👑</div>
+                <div class="vip-text" id="panelVipText">Admin Hesabı</div>
             </div>
 
             <!-- Dinamik Sorgu Gösterim Alanı -->
             <div class="action-container" id="actionContainer">
-                <h2 id="actionTitle"><i class="fas fa-terminal"></i> İşlem Başlığı</h2>
+                <h2 id="actionTitle"><i></i> İşlem Başlığı</h2>
                 
                 <!-- Genel Amaçlı Metin Alanı -->
                 <textarea id="actionInput" placeholder=""></textarea>
@@ -689,7 +757,8 @@
 
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("ADMIN PANEL YÖNETİCİSİ 👑", "#ffffff", "1px solid #ffffff");
+                openPanel("Admin Hesabı 👑", "#ffffff", "1px solid #ffffff");
+                document.getElementById('founderProfileArea').style.display = 'flex'; // Sağ üst alanı göster
                 return;
             }
 
@@ -701,6 +770,7 @@
         function loginAsFree() {
             currentLoginMode = "free";
             openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px solid #444444");
+            document.getElementById('founderProfileArea').style.display = 'none'; // Sağ üst alanı gizle
         }
 
         // Panel Ekran Değişimi
@@ -737,7 +807,7 @@
             openAction(title, iconClass, type);
         }
 
-        // İnput ve Arayüz Kontrol Paneli
+        // İnput ve Arayüz Kontrol Paneli Bulma Sınıfı (Logo sorunu tamamen çözüldü)
         function openAction(title, iconClass, type) {
             const container = document.getElementById('actionContainer');
             const titleElement = document.getElementById('actionTitle');
@@ -748,9 +818,8 @@
             const telefonGroup = document.getElementById('telefonGroup');
             const smsBombGroup = document.getElementById('smsBombGroup');
             
+            // Dinamik olarak gelen tüm logoları (iconClass) h2 içerisine hatasız basıyoruz
             titleElement.innerHTML = `<i class="${iconClass}"></i> ${title}`;
-            titleElement.style.color = "#ffffff";
-            titleElement.style.textShadow = "0 0 8px rgba(255, 255, 255, 0.5)";
 
             // Her şeyi sıfırla ve gizle
             textarea.style.display = 'none'; 
