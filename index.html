@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Panel - Ultra Cyber Blue</title>
+    <title>Angel Panel - Clean Stealth Edition</title>
     <!-- Google Fonts ve FontAwesome İkonları -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- MODERN DEĞİŞKENLER VE GENEL STİLLER --- */
+        /* --- GENEL STİLLER --- */
         * {
             margin: 0;
             padding: 0;
@@ -18,8 +18,8 @@
         }
 
         body {
-            /* Siyah tonları tamamen kaldırıldı, yoğun parlak siber mavi geçiş eklendi */
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #0284c7 100%);
+            /* Tüm sitenin ana rengi navbar'ın o asil derin tonuna eşitlendi */
+            background: #1e293b;
             color: #f8fafc;
             min-height: 100vh;
             overflow-x: hidden;
@@ -39,7 +39,7 @@
             font-weight: 600;
             font-size: 14px;
             z-index: 1000000;
-            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             text-align: center;
             animation: slideDown 0.3s forwards;
         }
@@ -54,7 +54,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
+            background: #2563eb;
             color: #ffffff;
             padding: 14px 28px;
             border-radius: 50px;
@@ -62,8 +62,8 @@
             font-size: 15px;
             cursor: pointer;
             z-index: 9999;
-            box-shadow: 0 8px 24px rgba(0, 210, 255, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             align-items: center;
             gap: 10px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -72,7 +72,7 @@
 
         .store-floating-btn:hover {
             transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0, 210, 255, 0.7);
+            background: #1d4ed8;
         }
 
         /* --- STORE MODAL --- */
@@ -91,15 +91,14 @@
         }
 
         .store-box {
-            /* Siyah arka plan yerine derin siber mavi tonu */
             background: #1e293b;
-            border: 2px solid #00d2ff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 24px;
             padding: 40px;
             width: 100%;
             max-width: 450px;
             text-align: center;
-            box-shadow: 0 20px 45px rgba(0, 210, 255, 0.3);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
         }
 
         .store-box h2 {
@@ -113,7 +112,7 @@
         .store-close-btn {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #0066ff 0%, #0044cc 100%);
+            background: #2563eb;
             border: none;
             border-radius: 12px;
             color: #ffffff;
@@ -123,7 +122,7 @@
             transition: 0.3s;
         }
 
-        .store-close-btn:hover { opacity: 0.9; }
+        .store-close-btn:hover { background: #1d4ed8; }
 
         /* --- GİRİŞ EKRANI --- */
         .login-container {
@@ -135,13 +134,11 @@
         }
 
         .login-card {
-            /* Kart arka planı siber mavi-lacivert parlamalı cam yapıldı */
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(20px);
+            background: #1e293b;
             padding: 45px 40px;
             border-radius: 28px;
-            box-shadow: 0 25px 60px rgba(0, 210, 255, 0.15);
-            border: 2px solid rgba(0, 210, 255, 0.3);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             width: 100%;
             max-width: 440px;
             text-align: center;
@@ -151,9 +148,7 @@
             margin-bottom: 35px;
             font-weight: 800;
             font-size: 32px;
-            background: linear-gradient(135deg, #00d2ff 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff; /* Girişteki Angel Panel yazısı da temiz beyaz yapıldı */
             letter-spacing: -0.5px;
         }
 
@@ -167,7 +162,7 @@
             left: 18px;
             top: 50%;
             transform: translateY(-50%);
-            color: #38bdf8;
+            color: #94a3b8;
             font-size: 16px;
             transition: 0.3s;
         }
@@ -175,9 +170,8 @@
         .input-group input {
             width: 100%;
             padding: 16px 16px 16px 52px;
-            /* İç inputlardaki siyahlıklar silindi */
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(0, 210, 255, 0.2);
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 14px;
             color: #f8fafc;
             font-size: 15px;
@@ -186,14 +180,13 @@
         }
 
         .input-group input:focus {
-            border-color: #00d2ff;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         .login-btn {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, #0066ff 0%, #00d2ff 100%);
+            background: #2563eb;
             border: none;
             border-radius: 14px;
             color: #ffffff;
@@ -201,13 +194,13 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             margin-bottom: 5px;
         }
 
         .login-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.6);
+            background: #1d4ed8;
         }
 
         .divider {
@@ -224,16 +217,16 @@
             content: "";
             flex: 1;
             height: 1px;
-            background: rgba(0, 210, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .free-login-btn {
             width: 100%;
             padding: 15px;
             background: transparent;
-            border: 1px solid #00d2ff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 14px;
-            color: #00d2ff;
+            color: #ffffff;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
@@ -241,8 +234,7 @@
         }
 
         .free-login-btn:hover {
-            background: rgba(0, 210, 255, 0.1);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .error-msg {
@@ -261,13 +253,12 @@
 
         /* --- NAVBAR --- */
         .navbar {
-            background: rgba(30, 41, 59, 0.75);
-            backdrop-filter: blur(12px);
+            background: #1e293b; /* Navbar'ın kendi orijinal rengi korundu */
             padding: 0 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 2px solid rgba(0, 210, 255, 0.3); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
             position: fixed;
             width: 100%;
             top: 0;
@@ -279,7 +270,7 @@
             font-size: 24px;
             background: none;
             border: none;
-            color: #00d2ff;
+            color: #ffffff; /* Üç çizgi butonu tam beyaz yapıldı */
             cursor: pointer;
             margin-right: 25px;
             transition: 0.2s;
@@ -288,9 +279,9 @@
         .navbar h1 {
             font-size: 24px; 
             font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, #00d2ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff; /* Üstteki Angel Panel yazısı net saf beyaz yapıldı */
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
         }
 
         /* --- PROFILE AREA --- */
@@ -303,32 +294,29 @@
         .founder-badge {
             font-size: 12px; 
             font-weight: 700;
-            background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
+            background: #2563eb;
             color: #ffffff;
             padding: 4px 12px;
             border-radius: 20px;
-            box-shadow: 0 0 12px rgba(0, 210, 255, 0.5);
         }
 
         .founder-avatar {
             width: 44px; 
             height: 44px;
             border-radius: 50%;
-            border: 2px solid #00d2ff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             object-fit: cover;
         }
 
-        /* --- SIDEBAR (CYBER BLUE) --- */
+        /* --- SIDEBAR --- */
         .sidebar {
             position: fixed;
             left: -310px;
             top: 80px; 
             width: 290px;
             height: calc(100vh - 80px);
-            /* Arka plan siber laciverte çekildi */
-            background: rgba(30, 41, 59, 0.95);
-            backdrop-filter: blur(10px);
-            border-right: 2px solid rgba(0, 210, 255, 0.2);
+            background: #1e293b; /* Yan menü rengi de navbar rengi ile birleştirildi */
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow-y: auto;
             z-index: 99;
@@ -341,7 +329,7 @@
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            color: #38bdf8; 
+            color: #94a3b8; 
             letter-spacing: 2px;
             margin: 30px 0 12px 12px;
         }
@@ -366,7 +354,7 @@
             font-size: 16px;
         }
 
-        /* LOGOLAR KENDİ ÖZGÜN RENKLERİNDE */
+        /* LOGOLAR KENDİ ÖZGÜN RENKLERİNDE KORUNDU */
         .menu-item.logo-adsoyad i { color: #38bdf8; }
         .menu-item.logo-aile i { color: #f43f5e; }
         .menu-item.logo-tel i { color: #60a5fa; }
@@ -379,15 +367,14 @@
         .menu-item.logo-tt i { color: #00f2fe; filter: drop-shadow(2px 0px 0px #fe0979); } 
         .menu-item.logo-ig i { color: #E1306C; } 
         .menu-item.logo-dc i { color: #5865F2; } 
-        .menu-item.logo-galeri i { color: #00d2ff; }
+        .menu-item.logo-galeri i { color: #3b82f6; }
         
         .menu-item.logo-kimlik i { color: #06b6d4; }
         .menu-item.logo-bomb i { color: #ef4444; }
 
         .menu-item:hover {
-            background: rgba(0, 210, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
             color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
         }
 
         /* --- ANA İÇERİK ALANI --- */
@@ -401,20 +388,20 @@
 
         /* İstatistik Kartı */
         .stats-card {
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(0, 210, 255, 0.2);
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             margin-bottom: 25px;
         }
 
         .stats-card h2 {
             font-size: 12px;
-            color: #38bdf8;
+            color: #94a3b8;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -423,9 +410,7 @@
         .stats-number {
             font-size: 56px;
             font-weight: 700;
-            background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
         }
 
         /* Hesap Durum Alanı */
@@ -436,7 +421,8 @@
             text-align: center;
             padding: 16px;
             border-radius: 16px;
-            background: rgba(30, 41, 59, 0.5);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .vip-text {
@@ -446,15 +432,14 @@
 
         /* İşlem Alanı */
         .action-container {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(12px);
-            border: 2px solid rgba(0, 210, 255, 0.25);
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 24px;
             padding: 35px;
             width: 100%;
             max-width: 500px;
             display: none;
-            box-shadow: 0 20px 45px rgba(0, 210, 255, 0.1);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
         }
 
@@ -470,8 +455,8 @@
         .action-container textarea {
             width: 100%;
             height: 110px;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(0, 210, 255, 0.2);
+            background: rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 14px;
             color: #ffffff;
             padding: 16px;
@@ -482,7 +467,7 @@
             transition: 0.3s;
         }
 
-        .action-container textarea:focus { border-color: #00d2ff; }
+        .action-container textarea:focus { border-color: rgba(255, 255, 255, 0.3); }
 
         .input-form-group {
             display: none;
@@ -494,8 +479,8 @@
         .input-form-group input {
             width: 100%;
             padding: 15px;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(0, 210, 255, 0.2);
+            background: rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 14px;
             color: #ffffff;
             font-size: 15px;
@@ -503,12 +488,12 @@
             transition: 0.3s;
         }
 
-        .input-form-group input:focus { border-color: #00d2ff; }
+        .input-form-group input:focus { border-color: rgba(255, 255, 255, 0.3); }
 
         .submit-btn {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #0066ff 0%, #00d2ff 100%);
+            background: #2563eb;
             border: none;
             border-radius: 14px;
             color: #ffffff;
@@ -520,10 +505,9 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
         }
 
-        .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+        .submit-btn:hover { background: #1d4ed8; }
     </style>
 </head>
 <body>
@@ -704,7 +688,7 @@
 
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("Admin Hesabı", "#00d2ff", "2px solid rgba(0, 210, 255, 0.5)"); 
+                openPanel("Admin Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.3)"); 
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
                 return;
             }
@@ -715,7 +699,7 @@
 
         function loginAsFree() {
             currentLoginMode = "free";
-            openPanel("Free Account", "#cbd5e1", "1px solid rgba(0, 210, 255, 0.2)");
+            openPanel("Free Account", "#cbd5e1", "1px solid rgba(255, 255, 255, 0.1)");
             document.getElementById('founderProfileArea').style.display = 'none'; 
         }
 
