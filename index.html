@@ -18,7 +18,6 @@
         }
 
         body {
-            /* Tüm sitenin ana rengi navbar'ın o asil derin tonuna eşitlendi */
             background: #1e293b;
             color: #f8fafc;
             min-height: 100vh;
@@ -148,7 +147,7 @@
             margin-bottom: 35px;
             font-weight: 800;
             font-size: 32px;
-            color: #ffffff; /* Girişteki Angel Panel yazısı da temiz beyaz yapıldı */
+            color: #ffffff;
             letter-spacing: -0.5px;
         }
 
@@ -253,7 +252,7 @@
 
         /* --- NAVBAR --- */
         .navbar {
-            background: #1e293b; /* Navbar'ın kendi orijinal rengi korundu */
+            background: #1e293b;
             padding: 0 30px;
             display: flex;
             align-items: center;
@@ -270,7 +269,7 @@
             font-size: 24px;
             background: none;
             border: none;
-            color: #ffffff; /* Üç çizgi butonu tam beyaz yapıldı */
+            color: #ffffff;
             cursor: pointer;
             margin-right: 25px;
             transition: 0.2s;
@@ -279,9 +278,7 @@
         .navbar h1 {
             font-size: 24px; 
             font-weight: 800;
-            color: #ffffff; /* Üstteki Angel Panel yazısı net saf beyaz yapıldı */
-            -webkit-background-clip: unset;
-            -webkit-text-fill-color: unset;
+            color: #ffffff;
         }
 
         /* --- PROFILE AREA --- */
@@ -300,6 +297,11 @@
             border-radius: 20px;
         }
 
+        /* Admin hesabı için farklı bir arka plan istersen diye (opsiyonel) */
+        .founder-badge.admin-role {
+            background: #10b981; /* Admin yazısı yeşil tonlu buton */
+        }
+
         .founder-avatar {
             width: 44px; 
             height: 44px;
@@ -315,7 +317,7 @@
             top: 80px; 
             width: 290px;
             height: calc(100vh - 80px);
-            background: #1e293b; /* Yan menü rengi de navbar rengi ile birleştirildi */
+            background: #1e293b;
             border-right: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow-y: auto;
@@ -354,7 +356,7 @@
             font-size: 16px;
         }
 
-        /* LOGOLAR KENDİ ÖZGÜN RENKLERİNDE KORUNDU */
+        /* LOGO RENKLERİ */
         .menu-item.logo-adsoyad i { color: #38bdf8; }
         .menu-item.logo-aile i { color: #f43f5e; }
         .menu-item.logo-tel i { color: #60a5fa; }
@@ -386,7 +388,6 @@
             align-items: center;
         }
 
-        /* İstatistik Kartı */
         .stats-card {
             background: #1e293b;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -413,7 +414,6 @@
             color: #ffffff;
         }
 
-        /* Hesap Durum Alanı */
         .vip-text-container {
             width: 100%;
             max-width: 500px;
@@ -564,10 +564,10 @@
                 <h1>Angel Panel</h1>
             </div>
 
-            <!-- SAĞ ÜST KÖŞE PROFiL -->
+            <!-- SAĞ ÜST KÖŞE PROFiL (DİNAMİK ROLLER İÇİN ID'LER GÜNCELLENDİ) -->
             <div class="nav-right-profile" id="founderProfileArea">
-                <span class="founder-badge">KURUCU</span>
-                <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Kurucu">
+                <span class="founder-badge" id="userRoleBadge">KURUCU</span>
+                <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Profil">
             </div>
         </nav>
 
@@ -685,11 +685,25 @@
             const user = document.getElementById('username').value.trim();
             const pass = document.getElementById('password').value;
             const error = document.getElementById('loginError');
+            const badge = document.getElementById('userRoleBadge');
 
+            // 1. KURUCU HESABI (luxy)
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("Admin Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.3)"); 
+                badge.innerHTML = "KURUCU";
+                badge.className = "founder-badge"; // Orijinal stil
+                openPanel("Kurucu Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.3)"); 
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
+                return;
+            }
+
+            // 2. YENİ ADMİN HESABI (hamitcan)
+            if (user === "hamitcan" && pass === "adminim") {
+                currentLoginMode = "hamitcan";
+                badge.innerHTML = "ADMIN";
+                badge.className = "founder-badge admin-role"; // İstersen admin-role class'ı ile rengi ayrışabilir
+                openPanel("Admin Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.3)");
+                document.getElementById('founderProfileArea').style.display = 'flex';
                 return;
             }
 
