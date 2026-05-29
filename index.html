@@ -274,9 +274,10 @@
             min-height: 100vh;
         }
 
+        /* --- KÜÇÜLTÜLMÜŞ YENİ NAVBAR --- */
         .navbar {
             background: #0a0a0a;
-            padding: 15px 35px;
+            padding: 10px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -285,7 +286,7 @@
             width: 100%;
             top: 0;
             z-index: 100;
-            height: 140px; /* Daha büyük profil için genişletildi */
+            height: 80px; /* 140px'den 80px'e çekilerek kibarlaştırıldı */
         }
 
         .nav-left {
@@ -294,12 +295,12 @@
         }
 
         .menu-btn {
-            font-size: 26px;
+            font-size: 22px;
             background: none;
             border: none;
             color: #fff;
             cursor: pointer;
-            margin-right: 25px;
+            margin-right: 20px;
             transition: 0.2s;
         }
 
@@ -308,54 +309,54 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
         }
 
-        /* Sol üst yazı büyütüldü */
+        /* Sol üst yazı kibar ama belirgin tonda tutuldu */
         .navbar h1 {
-            font-size: 32px; 
+            font-size: 24px; 
             font-weight: 600;
-            letter-spacing: 1px;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
 
-        /* --- SAĞ ÜST DAHA DA BÜYÜTÜLMÜŞ PROFiL ALANI --- */
+        /* --- SAĞ ÜST KİBARLAŞTIRILMIŞ PROFiL ALANI --- */
         .nav-right-profile {
             display: none; 
-            flex-direction: column;
+            flex-direction: row; /* Alt alta yerine yan yana getirilerek alandan tasarruf edildi */
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 12px;
         }
 
         .founder-badge {
-            font-size: 22px; /* Yazı boyutu daha da büyütüldü */
+            font-size: 14px; /* Boyut makul ölçüye çekildi */
             font-weight: 600;
             color: #ffffff;
-            letter-spacing: 4px; 
+            letter-spacing: 2px; 
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             animation: neonPulse 2s infinite alternate;
         }
 
         .founder-avatar {
-            width: 85px; /* Fotoğraf boyutu daha da büyütüldü */
-            height: 85px; /* Fotoğraf boyutu daha da büyütüldü */
+            width: 48px; /* 85px'den 48px'e düşürülerek navbar'a tam oturtuldu */
+            height: 48px;
             border-radius: 50px;
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
             object-fit: cover;
         }
 
         @keyframes neonPulse {
-            from { text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4); }
-            to { text-shadow: 0 0 22px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.9); }
+            from { text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); }
+            to { text-shadow: 0 0 15px rgba(255, 255, 255, 1); }
         }
 
         /* --- SIDEBAR --- */
         .sidebar {
             position: fixed;
             left: -300px;
-            top: 140px; 
+            top: 80px; /* Navbar yeni boyutuna göre ayarlandı */
             width: 280px;
-            height: calc(100vh - 140px);
+            height: calc(100vh - 80px);
             background: #0a0a0a;
             border-right: 1px solid #141414;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -417,8 +418,8 @@
 
         /* --- ANA İÇERİK --- */
         .main-content {
-            margin-top: 140px; 
-            padding: 50px 20px;
+            margin-top: 80px; /* Navbar küçüldüğü için üst boşluk düşürüldü */
+            padding: 40px 20px;
             transition: 0.3s;
             display: flex;
             flex-direction: column;
@@ -472,9 +473,9 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- YENİ ADMİN STORE YAZI EKLEME PANELİ --- */
+        /* Store Yazı Ekleme Paneli */
         .admin-store-panel {
-            display: none; /* Sadece luxy girişinde aktif olacak */
+            display: none; 
             width: 100%;
             max-width: 500px;
             background: #0a0a0a;
@@ -640,7 +641,6 @@
     <!-- STORE MODAL -->
     <div class="store-modal" id="storeModal">
         <div class="store-box">
-            <!-- Bu başlık admin panelinden yazılan yazıyla anlık değişecek -->
             <h2 id="storeDynamicText">ŞU ANLIK VIP SATILMIYOR</h2>
             <button class="store-close-btn" onclick="closeStoreModal()">Kapat</button>
         </div>
@@ -680,7 +680,7 @@
                 <h1>Angel Panel</h1>
             </div>
 
-            <!-- SAĞ ÜST KÖŞE DAHA DA BÜYÜTÜLMÜŞ KURUCU NEON PANEL ALANI -->
+            <!-- SAĞ ÜST KÖŞE KİBARLAŞTIRILMIŞ KURUCU ALANI -->
             <div class="nav-right-profile" id="founderProfileArea">
                 <span class="founder-badge">KURUCU</span>
                 <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Kurucu">
@@ -766,12 +766,12 @@
                 <div class="stats-number">27</div>
             </div>
 
-            <!-- Admin Hesabı Yazı Alanı (Taç Kaldırıldı) -->
+            <!-- Admin Hesabı Yazı Alanı -->
             <div class="vip-text-container" id="vipBorder">
                 <div class="vip-text" id="panelVipText">Admin Hesabı</div>
             </div>
 
-            <!-- YENİ STORE YAZI DEĞİŞTİRME PANELİ (Sadece Admin Görebilir) -->
+            <!-- STORE YAZI DEĞİŞTİRME PANELİ -->
             <div class="admin-store-panel" id="adminStorePanel">
                 <h3>Store Duyuru Yönetimi</h3>
                 <input type="text" id="storeCustomInput" placeholder="Store modalında görünecek yazıyı girin...">
@@ -810,7 +810,6 @@
     <!-- SCRIPT YAPISI -->
     <script>
         let currentLoginMode = ""; 
-        // Varsayılan store yazısı
         let globalStoreText = "ŞU ANLIK VIP SATILMIYOR";
 
         // Normal Giriş Doğrulama
@@ -821,9 +820,9 @@
 
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("Admin Hesabı", "#ffffff", "1px solid #ffffff"); // Taç emojisi kaldırıldı
+                openPanel("Admin Hesabı", "#ffffff", "1px solid #ffffff");
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
-                document.getElementById('adminStorePanel').style.display = 'block'; // Store ekleme panelini aç
+                document.getElementById('adminStorePanel').style.display = 'block'; 
                 return;
             }
 
@@ -836,7 +835,7 @@
             currentLoginMode = "free";
             openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px solid #444444");
             document.getElementById('founderProfileArea').style.display = 'none'; 
-            document.getElementById('adminStorePanel').style.display = 'none'; // Store ekleme panelini gizle
+            document.getElementById('adminStorePanel').style.display = 'none'; 
         }
 
         // Store Yazısını Güncelleme Fonksiyonu
@@ -851,7 +850,7 @@
             }
         }
 
-        // Store Modalı Açma Kontrolü (Güncel yazıyı basar)
+        // Store Modalı Açma Kontrolü
         function openStoreModal() { 
             document.getElementById('storeDynamicText').innerText = globalStoreText;
             document.getElementById('storeModal').style.display = 'flex'; 
