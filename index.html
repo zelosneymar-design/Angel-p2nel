@@ -17,8 +17,8 @@
         }
 
         body {
-            background-color: #080808;
-            color: #ffffff;
+            background-color: #f4f5f7; /* Siyah yerine açık gri/beyaz zemin */
+            color: #222222; /* Yazılar koyu gri */
             overflow-x: hidden;
         }
 
@@ -29,16 +29,15 @@
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: #0a0a0a;
-            color: #ffcc00; /* Yazı sarı yapıldı */
+            background: #ffffff;
+            color: #e6b800; 
             padding: 15px 30px;
             border-radius: 8px;
             font-weight: 600;
             font-size: 14px;
             z-index: 1000000;
-            box-shadow: 0 0 20px rgba(2ff, 204, 0, 0.3);
-            border: 1px solid #ffcc00; /* Kenarlık sarı */
-            text-shadow: 0 0 8px rgba(255, 204, 0, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 204, 0, 0.2);
+            border: 2px solid #ffcc00; 
             text-align: center;
         }
 
@@ -48,17 +47,16 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background: #111111; 
-            color: #ffffff;
+            background: #ffffff; 
+            color: #222222;
             padding: 14px 24px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 15px;
             cursor: pointer;
             z-index: 9999;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
-            border: 1px solid rgba(255, 204, 0, 0.5); /* Sarı kenarlık */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ffcc00; 
             align-items: center;
             gap: 10px;
             transition: 0.3s ease;
@@ -66,21 +64,18 @@
         }
 
         .store-floating-btn i {
-            color: #ffcc00; /* İkon sarı yapıldı */
-            filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.9));
+            color: #e6b800; 
         }
 
         .store-floating-btn:hover {
             transform: scale(1.08) translateY(-3px);
             background: #ffcc00; 
             border-color: #ffcc00;
-            color: #000000; /* Üstüne gelince yazı siyah olur */
-            box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
-            text-shadow: none;
+            color: #ffffff; 
+            box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
         }
         .store-floating-btn:hover i {
-            color: #000000;
-            filter: none;
+            color: #ffffff;
         }
 
         /* --- STORE MODAL PENCERESİ --- */
@@ -91,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(5px);
             z-index: 100000;
             justify-content: center;
@@ -99,20 +94,19 @@
         }
 
         .store-box {
-            background: #0a0a0a;
-            border: 1px solid #ffcc00; /* Sarı kenarlık */
+            background: #ffffff;
+            border: 2px solid #ffcc00; 
             border-radius: 16px;
             padding: 40px;
             width: 100%;
             max-width: 450px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(255, 204, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
         .store-box h2 {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            color: #222222;
             margin-bottom: 20px;
             font-size: 22px;
             font-weight: 600;
@@ -124,10 +118,10 @@
             margin-top: 15px;
             width: 100%;
             padding: 10px;
-            background: #222222;
-            border: 1px solid #444444;
+            background: #f1f1f1;
+            border: 1px solid #cccccc;
             border-radius: 8px;
-            color: #ffffff;
+            color: #222222;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
@@ -137,8 +131,8 @@
         .store-close-btn:hover {
             background: #ffcc00;
             border-color: #ffcc00;
-            color: #000000;
-            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
         }
 
         /* --- GİRİŞ EKRANI --- */
@@ -147,27 +141,25 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: radial-gradient(circle at center, #181813 0%, #000000 100%); /* Hafif sarımsı koyu arka plan */
+            background: radial-gradient(circle at center, #ffffff 0%, #f0f1f4 100%); 
         }
 
         .login-card {
-            background: #0a0a0a;
+            background: #ffffff;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 0 40px rgba(255, 204, 0, 0.05);
-            border: 1px solid #1f1f18;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e5ec;
             width: 100%;
             max-width: 420px;
             text-align: center;
-            backdrop-filter: blur(10px);
         }
 
         .login-card h2 {
             margin-bottom: 30px;
             font-weight: 600;
             font-size: 24px;
-            color: #ffffff;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            color: #222222;
             letter-spacing: 0.5px;
         }
 
@@ -181,7 +173,7 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #666666;
+            color: #999999;
             transition: 0.3s;
         }
 
@@ -189,48 +181,48 @@
             width: 100%;
             padding: 14px;
             padding-left: 45px;
-            background: #111111;
-            border: 1px solid #252520;
+            background: #f8f9fa;
+            border: 1px solid #dddddd;
             border-radius: 10px;
-            color: #fff;
+            color: #222222;
             font-size: 15px;
             outline: none;
             transition: 0.3s;
         }
 
         .input-group input:focus {
-            border-color: #ffcc00; /* Odaklanınca sarı olur */
+            border-color: #ffcc00; 
+            background: #ffffff;
             box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
         }
 
         .input-group input:focus + i {
-            color: #ffcc00;
-            filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
+            color: #e6b800;
         }
 
         .login-btn {
             width: 100%;
             padding: 14px;
-            background: #ffcc00; /* Giriş butonu sarı yapıldı */
+            background: #ffcc00; 
             border: none;
             border-radius: 10px;
-            color: #000000;
+            color: #ffffff;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
             margin-bottom: 15px;
         }
 
         .login-btn:hover {
-            background: #ffe066;
+            background: #e6b800;
             transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(255, 204, 0, 0.7);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
         }
 
         .divider {
-            color: #555555;
+            color: #888888;
             font-size: 12px;
             font-weight: 600;
             margin: 25px 0;
@@ -243,16 +235,16 @@
             content: "";
             flex: 1;
             height: 1px;
-            background: #252520;
+            background: #dddddd;
         }
 
         .free-login-btn {
             width: 100%;
             padding: 14px;
-            background: #111111;
-            border: 1px solid #252520;
+            background: #ffffff;
+            border: 2px solid #ffcc00;
             border-radius: 10px;
-            color: #ffffff;
+            color: #e6b800;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
@@ -260,14 +252,13 @@
         }
 
         .free-login-btn:hover {
-            background: #161616;
-            border-color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            background: #ffcc00;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
         }
 
         .error-msg {
-            color: #ffcc00;
-            text-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
+            color: #cc0000;
             margin-top: 15px;
             font-size: 14px;
             display: none;
@@ -281,17 +272,18 @@
 
         /* --- NAVBAR --- */
         .navbar {
-            background: #0a0a0a;
+            background: #ffffff;
             padding: 10px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #1f1f18;
+            border-bottom: 2px solid #ffcc00; /* Alt çizgi sarı yapıldı */
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
             height: 80px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
         .nav-left {
@@ -303,23 +295,21 @@
             font-size: 22px;
             background: none;
             border: none;
-            color: #fff;
+            color: #222222;
             cursor: pointer;
             margin-right: 20px;
             transition: 0.2s;
         }
 
         .menu-btn:hover {
-            color: #ffcc00; /* Menü çizgileri sarı parlar */
-            text-shadow: 0 0 8px rgba(255, 204, 0, 0.8);
+            color: #e6b800; 
         }
 
         .navbar h1 {
             font-size: 24px; 
             font-weight: 600;
             letter-spacing: 0.5px;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            color: #222222;
         }
 
         /* --- SAĞ ÜST KURUCU ALANI --- */
@@ -334,25 +324,18 @@
         .founder-badge {
             font-size: 14px; 
             font-weight: 600;
-            color: #ffcc00; /* Kurucu yazısı sarı yapıldı */
+            color: #e6b800; 
             letter-spacing: 2px; 
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
-            animation: neonPulse 2s infinite alternate;
         }
 
         .founder-avatar {
             width: 48px; 
             height: 48px;
             border-radius: 50px;
-            border: 2px solid #ffcc00; /* Profil çevresi sarı halka */
-            box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+            border: 2px solid #ffcc00; 
+            box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
             object-fit: cover;
-        }
-
-        @keyframes neonPulse {
-            from { text-shadow: 0 0 8px rgba(255, 204, 0, 0.6); }
-            to { text-shadow: 0 0 15px rgba(255, 204, 0, 1); }
         }
 
         /* --- SIDEBAR --- */
@@ -362,12 +345,13 @@
             top: 80px; 
             width: 280px;
             height: calc(100vh - 80px);
-            background: #0a0a0a;
-            border-right: 1px solid #1f1f18;
+            background: #ffffff;
+            border-right: 1px solid #e2e5ec;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-y: auto;
             z-index: 99;
             padding: 25px 12px;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.01);
         }
 
         .sidebar.active {
@@ -378,7 +362,7 @@
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            color: #666655; /* Başlıklar hafif sarımsı gri */
+            color: #999999; 
             letter-spacing: 2px;
             margin: 25px 0 10px 12px;
             user-select: none;
@@ -396,7 +380,7 @@
             cursor: pointer;
             transition: 0.2s all;
             font-size: 14px;
-            color: #aaaaaa;
+            color: #555555;
             border: none;
         }
 
@@ -404,21 +388,19 @@
             margin-right: 14px;
             width: 20px;
             text-align: center;
-            color: #ffffff; /* İkonlar beyaz */
+            color: #e6b800; /* İkonlar varsayılan sarı */
             font-size: 15px;
-            opacity: 0.8;
+            opacity: 0.9;
             transition: 0.2s;
         }
 
         .menu-item:hover {
-            background: rgba(255, 204, 0, 0.08); /* Üstüne gelince sarı arka plan efekti */
-            color: #ffcc00; /* Yazı sarı olur */
+            background: #fffdf0; 
+            color: #e6b800; 
+            font-weight: 500;
         }
 
         .menu-item:hover i {
-            opacity: 1;
-            color: #ffcc00; /* İkon sarı parlar */
-            filter: drop-shadow(0 0 5px #ffcc00);
             transform: scale(1.1);
         }
 
@@ -433,20 +415,20 @@
         }
 
         .stats-card {
-            background: #0a0a0a;
-            border: 1px solid #1f1f18;
+            background: #ffffff;
+            border: 1px solid #e2e5ec;
             border-radius: 20px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             margin-bottom: 25px;
         }
 
         .stats-card h2 {
             font-size: 13px;
-            color: #777766;
+            color: #888888;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 12px;
@@ -455,8 +437,7 @@
         .stats-number {
             font-size: 52px;
             font-weight: 600;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            color: #222222;
         }
 
         /* Üst Durum Bildirimi */
@@ -466,36 +447,36 @@
             margin-bottom: 35px;
             text-align: center;
             padding: 16px;
-            background: #0a0a0a;
+            background: #ffffff;
             border-radius: 14px;
-            border: 1px solid #ffcc00; /* Varsayılan sarı kenarlık */
-            box-shadow: 0 0 20px rgba(255, 204, 0, 0.1);
+            border: 2px solid #ffcc00; 
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.1);
         }
 
         .vip-text {
             font-size: 22px;
             font-weight: 600;
-            color: #ffffff;
+            color: #222222;
             letter-spacing: 0.5px;
         }
 
         /* İşlem Giriş Alanları */
         .action-container {
-            background: #0a0a0a;
-            border: 1px solid #1f1f18;
+            background: #ffffff;
+            border: 1px solid #e2e5ec;
             border-radius: 20px;
             padding: 35px;
             width: 100%;
             max-width: 500px;
             display: none;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
             margin-bottom: 20px;
         }
 
         .action-container h2 {
             font-size: 19px;
             margin-bottom: 25px;
-            color: #ffffff;
+            color: #222222;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -503,17 +484,16 @@
 
         .action-container h2 i {
             font-size: 22px;
-            color: #ffcc00; /* Panel içi başlık ikonları sarı */
-            filter: drop-shadow(0 0 6px rgba(255, 204, 0, 0.8));
+            color: #e6b800; 
         }
 
         .action-container textarea {
             width: 100%;
             height: 100px;
-            background: #111111;
-            border: 1px solid #252520;
+            background: #f8f9fa;
+            border: 1px solid #dddddd;
             border-radius: 10px;
-            color: #fff;
+            color: #222222;
             padding: 14px;
             font-size: 15px;
             outline: none;
@@ -524,7 +504,8 @@
 
         .action-container textarea:focus {
             border-color: #ffcc00;
-            box-shadow: 0 0 12px rgba(255, 204, 0, 0.2);
+            background: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 204, 0, 0.15);
         }
 
         .input-form-group {
@@ -537,10 +518,10 @@
         .input-form-group input {
             width: 100%;
             padding: 14px;
-            background: #111111;
-            border: 1px solid #252520;
+            background: #f8f9fa;
+            border: 1px solid #dddddd;
             border-radius: 10px;
-            color: #fff;
+            color: #222222;
             font-size: 15px;
             outline: none;
             transition: 0.3s;
@@ -548,16 +529,17 @@
 
         .input-form-group input:focus {
             border-color: #ffcc00;
-            box-shadow: 0 0 12px rgba(255, 204, 0, 0.2);
+            background: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 204, 0, 0.15);
         }
 
         .submit-btn {
             width: 100%;
             padding: 14px;
-            background: #ffcc00; /* Gönder butonu sarı yapıldı */
+            background: #ffcc00; 
             border: none;
             border-radius: 10px;
-            color: #000000;
+            color: #ffffff;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
@@ -566,12 +548,12 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
         }
 
         .submit-btn:hover {
-            background: #ffe066;
-            box-shadow: 0 0 25px rgba(255, 204, 0, 0.5);
+            background: #e6b800;
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
         }
     </style>
 </head>
@@ -614,7 +596,7 @@
             <div class="divider">VEYA</div>
 
             <button class="free-login-btn" onclick="loginAsFree()">
-                <i class="fas fa-unlock-alt"></i> Ücretsiz Giriş Yap (Free)
+                Ücretsiz Giriş Yap (Free)
             </button>
         </div>
     </div>
@@ -761,7 +743,7 @@
 
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("Admin Hesabı", "#ffcc00", "1px solid #ffcc00"); // Admin parlaması sarı yapıldı
+                openPanel("Admin Hesabı", "#e6b800", "2px solid #ffcc00"); 
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
                 return;
             }
@@ -770,10 +752,10 @@
             setTimeout(() => { error.style.display = 'none'; }, 3000);
         }
 
-        // Ücretsiz Giriş Modu (İstediğin gibi "Free Account" yapıldı)
+        // Ücretsiz Giriş Modu (Yalnızca "Free Account" metni var, emoji yok)
         function loginAsFree() {
             currentLoginMode = "free";
-            openPanel("Free Account ⚡", "#ffffff", "1px solid #444444");
+            openPanel("Free Account", "#555555", "2px solid #cccccc");
             document.getElementById('founderProfileArea').style.display = 'none'; 
         }
 
@@ -797,11 +779,9 @@
             vipBorder.style.border = borderStyle;
             
             if (currentLoginMode === "luxy") {
-                vipText.style.textShadow = "0 0 10px rgba(255, 204, 0, 0.8)";
-                vipBorder.style.boxShadow = "0 0 15px rgba(255, 204, 0, 0.2)";
+                vipBorder.style.boxShadow = "0 4px 15px rgba(255, 204, 0, 0.2)";
             } else {
-                vipText.style.textShadow = "none";
-                vipBorder.style.boxShadow = "none";
+                vipBorder.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.02)";
             }
         }
 
