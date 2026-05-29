@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel Panel</title>
-    <!-- Google Fonts ve FontAwesome İkonları -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -294,7 +293,7 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
-        /* --- SIDEBAR --- */
+        /* --- SIDEBAR (KATEGORİSİZ DÜZ LİSTE YAPISI) --- */
         .sidebar {
             position: fixed;
             left: -300px;
@@ -313,71 +312,18 @@
             left: 0;
         }
 
-        .sidebar-section {
-            margin-bottom: 12px;
-        }
-
-        /* KATEGORİ BAŞLIKLARI - BİRLEŞİK DÜZ ÇİZGİLİ */
-        .sidebar-section h3 {
-            font-size: 13px;
-            margin-bottom: 2px;
-            letter-spacing: 0.5px;
-            padding: 12px 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            user-select: none;
-            border-radius: 6px;
-            transition: background 0.2s;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.4); /* KESİNTİSİZ İNCE ÇİZGİ */
-        }
-
-        .sidebar-section h3:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .sidebar-section h3 .title-left {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .sidebar-section h3 .chevron-icon {
-            font-size: 11px;
-            transition: transform 0.3s ease;
-        }
-
-        /* Vayısılan Olarak Kapalı (Collapsed) Stil Mantığı */
-        .sidebar-section.collapsed .chevron-icon {
-            transform: rotate(-90deg);
-        }
-
-        .section-content {
-            max-height: 500px; 
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 2px 0;
-        }
-
-        .sidebar-section.collapsed .section-content {
-            max-height: 0;
-            padding: 0;
-        }
-
         .menu-item {
             display: flex;
             align-items: center;
             padding: 12px 15px;
             text-decoration: none;
             border-radius: 8px;
-            margin-bottom: 2px;
+            margin-bottom: 6px;
             cursor: pointer;
             transition: 0.2s;
             font-size: 14px;
             color: #cccccc;
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Tuşlara şık birer kenarlık çizgisi */
         }
 
         .menu-item i {
@@ -391,6 +337,7 @@
         .menu-item:hover {
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
+            border-color: #ffffff;
             box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
         }
 
@@ -546,17 +493,14 @@
 </head>
 <body>
 
-    <!-- VIP SATIN ALMA TOAST METNİ -->
     <div class="vip-alert-toast" id="vipAlertToast">
         VIP SATIN ALMAK IÇIN STOREYE GIRINIZ
     </div>
 
-    <!-- STORE BUTONU -->
     <div class="store-floating-btn" id="storeFloatingBtn" onclick="openStoreModal()">
         <i class="fas fa-shopping-cart"></i> STORE
     </div>
 
-    <!-- STORE MODAL -->
     <div class="store-modal" id="storeModal">
         <div class="store-box">
             <h2>ŞUANLIK VIP SATILMIYOR</h2>
@@ -564,7 +508,6 @@
         </div>
     </div>
 
-    <!-- GİRİŞ EKRANI -->
     <div class="login-container" id="loginScreen">
         <div class="login-card">
             <h2>Angel Panel Giriş</h2>
@@ -588,7 +531,6 @@
         </div>
     </div>
 
-    <!-- PANEL ANA EKRANI -->
     <div class="panel-container" id="panelScreen">
         <nav class="navbar">
             <div class="nav-left">
@@ -599,134 +541,66 @@
             </div>
         </nav>
 
-        <!-- YAN MENÜ (SIDEBAR) - KATEGORİLER BAŞLANGIÇTA KAPALI -->
         <div class="sidebar" id="sidebar">
             
-            <!-- 1. Ad Soyad Çözümleri -->
-            <div class="sidebar-section collapsed" id="catAdSoyad">
-                <h3 onclick="toggleCategory('catAdSoyad')">
-                    <span class="title-left">Ad Soyad Çözümleri <i class="fas fa-user-tag"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('Ad Soyad Sorgu', 'fa-user-tag', 'adsoyad')">
-                        <i class="fas fa-user-tag"></i> Ad Soyad Sorgu
-                    </div>
-                </div>
+            <div class="menu-item" onclick="handleMenuClick('Ad Soyad Sorgu', 'fa-user-tag', 'adsoyad')">
+                <i class="fas fa-user-tag"></i> Ad Soyad Sorgu
             </div>
 
-            <!-- 2. Aile Çözümleri -->
-            <div class="sidebar-section collapsed" id="catAile">
-                <h3 onclick="toggleCategory('catAile')">
-                    <span class="title-left">Aile Çözümleri <i class="fas fa-users"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('Aile Sorgu', 'fa-users', 'tc')">
-                        <i class="fas fa-users"></i> Aile Sorgu
-                    </div>
-                </div>
+            <div class="menu-item" onclick="handleMenuClick('Aile Sorgu', 'fa-users', 'tc')">
+                <i class="fas fa-users"></i> Aile Sorgu
             </div>
 
-            <!-- 3. Telefon Çözümleri -->
-            <div class="sidebar-section collapsed" id="catTelefon">
-                <h3 onclick="toggleCategory('catTelefon')">
-                    <span class="title-left">Telefon Çözümleri <i class="fas fa-phone"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('Telefon Sorgu', 'fa-phone', 'telefon')">
-                        <i class="fas fa-phone"></i> Telefon Sorgu
-                    </div>
-                </div>
+            <div class="menu-item" onclick="handleMenuClick('Telefon Sorgu', 'fa-phone', 'telefon')">
+                <i class="fas fa-phone"></i> Telefon Sorgu
             </div>
 
-            <!-- 4. Sağlık Çözümleri -->
-            <div class="sidebar-section collapsed" id="catSaglik">
-                <h3 onclick="toggleCategory('catSaglik')">
-                    <span class="title-left">Sağlık Çözümleri <i class="fas fa-heartbeat"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('Sağlık Sorgu', 'fa-heartbeat', 'tc')">
-                        <i class="fas fa-heartbeat"></i> Sağlık Sorgu
-                    </div>
-                </div>
+            <div class="menu-item" onclick="handleMenuClick('Sağlık Sorgu', 'fa-heartbeat', 'tc')">
+                <i class="fas fa-heartbeat"></i> Sağlık Sorgu
             </div>
 
-            <!-- 5. Vesika Çözümleri -->
-            <div class="sidebar-section collapsed" id="catVesika">
-                <h3 onclick="toggleCategory('catVesika')">
-                    <span class="title-left">Vesika Çözümleri <i class="fas fa-id-card-alt"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('Vesika Sorgu', 'fa-id-card-alt', 'tc')">
-                        <i class="fas fa-id-card-alt"></i> Vesika Sorgu
-                    </div>
-                </div>
+            <div class="menu-item" onclick="handleMenuClick('Vesika Sorgu', 'fa-id-card-alt', 'tc')">
+                <i class="fas fa-id-card-alt"></i> Vesika Sorgu
             </div>
 
-            <!-- 6. İş Yeri Çözümleri -->
-            <div class="sidebar-section collapsed" id="catIsyeri">
-                <h3 onclick="toggleCategory('catIsyeri')">
-                    <span class="title-left">İş Yeri Çözümleri <i class="fas fa-briefcase"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('İş Yeri Sorgu', 'fa-briefcase', 'tc')">
-                        <i class="fas fa-briefcase"></i> İş yeri Sorgu
-                    </div>
-                </div>
+            <div class="menu-item" onclick="handleMenuClick('İş Yeri Sorgu', 'fa-briefcase', 'tc')">
+                <i class="fas fa-briefcase"></i> İş yeri Sorgu
             </div>
 
-            <!-- 7. Adres Çözümleri -->
-            <div class="sidebar-section collapsed" id="catAdres">
-                <h3 onclick="toggleCategory('catAdres')">
-                    <span class="title-left">Adres Çözümleri <i class="fas fa-map-marker-alt"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('Hane Sorgu', 'fa-map-marker-alt', 'tc')">
-                        <i class="fas fa-map-marker-alt"></i> Hane Sorgu
-                    </div>
-                </div>
+            <div class="menu-item" onclick="handleMenuClick('Hane Sorgu', 'fa-map-marker-alt', 'tc')">
+                <i class="fas fa-map-marker-alt"></i> Hane Sorgu
             </div>
 
-            <!-- 8. Diğer İşlemler Bölümü -->
-            <div class="sidebar-section collapsed" id="catDiger">
-                <h3 onclick="toggleCategory('catDiger')">
-                    <span class="title-left">Diğer İşlemler <i class="fas fa-tools"></i></span>
-                    <i class="fas fa-chevron-down chevron-icon"></i>
-                </h3>
-                <div class="section-content">
-                    <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fa-passport', 'disabled')">
-                        <i class="fas fa-passport"></i> Kimlik Oluşturucu
-                    </div>
-                    <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fa-brands fa-whatsapp', 'whatsapp')">
-                        <i class="fa-brands fa-whatsapp"></i> Whatsapp Sızma
-                    </div>
-                    <div class="menu-item" onclick="handleMenuClick('Tiktok Sızma', 'fa-brands fa-tiktok', 'nick')">
-                        <i class="fa-brands fa-tiktok"></i> Tiktok Sızma
-                    </div>
-                    <div class="menu-item" onclick="handleMenuClick('Instagram Sızma', 'fa-brands fa-instagram', 'nick')">
-                        <i class="fa-brands fa-instagram"></i> Instagram Sızma
-                    </div>
-                    <div class="menu-item" onclick="handleMenuClick('Discord Sızma', 'fa-brands fa-discord', 'nick')">
-                        <i class="fa-brands fa-discord"></i> Discord Sızma
-                    </div>
-                    <div class="menu-item" onclick="handleMenuClick('Galeri Sızma', 'fa-images', 'disabled')">
-                        <i class="fas fa-images"></i> Galeri Sızma
-                    </div>
-                    <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fa-bomb', 'smsbomb')">
-                        <i class="fas fa-bomb"></i> Sms Bomb
-                    </div>
-                </div>
+            <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fa-passport', 'disabled')">
+                <i class="fas fa-passport"></i> Kimlik Oluşturucu
+            </div>
+
+            <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fa-brands fa-whatsapp', 'whatsapp')">
+                <i class="fa-brands fa-whatsapp"></i> Whatsapp Sızma
+            </div>
+
+            <div class="menu-item" onclick="handleMenuClick('Tiktok Sızma', 'fa-brands fa-tiktok', 'nick')">
+                <i class="fa-brands fa-tiktok"></i> Tiktok Sızma
+            </div>
+
+            <div class="menu-item" onclick="handleMenuClick('Instagram Sızma', 'fa-brands fa-instagram', 'nick')">
+                <i class="fa-brands fa-instagram"></i> Instagram Sızma
+            </div>
+
+            <div class="menu-item" onclick="handleMenuClick('Discord Sızma', 'fa-brands fa-discord', 'nick')">
+                <i class="fa-brands fa-discord"></i> Discord Sızma
+            </div>
+
+            <div class="menu-item" onclick="handleMenuClick('Galeri Sızma', 'fa-images', 'disabled')">
+                <i class="fas fa-images"></i> Galeri Sızma
+            </div>
+
+            <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fa-bomb', 'smsbomb')">
+                <i class="fas fa-bomb"></i> Sms Bomb
             </div>
 
         </div>
 
-        <!-- ANA İÇERİK ALANI -->
         <main class="main-content">
             <div class="stats-card">
                 <h2>Toplam Üye Sayısı</h2>
@@ -737,27 +611,22 @@
                 <div class="vip-text" id="panelVipText">VIP FULL ACCESS AKTİF 👑</div>
             </div>
 
-            <!-- Dinamik Sorgu Gösterim Alanı -->
             <div class="action-container" id="actionContainer">
                 <h2 id="actionTitle"><i class="fas fa-terminal"></i> İşlem Başlığı</h2>
                 
-                <!-- Genel Amaçlı Metin Alanı -->
                 <textarea id="actionInput" placeholder=""></textarea>
                 
-                <!-- Ad Soyad Özel İnput Grubu -->
                 <div class="input-form-group" id="adSoyadGroup">
                     <input type="text" id="adInput" placeholder="İsim">
                     <input type="text" id="ad2Input" placeholder="2. İsmi (varsa)">
                     <input type="text" id="soyadInput" placeholder="Soy İsim">
                 </div>
 
-                <!-- Telefon Özel İnput Grubu -->
                 <div class="input-form-group" id="telefonGroup">
                     <input type="text" id="gsmTcInput" placeholder="Gsm'den TC Bulma">
                     <input type="text" id="tcGsmInput" placeholder="TC'den Gsm Bulma">
                 </div>
 
-                <!-- Sms Bomb Özel İnput Grubu -->
                 <div class="input-form-group" id="smsBombGroup">
                     <input type="text" id="bombNumInput" placeholder="Numarayı Yazın">
                     <input type="text" id="bombCountInput" placeholder="Göndermek istediğiniz Sms Sayısı">
@@ -770,7 +639,6 @@
         </main>
     </div>
 
-    <!-- SCRIPT YAPISI -->
     <script>
         let currentLoginMode = ""; 
 
@@ -860,7 +728,6 @@
 
             // ÖZELLİK DURUM KONTROLLERİ
             if (type === 'disabled') {
-                // Çalışmayan özellik kilidi (Kimlik Oluşturucu ve Galeri Sızma)
                 textarea.style.display = 'block';
                 textarea.value = "Bu Özellik Şu Anda Çalışmıyor";
                 textarea.readOnly = true;
@@ -904,11 +771,6 @@
         function openStoreModal() { document.getElementById('storeModal').style.display = 'flex'; }
         function closeStoreModal() { document.getElementById('storeModal').style.display = 'none'; }
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
-        
-        // Kategori Aç/Kapat Mantığı
-        function toggleCategory(id) { 
-            document.getElementById(id).classList.toggle('collapsed'); 
-        }
 
         // Enter ile Giriş Kontrolü
         document.getElementById('password').addEventListener('keypress', function(e) { 
