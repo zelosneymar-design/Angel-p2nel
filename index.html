@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Panel - Premium</title>
+    <title>Angel Panel - Premium Blue</title>
     <!-- Google Fonts ve FontAwesome İkonları -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,20 +18,21 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            /* Mor ve pembeler kaldırıldı, tamamen derin mavi ve lacivert tonları eklendi */
+            background: linear-gradient(135deg, #070a13 0%, #0f172a 50%, #1e3a8a 100%);
             color: #f8fafc;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* --- TOAST UYARI (MODERN) --- */
+        /* --- TOAST UYARI (MODERN MAVİ/KIRMIZI DENGESİ) --- */
         .vip-alert-toast {
             display: none;
             position: fixed;
             top: 25px;
             left: 50%;
             transform: translateX(-50%) translateY(-20px);
-            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+            background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
             color: #ffffff; 
             padding: 16px 32px;
             border-radius: 12px;
@@ -53,7 +54,8 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            /* Buton rengi pembeden siber maviye çekildi */
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
             color: #ffffff;
             padding: 14px 28px;
             border-radius: 50px;
@@ -61,7 +63,7 @@
             font-size: 15px;
             cursor: pointer;
             z-index: 9999;
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.4);
             border: none;
             align-items: center;
             gap: 10px;
@@ -73,7 +75,7 @@
 
         .store-floating-btn:hover {
             transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 12px 28px rgba(236, 72, 153, 0.6);
+            box-shadow: 0 12px 28px rgba(6, 182, 212, 0.6);
         }
 
         /* --- STORE MODAL --- */
@@ -84,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(7, 10, 19, 0.7);
             backdrop-filter: blur(8px);
             z-index: 100000;
             justify-content: center;
@@ -92,29 +94,29 @@
         }
 
         .store-box {
-            background: #1e293b;
+            background: #0f172a;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             padding: 40px;
             width: 100%;
             max-width: 450px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         .store-box h2 {
-            background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            /* Store içindeki yazı rengi tam istediğin gibi saf beyaz yapıldı */
+            color: #ffffff;
             margin-bottom: 25px;
             font-size: 24px;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .store-close-btn {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             border: none;
             border-radius: 12px;
             color: #ffffff;
@@ -136,12 +138,12 @@
         }
 
         .login-card {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(16px);
             padding: 45px 40px;
             border-radius: 28px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.15);
             width: 100%;
             max-width: 440px;
             text-align: center;
@@ -151,7 +153,7 @@
             margin-bottom: 35px;
             font-weight: 700;
             font-size: 28px;
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.5px;
@@ -167,7 +169,7 @@
             left: 18px;
             top: 50%;
             transform: translateY(-50%);
-            color: #64748b;
+            color: #475569;
             font-size: 16px;
             transition: 0.3s;
         }
@@ -175,8 +177,8 @@
         .input-group input {
             width: 100%;
             padding: 16px 16px 16px 52px;
-            background: #0f172a;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #070a13;
+            border: 1px solid rgba(56, 189, 248, 0.1);
             border-radius: 14px;
             color: #f8fafc;
             font-size: 15px;
@@ -185,18 +187,18 @@
         }
 
         .input-group input:focus {
-            border-color: #6366f1;
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
 
         .input-group input:focus + i {
-            color: #6366f1;
+            color: #38bdf8;
         }
 
         .login-btn {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             border: none;
             border-radius: 14px;
             color: #ffffff;
@@ -204,17 +206,17 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
             margin-bottom: 5px;
         }
 
         .login-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
         }
 
         .divider {
-            color: #64748b;
+            color: #475569;
             font-size: 13px;
             font-weight: 500;
             margin: 25px 0;
@@ -227,14 +229,14 @@
             content: "";
             flex: 1;
             height: 1px;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(56, 189, 248, 0.1);
         }
 
         .free-login-btn {
             width: 100%;
             padding: 15px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 14px;
             color: #f8fafc;
             font-size: 15px;
@@ -244,8 +246,8 @@
         }
 
         .free-login-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: #f8fafc;
+            background: rgba(56, 189, 248, 0.05);
+            border-color: #38bdf8;
         }
 
         .error-msg {
@@ -264,13 +266,13 @@
 
         /* --- NAVBAR --- */
         .navbar {
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(7, 10, 13, 0.85);
             backdrop-filter: blur(12px);
             padding: 0 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15); 
             position: fixed;
             width: 100%;
             top: 0;
@@ -290,13 +292,13 @@
             transition: 0.2s;
         }
 
-        .menu-btn:hover { color: #6366f1; }
+        .menu-btn:hover { color: #38bdf8; }
 
         .navbar h1 {
             font-size: 22px; 
             font-weight: 700;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -311,31 +313,32 @@
         .founder-badge {
             font-size: 12px; 
             font-weight: 700;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: #ffffff;
             padding: 4px 12px;
             border-radius: 20px;
             letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
 
         .founder-avatar {
             width: 44px; 
             height: 44px;
             border-radius: 50%;
-            border: 2px solid #f59e0b;
+            border: 2px solid #3b82f6;
             object-fit: cover;
         }
 
-        /* --- SIDEBAR (MODERN) --- */
+        /* --- SIDEBAR (MODERN BLUE) --- */
         .sidebar {
             position: fixed;
             left: -310px;
             top: 80px; 
             width: 290px;
             height: calc(100vh - 80px);
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(7, 10, 19, 0.95);
             backdrop-filter: blur(10px);
-            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            border-right: 1px solid rgba(56, 189, 248, 0.1);
             transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow-y: auto;
             z-index: 99;
@@ -348,7 +351,7 @@
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            color: #64748b; 
+            color: #475569; 
             letter-spacing: 2px;
             margin: 30px 0 12px 12px;
             user-select: none;
@@ -376,7 +379,7 @@
             transition: 0.2s;
         }
 
-        /* --- ORİJİNAL LOGO RENKLERİ (ÖZEL ATAMALAR) --- */
+        /* --- LOGOLAR KENDİ ÖZGÜN RENKLERİNDE --- */
         .menu-item.logo-adsoyad i { color: #38bdf8; }
         .menu-item.logo-aile i { color: #f43f5e; }
         .menu-item.logo-tel i { color: #60a5fa; }
@@ -385,17 +388,17 @@
         .menu-item.logo-isyeri i { color: #a78bfa; }
         .menu-item.logo-hane i { color: #f472b6; }
         
-        .menu-item.logo-wp i { color: #25D366; } /* WhatsApp Yeşili */
-        .menu-item.logo-tt i { color: #00f2fe; filter: drop-shadow(2px 0px 0px #fe0979); } /* TikTok Cyan/Pink */
-        .menu-item.logo-ig i { color: #E1306C; } /* Instagram Pembesi */
-        .menu-item.logo-dc i { color: #5865F2; } /* Discord Mavisi */
-        .menu-item.logo-galeri i { color: #f59e0b; }
+        .menu-item.logo-wp i { color: #25D366; } 
+        .menu-item.logo-tt i { color: #00f2fe; filter: drop-shadow(2px 0px 0px #fe0979); } 
+        .menu-item.logo-ig i { color: #E1306C; } 
+        .menu-item.logo-dc i { color: #5865F2; } 
+        .menu-item.logo-galeri i { color: #3b82f6; }
         
-        .menu-item.logo-kimlik i { color: #ec4899; }
+        .menu-item.logo-kimlik i { color: #06b6d4; }
         .menu-item.logo-bomb i { color: #ef4444; }
 
         .menu-item:hover {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(56, 189, 248, 0.06);
             color: #ffffff;
         }
         .menu-item:hover i { transform: scale(1.15); }
@@ -411,20 +414,20 @@
 
         /* İstatistik Kartı */
         .stats-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.08);
             border-radius: 24px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             margin-bottom: 25px;
         }
 
         .stats-card h2 {
             font-size: 12px;
-            color: #94a3b8;
+            color: #64748b;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -434,7 +437,7 @@
         .stats-number {
             font-size: 56px;
             font-weight: 700;
-            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -447,7 +450,7 @@
             text-align: center;
             padding: 16px;
             border-radius: 16px;
-            background: rgba(30, 41, 59, 0.2);
+            background: rgba(15, 23, 42, 0.3);
         }
 
         .vip-text {
@@ -458,15 +461,15 @@
 
         /* İşlem Alanı (Giriş Kutusu) */
         .action-container {
-            background: rgba(30, 41, 59, 0.6);
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.15);
             border-radius: 24px;
             padding: 35px;
             width: 100%;
             max-width: 500px;
             display: none;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.35);
             margin-bottom: 20px;
         }
 
@@ -483,8 +486,8 @@
         .action-container textarea {
             width: 100%;
             height: 110px;
-            background: #0f172a;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #070a13;
+            border: 1px solid rgba(56, 189, 248, 0.15);
             border-radius: 14px;
             color: #ffffff;
             padding: 16px;
@@ -495,7 +498,7 @@
             transition: 0.3s;
         }
 
-        .action-container textarea:focus { border-color: #6366f1; }
+        .action-container textarea:focus { border-color: #38bdf8; }
 
         .input-form-group {
             display: none;
@@ -507,8 +510,8 @@
         .input-form-group input {
             width: 100%;
             padding: 15px;
-            background: #0f172a;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #070a13;
+            border: 1px solid rgba(56, 189, 248, 0.15);
             border-radius: 14px;
             color: #ffffff;
             font-size: 15px;
@@ -516,12 +519,12 @@
             transition: 0.3s;
         }
 
-        .input-form-group input:focus { border-color: #6366f1; }
+        .input-form-group input:focus { border-color: #38bdf8; }
 
         .submit-btn {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             border: none;
             border-radius: 14px;
             color: #ffffff;
@@ -533,7 +536,7 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
         }
 
         .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
