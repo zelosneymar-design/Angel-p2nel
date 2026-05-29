@@ -17,8 +17,8 @@
         }
 
         body {
-            background-color: #f4f5f7; /* Siyah yerine açık gri/beyaz zemin */
-            color: #222222; /* Yazılar koyu gri */
+            background-color: #ffcc00; /* ANA RENK SARI */
+            color: #ffffff;
             overflow-x: hidden;
         }
 
@@ -30,14 +30,14 @@
             left: 50%;
             transform: translateX(-50%);
             background: #ffffff;
-            color: #e6b800; 
+            color: #ffcc00; 
             padding: 15px 30px;
             border-radius: 8px;
             font-weight: 600;
             font-size: 14px;
             z-index: 1000000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 204, 0, 0.2);
-            border: 2px solid #ffcc00; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ffffff; 
             text-align: center;
         }
 
@@ -48,7 +48,7 @@
             bottom: 25px;
             right: 25px;
             background: #ffffff; 
-            color: #222222;
+            color: #ffcc00;
             padding: 14px 24px;
             border-radius: 50px;
             font-weight: 600;
@@ -56,7 +56,7 @@
             cursor: pointer;
             z-index: 9999;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 2px solid #ffcc00; 
+            border: 2px solid #ffffff; 
             align-items: center;
             gap: 10px;
             transition: 0.3s ease;
@@ -64,15 +64,15 @@
         }
 
         .store-floating-btn i {
-            color: #e6b800; 
+            color: #ffcc00; 
         }
 
         .store-floating-btn:hover {
             transform: scale(1.08) translateY(-3px);
-            background: #ffcc00; 
-            border-color: #ffcc00;
+            background: #e6b800; 
+            border-color: #e6b800;
             color: #ffffff; 
-            box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         .store-floating-btn:hover i {
             color: #ffffff;
@@ -86,7 +86,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 204, 0, 0.4);
             backdrop-filter: blur(5px);
             z-index: 100000;
             justify-content: center;
@@ -95,33 +95,31 @@
 
         .store-box {
             background: #ffffff;
-            border: 2px solid #ffcc00; 
+            border: 3px solid #ffcc00; 
             border-radius: 16px;
             padding: 40px;
             width: 100%;
             max-width: 450px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             position: relative;
         }
 
         .store-box h2 {
-            color: #222222;
+            color: #ffcc00;
             margin-bottom: 20px;
             font-size: 22px;
             font-weight: 600;
-            word-wrap: break-word;
-            white-space: pre-wrap;
         }
 
         .store-close-btn {
             margin-top: 15px;
             width: 100%;
             padding: 10px;
-            background: #f1f1f1;
-            border: 1px solid #cccccc;
+            background: #ffcc00;
+            border: none;
             border-radius: 8px;
-            color: #222222;
+            color: #ffffff;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
@@ -129,10 +127,7 @@
         }
 
         .store-close-btn:hover {
-            background: #ffcc00;
-            border-color: #ffcc00;
-            color: #ffffff;
-            box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+            background: #e6b800;
         }
 
         /* --- GİRİŞ EKRANI --- */
@@ -141,15 +136,15 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: radial-gradient(circle at center, #ffffff 0%, #f0f1f4 100%); 
+            background: radial-gradient(circle at center, #ffdb4d 0%, #ffcc00 100%); 
         }
 
         .login-card {
             background: #ffffff;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-            border: 1px solid #e2e5ec;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ffffff;
             width: 100%;
             max-width: 420px;
             text-align: center;
@@ -159,7 +154,7 @@
             margin-bottom: 30px;
             font-weight: 600;
             font-size: 24px;
-            color: #222222;
+            color: #ffcc00;
             letter-spacing: 0.5px;
         }
 
@@ -173,7 +168,7 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #999999;
+            color: #ffcc00;
             transition: 0.3s;
         }
 
@@ -181,8 +176,8 @@
             width: 100%;
             padding: 14px;
             padding-left: 45px;
-            background: #f8f9fa;
-            border: 1px solid #dddddd;
+            background: #fffdf0;
+            border: 2px solid #ffcc00;
             border-radius: 10px;
             color: #222222;
             font-size: 15px;
@@ -191,13 +186,9 @@
         }
 
         .input-group input:focus {
-            border-color: #ffcc00; 
             background: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
-        }
-
-        .input-group input:focus + i {
-            color: #e6b800;
+            border-color: #e6b800;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
         }
 
         .login-btn {
@@ -218,11 +209,10 @@
         .login-btn:hover {
             background: #e6b800;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
         }
 
         .divider {
-            color: #888888;
+            color: #ffcc00;
             font-size: 12px;
             font-weight: 600;
             margin: 25px 0;
@@ -234,8 +224,8 @@
         .divider::before, .divider::after {
             content: "";
             flex: 1;
-            height: 1px;
-            background: #dddddd;
+            height: 2px;
+            background: #fffdf0;
         }
 
         .free-login-btn {
@@ -244,7 +234,7 @@
             background: #ffffff;
             border: 2px solid #ffcc00;
             border-radius: 10px;
-            color: #e6b800;
+            color: #ffcc00;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
@@ -254,7 +244,6 @@
         .free-login-btn:hover {
             background: #ffcc00;
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
         }
 
         .error-msg {
@@ -262,28 +251,29 @@
             margin-top: 15px;
             font-size: 14px;
             display: none;
+            font-weight: 500;
         }
 
         /* --- PANEL EKRANI --- */
         .panel-container {
             display: none;
             min-height: 100vh;
+            background-color: #ffcc00;
         }
 
         /* --- NAVBAR --- */
         .navbar {
-            background: #ffffff;
+            background: #ffcc00;
             padding: 10px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 2px solid #ffcc00; /* Alt çizgi sarı yapıldı */
+            border-bottom: 3px solid #ffffff; 
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
             height: 80px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
         .nav-left {
@@ -295,21 +285,21 @@
             font-size: 22px;
             background: none;
             border: none;
-            color: #222222;
+            color: #ffffff;
             cursor: pointer;
             margin-right: 20px;
             transition: 0.2s;
         }
 
         .menu-btn:hover {
-            color: #e6b800; 
+            color: #fffdf0; 
         }
 
         .navbar h1 {
             font-size: 24px; 
             font-weight: 600;
             letter-spacing: 0.5px;
-            color: #222222;
+            color: #ffffff;
         }
 
         /* --- SAĞ ÜST KURUCU ALANI --- */
@@ -324,7 +314,7 @@
         .founder-badge {
             font-size: 14px; 
             font-weight: 600;
-            color: #e6b800; 
+            color: #ffffff; 
             letter-spacing: 2px; 
             text-transform: uppercase;
         }
@@ -333,8 +323,8 @@
             width: 48px; 
             height: 48px;
             border-radius: 50px;
-            border: 2px solid #ffcc00; 
-            box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+            border: 2px solid #ffffff; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             object-fit: cover;
         }
 
@@ -346,12 +336,12 @@
             width: 280px;
             height: calc(100vh - 80px);
             background: #ffffff;
-            border-right: 1px solid #e2e5ec;
+            border-right: 3px solid #ffcc00;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-y: auto;
             z-index: 99;
             padding: 25px 12px;
-            box-shadow: 4px 0 10px rgba(0,0,0,0.01);
+            box-shadow: 4px 0 15px rgba(0,0,0,0.05);
         }
 
         .sidebar.active {
@@ -362,7 +352,7 @@
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            color: #999999; 
+            color: #ffcc00; 
             letter-spacing: 2px;
             margin: 25px 0 10px 12px;
             user-select: none;
@@ -380,7 +370,7 @@
             cursor: pointer;
             transition: 0.2s all;
             font-size: 14px;
-            color: #555555;
+            color: #444444;
             border: none;
         }
 
@@ -388,19 +378,20 @@
             margin-right: 14px;
             width: 20px;
             text-align: center;
-            color: #e6b800; /* İkonlar varsayılan sarı */
+            color: #ffcc00; 
             font-size: 15px;
             opacity: 0.9;
             transition: 0.2s;
         }
 
         .menu-item:hover {
-            background: #fffdf0; 
-            color: #e6b800; 
+            background: #ffcc00; 
+            color: #ffffff; 
             font-weight: 500;
         }
 
         .menu-item:hover i {
+            color: #ffffff;
             transform: scale(1.1);
         }
 
@@ -416,28 +407,29 @@
 
         .stats-card {
             background: #ffffff;
-            border: 1px solid #e2e5ec;
+            border: 2px solid #ffffff;
             border-radius: 20px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             margin-bottom: 25px;
         }
 
         .stats-card h2 {
             font-size: 13px;
-            color: #888888;
+            color: #ffcc00;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .stats-number {
             font-size: 52px;
             font-weight: 600;
-            color: #222222;
+            color: #ffcc00;
         }
 
         /* Üst Durum Bildirimi */
@@ -449,34 +441,34 @@
             padding: 16px;
             background: #ffffff;
             border-radius: 14px;
-            border: 2px solid #ffcc00; 
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.1);
+            border: 3px solid #ffffff; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .vip-text {
             font-size: 22px;
             font-weight: 600;
-            color: #222222;
+            color: #ffcc00;
             letter-spacing: 0.5px;
         }
 
         /* İşlem Giriş Alanları */
         .action-container {
             background: #ffffff;
-            border: 1px solid #e2e5ec;
+            border: 2px solid #ffffff;
             border-radius: 20px;
             padding: 35px;
             width: 100%;
             max-width: 500px;
             display: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             margin-bottom: 20px;
         }
 
         .action-container h2 {
             font-size: 19px;
             margin-bottom: 25px;
-            color: #222222;
+            color: #ffcc00;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -484,14 +476,14 @@
 
         .action-container h2 i {
             font-size: 22px;
-            color: #e6b800; 
+            color: #ffcc00; 
         }
 
         .action-container textarea {
             width: 100%;
             height: 100px;
-            background: #f8f9fa;
-            border: 1px solid #dddddd;
+            background: #fffdf0;
+            border: 2px solid #ffcc00;
             border-radius: 10px;
             color: #222222;
             padding: 14px;
@@ -503,9 +495,8 @@
         }
 
         .action-container textarea:focus {
-            border-color: #ffcc00;
             background: #ffffff;
-            box-shadow: 0 0 12px rgba(255, 204, 0, 0.15);
+            box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
         }
 
         .input-form-group {
@@ -518,8 +509,8 @@
         .input-form-group input {
             width: 100%;
             padding: 14px;
-            background: #f8f9fa;
-            border: 1px solid #dddddd;
+            background: #fffdf0;
+            border: 2px solid #ffcc00;
             border-radius: 10px;
             color: #222222;
             font-size: 15px;
@@ -528,9 +519,8 @@
         }
 
         .input-form-group input:focus {
-            border-color: #ffcc00;
             background: #ffffff;
-            box-shadow: 0 0 12px rgba(255, 204, 0, 0.15);
+            box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
         }
 
         .submit-btn {
@@ -548,12 +538,11 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
         }
 
         .submit-btn:hover {
             background: #e6b800;
-            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
         }
     </style>
 </head>
@@ -697,12 +686,12 @@
                 <div class="stats-number">27</div>
             </div>
 
-            <!-- Admin Hesabı / Free Account Yazı Alanı -->
+            <!-- Üye / Hesap Durum Bildirimi -->
             <div class="vip-text-container" id="vipBorder">
                 <div class="vip-text" id="panelVipText">Admin Hesabı</div>
             </div>
 
-            <!-- Dinamik Sorgu Gösterim Alanı -->
+            <!-- Dinamik İşlem Alanı -->
             <div class="action-container" id="actionContainer">
                 <h2 id="actionTitle"><i></i> İşlem Başlığı</h2>
                 
@@ -743,7 +732,7 @@
 
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("Admin Hesabı", "#e6b800", "2px solid #ffcc00"); 
+                openPanel("Admin Hesabı", "#ffcc00", "3px solid #ffcc00"); 
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
                 return;
             }
@@ -752,19 +741,19 @@
             setTimeout(() => { error.style.display = 'none'; }, 3000);
         }
 
-        // Ücretsiz Giriş Modu (Yalnızca "Free Account" metni var, emoji yok)
+        // Ücretsiz Giriş Modu
         function loginAsFree() {
             currentLoginMode = "free";
-            openPanel("Free Account", "#555555", "2px solid #cccccc");
+            openPanel("Free Account", "#777777", "3px solid #cccccc");
             document.getElementById('founderProfileArea').style.display = 'none'; 
         }
 
-        // Store Modalı Açma Kontrolü
+        // Store Açma
         function openStoreModal() { 
             document.getElementById('storeModal').style.display = 'flex'; 
         }
 
-        // Panel Ekran Değişimi
+        // Panel Ekran Geçişleri
         function openPanel(statusText, textColor, borderStyle) {
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('panelScreen').style.display = 'block';
@@ -777,12 +766,6 @@
             vipText.innerHTML = statusText;
             vipText.style.color = textColor;
             vipBorder.style.border = borderStyle;
-            
-            if (currentLoginMode === "luxy") {
-                vipBorder.style.boxShadow = "0 4px 15px rgba(255, 204, 0, 0.2)";
-            } else {
-                vipBorder.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.02)";
-            }
         }
 
         // Menü Tıklama Kontrolü
@@ -796,7 +779,7 @@
             openAction(title, iconClass, type);
         }
 
-        // İnput ve Arayüz Kontrol Paneli Bulma
+        // İnputları Ayarlama Alanı
         function openAction(title, iconClass, type) {
             const container = document.getElementById('actionContainer');
             const titleElement = document.getElementById('actionTitle');
@@ -864,7 +847,7 @@
         function closeStoreModal() { document.getElementById('storeModal').style.display = 'none'; }
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
 
-        // Enter ile Giriş Kontrolü
+        // Enter Basıldığında Giriş Yapma
         document.getElementById('password').addEventListener('keypress', function(e) { 
             if (e.key === 'Enter') checkNormalLogin(); 
         });
