@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel Panel</title>
-    <!-- Google Fonts ve FontAwesome İkonları -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -274,7 +273,7 @@
             min-height: 100vh;
         }
 
-        /* --- KÜÇÜLTÜLMÜŞ YENİ NAVBAR --- */
+        /* --- NAVBAR --- */
         .navbar {
             background: #0a0a0a;
             padding: 10px 25px;
@@ -286,7 +285,7 @@
             width: 100%;
             top: 0;
             z-index: 100;
-            height: 80px; /* 140px'den 80px'e çekilerek kibarlaştırıldı */
+            height: 80px; 
         }
 
         .nav-left {
@@ -309,7 +308,6 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
         }
 
-        /* Sol üst yazı kibar ama belirgin tonda tutuldu */
         .navbar h1 {
             font-size: 24px; 
             font-weight: 600;
@@ -317,17 +315,17 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
 
-        /* --- SAĞ ÜST KİBARLAŞTIRILMIŞ PROFiL ALANI --- */
+        /* --- SAĞ ÜST KURUCU ALANI --- */
         .nav-right-profile {
             display: none; 
-            flex-direction: row; /* Alt alta yerine yan yana getirilerek alandan tasarruf edildi */
+            flex-direction: row; 
             align-items: center;
             justify-content: center;
             gap: 12px;
         }
 
         .founder-badge {
-            font-size: 14px; /* Boyut makul ölçüye çekildi */
+            font-size: 14px; 
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 2px; 
@@ -337,7 +335,7 @@
         }
 
         .founder-avatar {
-            width: 48px; /* 85px'den 48px'e düşürülerek navbar'a tam oturtuldu */
+            width: 48px; 
             height: 48px;
             border-radius: 50px;
             border: 2px solid #ffffff;
@@ -354,7 +352,7 @@
         .sidebar {
             position: fixed;
             left: -300px;
-            top: 80px; /* Navbar yeni boyutuna göre ayarlandı */
+            top: 80px; 
             width: 280px;
             height: calc(100vh - 80px);
             background: #0a0a0a;
@@ -418,7 +416,7 @@
 
         /* --- ANA İÇERİK --- */
         .main-content {
-            margin-top: 80px; /* Navbar küçüldüğü için üst boşluk düşürüldü */
+            margin-top: 80px; 
             padding: 40px 20px;
             transition: 0.3s;
             display: flex;
@@ -457,7 +455,7 @@
         .vip-text-container {
             width: 100%;
             max-width: 500px;
-            margin-bottom: 20px;
+            margin-bottom: 35px;
             text-align: center;
             padding: 16px;
             background: #0a0a0a;
@@ -471,63 +469,6 @@
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 0.5px;
-        }
-
-        /* Store Yazı Ekleme Paneli */
-        .admin-store-panel {
-            display: none; 
-            width: 100%;
-            max-width: 500px;
-            background: #0a0a0a;
-            border: 1px dashed rgba(255, 255, 255, 0.4);
-            border-radius: 14px;
-            padding: 20px;
-            margin-bottom: 35px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .admin-store-panel h3 {
-            font-size: 14px;
-            color: #ffffff;
-            margin-bottom: 12px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .admin-store-panel input {
-            width: 100%;
-            padding: 10px 14px;
-            background: #111111;
-            border: 1px solid #222222;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 14px;
-            outline: none;
-            margin-bottom: 12px;
-            transition: 0.3s;
-        }
-
-        .admin-store-panel input:focus {
-            border-color: #ffffff;
-        }
-
-        .admin-store-btn {
-            width: 100%;
-            padding: 10px;
-            background: #ffffff;
-            border: none;
-            border-radius: 8px;
-            color: #000000;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .admin-store-btn:hover {
-            background: #e5e5e5;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         /* İşlem Giriş Alanları */
@@ -628,25 +569,21 @@
 </head>
 <body>
 
-    <!-- VIP SATIN ALMA TOAST METNİ -->
     <div class="vip-alert-toast" id="vipAlertToast">
         VIP SATIN ALMAK İÇİN STORE'A GİRİNİZ
     </div>
 
-    <!-- STORE BUTONU -->
     <div class="store-floating-btn" id="storeFloatingBtn" onclick="openStoreModal()">
         <i class="fas fa-shopping-cart"></i> STORE
     </div>
 
-    <!-- STORE MODAL -->
     <div class="store-modal" id="storeModal">
         <div class="store-box">
-            <h2 id="storeDynamicText">ŞU ANLIK VIP SATILMIYOR</h2>
+            <h2>ŞU ANLIK VIP SATILMIYOR</h2>
             <button class="store-close-btn" onclick="closeStoreModal()">Kapat</button>
         </div>
     </div>
 
-    <!-- GİRİŞ EKRANI -->
     <div class="login-container" id="loginScreen">
         <div class="login-card">
             <h2>Angel Panel Giriş</h2>
@@ -670,7 +607,6 @@
         </div>
     </div>
 
-    <!-- PANEL ANA EKRANI -->
     <div class="panel-container" id="panelScreen">
         <nav class="navbar">
             <div class="nav-left">
@@ -680,17 +616,14 @@
                 <h1>Angel Panel</h1>
             </div>
 
-            <!-- SAĞ ÜST KÖŞE KİBARLAŞTIRILMIŞ KURUCU ALANI -->
             <div class="nav-right-profile" id="founderProfileArea">
                 <span class="founder-badge">KURUCU</span>
                 <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Kurucu">
             </div>
         </nav>
 
-        <!-- YAN MENÜ (SIDEBAR) -->
         <div class="sidebar" id="sidebar">
             
-            <!-- ÇÖZÜMLER GRUBU -->
             <div class="menu-group-title">Çözümler</div>
             
             <div class="menu-item" onclick="handleMenuClick('Ad Soyad Sorgu', 'fas fa-user-tag', 'adsoyad')">
@@ -722,7 +655,6 @@
             </div>
 
 
-            <!-- SIZMALAR GRUBU -->
             <div class="menu-group-title">Sızmalar</div>
 
             <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fab fa-whatsapp', 'whatsapp')">
@@ -746,7 +678,6 @@
             </div>
 
 
-            <!-- DİĞER İŞLEMLER GRUBU -->
             <div class="menu-group-title">Diğer İşlemler</div>
 
             <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fas fa-passport', 'disabled')">
@@ -759,26 +690,16 @@
 
         </div>
 
-        <!-- ANA İÇERİK ALANI -->
         <main class="main-content">
             <div class="stats-card">
                 <h2>Toplam Üye Sayısı</h2>
                 <div class="stats-number">27</div>
             </div>
 
-            <!-- Admin Hesabı Yazı Alanı -->
             <div class="vip-text-container" id="vipBorder">
                 <div class="vip-text" id="panelVipText">Admin Hesabı</div>
             </div>
 
-            <!-- STORE YAZI DEĞİŞTİRME PANELİ -->
-            <div class="admin-store-panel" id="adminStorePanel">
-                <h3>Store Duyuru Yönetimi</h3>
-                <input type="text" id="storeCustomInput" placeholder="Store modalında görünecek yazıyı girin...">
-                <button class="admin-store-btn" onclick="updateStoreText()">Store Yazısını Güncelle</button>
-            </div>
-
-            <!-- Dinamik Sorgu Gösterim Alanı -->
             <div class="action-container" id="actionContainer">
                 <h2 id="actionTitle"><i></i> İşlem Başlığı</h2>
                 
@@ -807,10 +728,8 @@
         </main>
     </div>
 
-    <!-- SCRIPT YAPISI -->
     <script>
         let currentLoginMode = ""; 
-        let globalStoreText = "ŞU ANLIK VIP SATILMIYOR";
 
         // Normal Giriş Doğrulama
         function checkNormalLogin() {
@@ -822,7 +741,6 @@
                 currentLoginMode = "luxy";
                 openPanel("Admin Hesabı", "#ffffff", "1px solid #ffffff");
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
-                document.getElementById('adminStorePanel').style.display = 'block'; 
                 return;
             }
 
@@ -835,24 +753,10 @@
             currentLoginMode = "free";
             openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px solid #444444");
             document.getElementById('founderProfileArea').style.display = 'none'; 
-            document.getElementById('adminStorePanel').style.display = 'none'; 
-        }
-
-        // Store Yazısını Güncelleme Fonksiyonu
-        function updateStoreText() {
-            const newText = document.getElementById('storeCustomInput').value.trim();
-            if(newText !== "") {
-                globalStoreText = newText;
-                document.getElementById('storeDynamicText').innerText = globalStoreText;
-                alert("Store duyuru yazısı başarıyla güncellendi! Herkes görebilir.");
-            } else {
-                alert("Lütfen geçerli bir yazı girin.");
-            }
         }
 
         // Store Modalı Açma Kontrolü
         function openStoreModal() { 
-            document.getElementById('storeDynamicText').innerText = globalStoreText;
             document.getElementById('storeModal').style.display = 'flex'; 
         }
 
@@ -890,7 +794,7 @@
             openAction(title, iconClass, type);
         }
 
-        // İnput ve Arayüz Kontrol Paneli Bulma Sınıfı
+        // İnput ve Arayüz Kontrol Paneli Bulma
         function openAction(title, iconClass, type) {
             const container = document.getElementById('actionContainer');
             const titleElement = document.getElementById('actionTitle');
@@ -969,4 +873,3 @@
     </script>
 </body>
 </html>
-
