@@ -99,7 +99,7 @@
             border-radius: 16px;
             padding: 40px;
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
             text-align: center;
             box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
             position: relative;
@@ -109,8 +109,10 @@
             color: #ffffff;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 600;
+            word-wrap: break-word;
+            white-space: pre-wrap;
         }
 
         .store-close-btn {
@@ -274,7 +276,7 @@
 
         .navbar {
             background: #0a0a0a;
-            padding: 15px 25px;
+            padding: 15px 35px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -283,7 +285,7 @@
             width: 100%;
             top: 0;
             z-index: 100;
-            height: 110px; /* Büyük profil alanı taşmasın diye yükseltildi */
+            height: 140px; /* Daha büyük profil için genişletildi */
         }
 
         .nav-left {
@@ -292,12 +294,12 @@
         }
 
         .menu-btn {
-            font-size: 22px;
+            font-size: 26px;
             background: none;
             border: none;
             color: #fff;
             cursor: pointer;
-            margin-right: 20px;
+            margin-right: 25px;
             transition: 0.2s;
         }
 
@@ -306,53 +308,54 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
         }
 
+        /* Sol üst yazı büyütüldü */
         .navbar h1 {
-            font-size: 19px;
+            font-size: 32px; 
             font-weight: 600;
-            letter-spacing: 0.5px;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
-        /* --- SAĞ ÜST BÜYÜTÜLMÜŞ PROFiL ALANI --- */
+        /* --- SAĞ ÜST DAHA DA BÜYÜTÜLMÜŞ PROFiL ALANI --- */
         .nav-right-profile {
             display: none; 
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 6px;
         }
 
         .founder-badge {
-            font-size: 16px; /* Yazı boyutu büyütüldü */
+            font-size: 22px; /* Yazı boyutu daha da büyütüldü */
             font-weight: 600;
             color: #ffffff;
-            letter-spacing: 3px; /* Harf boşlukları açıldı */
+            letter-spacing: 4px; 
             text-transform: uppercase;
-            text-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.7);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
             animation: neonPulse 2s infinite alternate;
         }
 
         .founder-avatar {
-            width: 65px; /* Fotoğraf boyutu büyütüldü */
-            height: 65px; /* Fotoğraf boyutu büyütüldü */
+            width: 85px; /* Fotoğraf boyutu daha da büyütüldü */
+            height: 85px; /* Fotoğraf boyutu daha da büyütüldü */
             border-radius: 50px;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
             object-fit: cover;
         }
 
         @keyframes neonPulse {
-            from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 18px rgba(255, 255, 255, 0.4); }
-            to { text-shadow: 0 0 18px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8); }
+            from { text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4); }
+            to { text-shadow: 0 0 22px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.9); }
         }
 
         /* --- SIDEBAR --- */
         .sidebar {
             position: fixed;
             left: -300px;
-            top: 110px; /* Navbar boyutuna göre ayarlandı */
+            top: 140px; 
             width: 280px;
-            height: calc(100vh - 110px);
+            height: calc(100vh - 140px);
             background: #0a0a0a;
             border-right: 1px solid #141414;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -365,7 +368,6 @@
             left: 0;
         }
 
-        /* Grup Başlıkları */
         .menu-group-title {
             font-size: 11px;
             font-weight: 600;
@@ -379,7 +381,6 @@
             margin-top: 5px;
         }
 
-        /* Çizgisiz Yeni Modern Tuş Tasarımı */
         .menu-item {
             display: flex;
             align-items: center;
@@ -416,7 +417,7 @@
 
         /* --- ANA İÇERİK --- */
         .main-content {
-            margin-top: 110px; /* Navbar boyutuna göre ayarlandı */
+            margin-top: 140px; 
             padding: 50px 20px;
             transition: 0.3s;
             display: flex;
@@ -455,7 +456,7 @@
         .vip-text-container {
             width: 100%;
             max-width: 500px;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
             text-align: center;
             padding: 16px;
             background: #0a0a0a;
@@ -469,6 +470,63 @@
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 0.5px;
+        }
+
+        /* --- YENİ ADMİN STORE YAZI EKLEME PANELİ --- */
+        .admin-store-panel {
+            display: none; /* Sadece luxy girişinde aktif olacak */
+            width: 100%;
+            max-width: 500px;
+            background: #0a0a0a;
+            border: 1px dashed rgba(255, 255, 255, 0.4);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .admin-store-panel h3 {
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .admin-store-panel input {
+            width: 100%;
+            padding: 10px 14px;
+            background: #111111;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+
+        .admin-store-panel input:focus {
+            border-color: #ffffff;
+        }
+
+        .admin-store-btn {
+            width: 100%;
+            padding: 10px;
+            background: #ffffff;
+            border: none;
+            border-radius: 8px;
+            color: #000000;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .admin-store-btn:hover {
+            background: #e5e5e5;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         /* İşlem Giriş Alanları */
@@ -519,7 +577,6 @@
             box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
         }
 
-        /* Özel Form İnput Grupları */
         .input-form-group {
             display: none;
             flex-direction: column;
@@ -583,7 +640,8 @@
     <!-- STORE MODAL -->
     <div class="store-modal" id="storeModal">
         <div class="store-box">
-            <h2>ŞU ANLIK VIP SATILMIYOR</h2>
+            <!-- Bu başlık admin panelinden yazılan yazıyla anlık değişecek -->
+            <h2 id="storeDynamicText">ŞU ANLIK VIP SATILMIYOR</h2>
             <button class="store-close-btn" onclick="closeStoreModal()">Kapat</button>
         </div>
     </div>
@@ -622,7 +680,7 @@
                 <h1>Angel Panel</h1>
             </div>
 
-            <!-- SAĞ ÜST KÖŞE BÜYÜTÜLMÜŞ KURUCU NEON PANEL ALANI -->
+            <!-- SAĞ ÜST KÖŞE DAHA DA BÜYÜTÜLMÜŞ KURUCU NEON PANEL ALANI -->
             <div class="nav-right-profile" id="founderProfileArea">
                 <span class="founder-badge">KURUCU</span>
                 <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Kurucu">
@@ -708,31 +766,35 @@
                 <div class="stats-number">27</div>
             </div>
 
+            <!-- Admin Hesabı Yazı Alanı (Taç Kaldırıldı) -->
             <div class="vip-text-container" id="vipBorder">
                 <div class="vip-text" id="panelVipText">Admin Hesabı</div>
+            </div>
+
+            <!-- YENİ STORE YAZI DEĞİŞTİRME PANELİ (Sadece Admin Görebilir) -->
+            <div class="admin-store-panel" id="adminStorePanel">
+                <h3>Store Duyuru Yönetimi</h3>
+                <input type="text" id="storeCustomInput" placeholder="Store modalında görünecek yazıyı girin...">
+                <button class="admin-store-btn" onclick="updateStoreText()">Store Yazısını Güncelle</button>
             </div>
 
             <!-- Dinamik Sorgu Gösterim Alanı -->
             <div class="action-container" id="actionContainer">
                 <h2 id="actionTitle"><i></i> İşlem Başlığı</h2>
                 
-                <!-- Genel Amaçlı Metin Alanı -->
                 <textarea id="actionInput" placeholder=""></textarea>
                 
-                <!-- Ad Soyad Özel İnput Grubu -->
                 <div class="input-form-group" id="adSoyadGroup">
                     <input type="text" id="adInput" placeholder="İsim">
                     <input type="text" id="ad2Input" placeholder="2. İsmi (varsa)">
                     <input type="text" id="soyadInput" placeholder="Soy İsim">
                 </div>
 
-                <!-- Telefon Özel İnput Grubu -->
                 <div class="input-form-group" id="telefonGroup">
                     <input type="text" id="gsmTcInput" placeholder="Gsm'den TC Bulma">
                     <input type="text" id="tcGsmInput" placeholder="TC'den Gsm Bulma">
                 </div>
 
-                <!-- Sms Bomb Özel İnput Grubu -->
                 <div class="input-form-group" id="smsBombGroup">
                     <input type="text" id="bombNumInput" placeholder="Numarayı Yazın">
                     <input type="text" id="bombCountInput" placeholder="Göndermek istediğiniz Sms Sayısı">
@@ -748,6 +810,8 @@
     <!-- SCRIPT YAPISI -->
     <script>
         let currentLoginMode = ""; 
+        // Varsayılan store yazısı
+        let globalStoreText = "ŞU ANLIK VIP SATILMIYOR";
 
         // Normal Giriş Doğrulama
         function checkNormalLogin() {
@@ -757,8 +821,9 @@
 
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
-                openPanel("Admin Hesabı 👑", "#ffffff", "1px solid #ffffff");
+                openPanel("Admin Hesabı", "#ffffff", "1px solid #ffffff"); // Taç emojisi kaldırıldı
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
+                document.getElementById('adminStorePanel').style.display = 'block'; // Store ekleme panelini aç
                 return;
             }
 
@@ -771,6 +836,25 @@
             currentLoginMode = "free";
             openPanel("DENEME HESABI (FREE) ⚡", "#888888", "1px solid #444444");
             document.getElementById('founderProfileArea').style.display = 'none'; 
+            document.getElementById('adminStorePanel').style.display = 'none'; // Store ekleme panelini gizle
+        }
+
+        // Store Yazısını Güncelleme Fonksiyonu
+        function updateStoreText() {
+            const newText = document.getElementById('storeCustomInput').value.trim();
+            if(newText !== "") {
+                globalStoreText = newText;
+                document.getElementById('storeDynamicText').innerText = globalStoreText;
+                alert("Store duyuru yazısı başarıyla güncellendi! Herkes görebilir.");
+            } else {
+                alert("Lütfen geçerli bir yazı girin.");
+            }
+        }
+
+        // Store Modalı Açma Kontrolü (Güncel yazıyı basar)
+        function openStoreModal() { 
+            document.getElementById('storeDynamicText').innerText = globalStoreText;
+            document.getElementById('storeModal').style.display = 'flex'; 
         }
 
         // Panel Ekran Değişimi
@@ -796,7 +880,7 @@
             }
         }
 
-        // Menü Tıklama Kontrolü (Free kullanıcı engeli)
+        // Menü Tıklama Kontrolü
         function handleMenuClick(title, iconClass, type) {
             if (currentLoginMode === "free") {
                 const toast = document.getElementById('vipAlertToast');
@@ -820,7 +904,6 @@
             
             titleElement.innerHTML = `<i class="${iconClass}"></i> ${title}`;
 
-            // Her şeyi sıfırla ve gizle
             textarea.style.display = 'none'; 
             textarea.value = '';
             textarea.placeholder = '';
@@ -833,7 +916,6 @@
             
             clearAllInputs();
 
-            // ÖZELLİK DURUM KONTROLLERİ
             if (type === 'disabled') {
                 textarea.style.display = 'block';
                 textarea.value = "Bu Özellik Şu Anda Çalışmıyor";
@@ -874,8 +956,6 @@
             clearAllInputs();
         }
 
-        // Temel Arayüz Fonksiyonları
-        function openStoreModal() { document.getElementById('storeModal').style.display = 'flex'; }
         function closeStoreModal() { document.getElementById('storeModal').style.display = 'none'; }
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
 
@@ -884,7 +964,6 @@
             if (e.key === 'Enter') checkNormalLogin(); 
         });
 
-        // Dışarı tıklayınca Store Modal kapatma
         window.onclick = function(event) {
             if (event.target == document.getElementById('storeModal')) closeStoreModal();
         }
