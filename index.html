@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Panel - Neon Dark Edition</title>
+    <title>Angel Panel - Red & Black Neon Edition</title>
     <!-- Google Fonts ve FontAwesome İkonları -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +18,7 @@
         }
 
         body {
-            background: #1e293b;
+            background: #111827;
             color: #f8fafc;
             min-height: 100vh;
             overflow-x: hidden;
@@ -53,7 +53,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #2563eb;
+            background: #b91c1c;
             color: #ffffff;
             padding: 14px 28px;
             border-radius: 50px;
@@ -61,8 +61,8 @@
             font-size: 15px;
             cursor: pointer;
             z-index: 9999;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             align-items: center;
             gap: 10px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -71,7 +71,7 @@
 
         .store-floating-btn:hover {
             transform: scale(1.05) translateY(-5px);
-            background: #1d4ed8;
+            background: #991b1b;
         }
 
         /* --- STORE MODAL --- */
@@ -82,7 +82,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             z-index: 100000;
             justify-content: center;
@@ -90,14 +90,14 @@
         }
 
         .store-box {
-            background: #1e293b;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 24px;
             padding: 40px;
             width: 100%;
             max-width: 450px;
             text-align: center;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 45px rgba(255, 255, 255, 0.1);
         }
 
         .store-box h2 {
@@ -106,38 +106,40 @@
             font-size: 24px;
             font-weight: 700;
             letter-spacing: 0.5px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
 
         .store-close-btn {
             width: 100%;
             padding: 14px;
-            background: #2563eb;
+            background: #ffffff;
             border: none;
             border-radius: 12px;
-            color: #ffffff;
+            color: #000000;
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
         }
 
-        .store-close-btn:hover { background: #1d4ed8; }
+        .store-close-btn:hover { background: #e2e8f0; }
 
-        /* --- GİRİŞ EKRANI --- */
+        /* --- GİRİŞ EKRANI (KIRMIZI / SİYAH TEMA) --- */
         .login-container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            background: #4c0519; /* Ana sayfa arka planı kapalı kırmızı */
         }
 
         .login-card {
-            background: #1e293b;
+            background: #000000; /* Giriş kartı siyah */
             padding: 45px 40px;
             border-radius: 28px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             width: 100%;
             max-width: 440px;
             text-align: center;
@@ -149,6 +151,7 @@
             font-size: 32px;
             color: #ffffff;
             letter-spacing: -0.5px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
         }
 
         .input-group {
@@ -161,49 +164,50 @@
             left: 18px;
             top: 50%;
             transform: translateY(-50%);
-            color: #94a3b8;
+            color: #ffffff;
             font-size: 16px;
-            transition: 0.3s;
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
         }
 
         .input-group input {
             width: 100%;
             padding: 16px 16px 16px 52px;
-            background: rgba(15, 23, 42, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #4c0519; /* Input içleri kapalı kırmızı */
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 14px;
-            color: #f8fafc;
+            color: #ffffff;
             font-size: 15px;
             outline: none;
             transition: 0.3s;
         }
 
         .input-group input:focus {
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         .login-btn {
             width: 100%;
             padding: 16px;
-            background: #2563eb;
+            background: #ffffff;
             border: none;
             border-radius: 14px;
-            color: #ffffff;
+            color: #000000;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
             margin-bottom: 5px;
         }
 
         .login-btn:hover {
             transform: translateY(-2px);
-            background: #1d4ed8;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
         }
 
         .divider {
-            color: #94a3b8;
+            color: #ffffff;
             font-size: 13px;
             font-weight: 500;
             margin: 25px 0;
@@ -211,29 +215,31 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
         .divider::before, .divider::after {
             content: "";
             flex: 1;
             height: 1px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .free-login-btn {
             width: 100%;
             padding: 15px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 14px;
             color: #ffffff;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
         .free-login-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .error-msg {
@@ -250,14 +256,14 @@
             min-height: 100vh;
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR (YUKARISI KIRMIZIYA BOYANDI) --- */
         .navbar {
-            background: #1e293b;
+            background: #4c0519; /* Üst Bar Kapalı Kırmızı Yapıldı */
             padding: 0 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
             position: fixed;
             width: 100%;
             top: 0;
@@ -279,45 +285,51 @@
             font-size: 24px; 
             font-weight: 800;
             color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        /* --- PROFILE AREA --- */
+        /* --- PROFiL VE NEON BEYAZ BADGELER --- */
         .nav-right-profile {
             display: none; 
             align-items: center;
             gap: 15px;
         }
 
+        /* Kurucu ve Admin Yazısının Neon Beyaz Yapılması */
         .founder-badge {
-            font-size: 12px; 
+            font-size: 13px; 
             font-weight: 700;
-            background: #2563eb;
+            background: transparent; /* Arka plan kaldırıldı */
             color: #ffffff;
             padding: 4px 12px;
             border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            /* Parlama Efektleri */
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), inset 0 0 5px rgba(255, 255, 255, 0.2);
         }
 
         .founder-badge.admin-role {
-            background: #10b981;
+            border-color: rgba(255, 255, 255, 0.8);
         }
 
         .founder-avatar {
             width: 44px; 
             height: 44px;
             border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
             object-fit: cover;
         }
 
-        /* --- SIDEBAR (SOL MENÜ - YENİ NEON SİYAH TASARIM) --- */
+        /* --- SIDEBAR (SOL MENÜ - GENİŞ VE SAF SİYAH) --- */
         .sidebar {
             position: fixed;
-            left: -380px; /* Genişlik arttığı için başlangıç pozisyonu kaydırıldı */
+            left: -380px; 
             top: 80px; 
-            width: 360px; /* Genişlik 290px'den 360px'e yükseltildi (Büyütüldü) */
+            width: 360px; 
             height: calc(100vh - 80px);
-            background: #000000; /* Tamamen Siyah Yapıldı */
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000000; 
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
             transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow-y: auto;
             z-index: 99;
@@ -326,13 +338,15 @@
 
         .sidebar.active { left: 0; }
 
-        /* Sol Menü En Üst Büyük Fotoğraf */
+        /* Sol Menü En Üst Büyük Logo Düzenlemesi */
         .sidebar-top-logo {
             width: 100%;
-            max-height: 180px;
+            height: auto;
+            max-height: 160px;
             object-fit: contain;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+            margin: 0 auto 20px auto;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             padding-bottom: 15px;
         }
 
@@ -343,7 +357,6 @@
             color: #ffffff; 
             letter-spacing: 2px;
             margin: 25px 0 12px 12px;
-            /* Neon Beyaz Başlık Efekti */
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
 
@@ -358,7 +371,6 @@
             font-size: 15px;
             font-weight: 500;
             color: #ffffff;
-            /* Yazı ve Logolar için Neon Beyaz Parlama Sabitlendi */
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
@@ -367,7 +379,7 @@
             width: 20px;
             text-align: center;
             font-size: 18px;
-            color: #ffffff; /* Tüm ikon renkleri neon beyaz için beyaza çekildi */
+            color: #ffffff; 
             filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
         }
 
@@ -383,19 +395,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: #4c0519; /* Orta Taraf Kapalı/Koyu Kırmızı Yapıldı */
+            background: #4c0519; 
             min-height: calc(100vh - 80px);
         }
 
         .stats-card {
-            background: #000000; /* Siyah ile uyum için kart siyaha çekildi */
+            background: #000000; 
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 24px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             margin-bottom: 25px;
         }
 
@@ -429,19 +441,20 @@
         .vip-text {
             font-size: 20px;
             font-weight: 600;
+            color: #ffffff;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
-        /* --- İŞLEM ALANI (GİRİŞ/YAZI EKRANI - SİYAH VE NEON BEYAZ) --- */
+        /* --- İŞLEM ALANI (EKRAN SİAH - YAZILAR NEON BEYAZ) --- */
         .action-container {
-            background: #000000; /* Tamamen Siyah Yapıldı */
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Neon belirginlik için sınır */
+            background: #000000; 
+            border: 1px solid rgba(255, 255, 255, 0.3); 
             border-radius: 24px;
             padding: 35px;
             width: 100%;
             max-width: 500px;
             display: none;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
             margin-bottom: 20px;
         }
 
@@ -452,7 +465,6 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            /* Neon Beyaz Başlık */
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
         }
         
@@ -510,10 +522,10 @@
         .submit-btn {
             width: 100%;
             padding: 15px;
-            background: #ffffff; /* Neon beyaz temaya uygun temiz buton */
+            background: #ffffff; 
             border: none;
             border-radius: 14px;
-            color: #000000; /* Yazısı siyah */
+            color: #000000; 
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
@@ -551,7 +563,7 @@
         </div>
     </div>
 
-    <!-- GİRİŞ SİSTEMİ -->
+    <!-- GİRİŞ SİSTEMİ (KIRMIZI VE SİYAH TASARIM) -->
     <div class="login-container" id="loginScreen">
         <div class="login-card">
             <h2>Angel Panel</h2>
@@ -577,6 +589,7 @@
 
     <!-- PANEL ANA KONTROLLERİ -->
     <div class="panel-container" id="panelScreen">
+        <!-- NAVBAR: KIRMIZI YAPILDI -->
         <nav class="navbar">
             <div class="nav-left">
                 <button class="menu-btn" onclick="toggleSidebar()">
@@ -585,16 +598,17 @@
                 <h1>Angel Panel</h1>
             </div>
 
+            <!-- SAĞ ÜST KÖŞE PROFiL (YAZILAR NEON BEYAZ) -->
             <div class="nav-right-profile" id="founderProfileArea">
                 <span class="founder-badge" id="userRoleBadge">KURUCU</span>
                 <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Profil">
             </div>
         </nav>
 
-        <!-- SIDEBAR (BÜYÜTÜLMÜŞ, SİYAH VE NEON) -->
+        <!-- SIDEBAR (SİYAH, NEON VE ÇALIŞAN LOGO) -->
         <div class="sidebar" id="sidebar">
             
-            <!-- EN ÜSTE EKLENEN BÜYÜK FOTOĞRAF -->
+            <!-- LOGO BURADA: YENİDEN ENTEGRE EDİLDİ VE URL KORUMALI -->
             <img class="sidebar-top-logo" src="https://cdn.discordapp.com/attachments/1379499292556791900/1511039284088406096/file_00000000a7507209a824430b6b9e7b2c.png?ex=6a1f007f&is=6a1daeff&hm=c02b808ac338b5ec044165395bd64331a0f989754c3f78e2b976a7dedb153ac8&" alt="Angel Logo">
             
             <div class="menu-group-title">Çözümler</div>
@@ -672,7 +686,7 @@
                 <div class="vip-text" id="panelVipText">Admin Hesabı</div>
             </div>
 
-            <!-- İŞLEM ALANI (SİYAH EKRA - NEON BEYAZ YAZILI) -->
+            <!-- İŞLEM ALANI (EKRAN SİYAH - NEON BEYAZ YAZILI) -->
             <div class="action-container" id="actionContainer">
                 <h2 id="actionTitle"><i></i> İşlem Başlığı</h2>
                 
@@ -715,7 +729,7 @@
                 currentLoginMode = "luxy";
                 badge.innerHTML = "KURUCU";
                 badge.className = "founder-badge"; 
-                openPanel("Kurucu Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.3)"); 
+                openPanel("Kurucu Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.5)"); 
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
                 return;
             }
@@ -724,7 +738,7 @@
                 currentLoginMode = "hamitcan";
                 badge.innerHTML = "ADMIN";
                 badge.className = "founder-badge admin-role"; 
-                openPanel("Admin Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.3)");
+                openPanel("Admin Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.5)");
                 document.getElementById('founderProfileArea').style.display = 'flex';
                 return;
             }
@@ -735,7 +749,7 @@
 
         function loginAsFree() {
             currentLoginMode = "free";
-            openPanel("Free Account", "#cbd5e1", "1px solid rgba(255, 255, 255, 0.1)");
+            openPanel("Free Account", "#ffffff", "1px solid rgba(255, 255, 255, 0.2)");
             document.getElementById('founderProfileArea').style.display = 'none'; 
         }
 
