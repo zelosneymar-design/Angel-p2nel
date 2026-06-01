@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Panel - Clean Stealth Edition</title>
+    <title>Angel Panel - Neon Dark Edition</title>
     <!-- Google Fonts ve FontAwesome İkonları -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -297,9 +297,8 @@
             border-radius: 20px;
         }
 
-        /* Admin hesabı için farklı bir arka plan istersen diye (opsiyonel) */
         .founder-badge.admin-role {
-            background: #10b981; /* Admin yazısı yeşil tonlu buton */
+            background: #10b981;
         }
 
         .founder-avatar {
@@ -310,30 +309,42 @@
             object-fit: cover;
         }
 
-        /* --- SIDEBAR --- */
+        /* --- SIDEBAR (SOL MENÜ - YENİ NEON SİYAH TASARIM) --- */
         .sidebar {
             position: fixed;
-            left: -310px;
+            left: -380px; /* Genişlik arttığı için başlangıç pozisyonu kaydırıldı */
             top: 80px; 
-            width: 290px;
+            width: 360px; /* Genişlik 290px'den 360px'e yükseltildi (Büyütüldü) */
             height: calc(100vh - 80px);
-            background: #1e293b;
+            background: #000000; /* Tamamen Siyah Yapıldı */
             border-right: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow-y: auto;
             z-index: 99;
-            padding: 30px 16px;
+            padding: 20px 16px 40px 16px;
         }
 
         .sidebar.active { left: 0; }
 
+        /* Sol Menü En Üst Büyük Fotoğraf */
+        .sidebar-top-logo {
+            width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
         .menu-group-title {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
-            color: #94a3b8; 
+            color: #ffffff; 
             letter-spacing: 2px;
-            margin: 30px 0 12px 12px;
+            margin: 25px 0 12px 12px;
+            /* Neon Beyaz Başlık Efekti */
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
 
         .menu-item {
@@ -344,74 +355,64 @@
             margin-bottom: 6px;
             cursor: pointer;
             transition: 0.2s all;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
-            color: #cbd5e1;
+            color: #ffffff;
+            /* Yazı ve Logolar için Neon Beyaz Parlama Sabitlendi */
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         .menu-item i {
             margin-right: 16px;
             width: 20px;
             text-align: center;
-            font-size: 16px;
+            font-size: 18px;
+            color: #ffffff; /* Tüm ikon renkleri neon beyaz için beyaza çekildi */
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
         }
-
-        /* LOGO RENKLERİ */
-        .menu-item.logo-adsoyad i { color: #38bdf8; }
-        .menu-item.logo-aile i { color: #f43f5e; }
-        .menu-item.logo-tel i { color: #60a5fa; }
-        .menu-item.logo-saglik i { color: #10b981; }
-        .menu-item.logo-vesika i { color: #fbbf24; }
-        .menu-item.logo-isyeri i { color: #a78bfa; }
-        .menu-item.logo-hane i { color: #f472b6; }
-        
-        .menu-item.logo-wp i { color: #25D366; } 
-        .menu-item.logo-tt i { color: #00f2fe; filter: drop-shadow(2px 0px 0px #fe0979); } 
-        .menu-item.logo-ig i { color: #E1306C; } 
-        .menu-item.logo-dc i { color: #5865F2; } 
-        .menu-item.logo-galeri i { color: #3b82f6; }
-        
-        .menu-item.logo-kimlik i { color: #06b6d4; }
-        .menu-item.logo-bomb i { color: #ef4444; }
 
         .menu-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
-        /* --- ANA İÇERİK ALANI --- */
+        /* --- ANA İÇERİK ALANI (ORTA TARAF - KAPALI KIRMIZI) --- */
         .main-content {
             margin-top: 80px; 
             padding: 50px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: #4c0519; /* Orta Taraf Kapalı/Koyu Kırmızı Yapıldı */
+            min-height: calc(100vh - 80px);
         }
 
         .stats-card {
-            background: #1e293b;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000000; /* Siyah ile uyum için kart siyaha çekildi */
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 24px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             margin-bottom: 25px;
         }
 
         .stats-card h2 {
             font-size: 12px;
-            color: #94a3b8;
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
         .stats-number {
             font-size: 56px;
             font-weight: 700;
             color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
         }
 
         .vip-text-container {
@@ -421,25 +422,26 @@
             text-align: center;
             padding: 16px;
             border-radius: 16px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .vip-text {
             font-size: 20px;
             font-weight: 600;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
-        /* İşlem Alanı */
+        /* --- İŞLEM ALANI (GİRİŞ/YAZI EKRANI - SİYAH VE NEON BEYAZ) --- */
         .action-container {
-            background: #1e293b;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: #000000; /* Tamamen Siyah Yapıldı */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Neon belirginlik için sınır */
             border-radius: 24px;
             padding: 35px;
             width: 100%;
             max-width: 500px;
             display: none;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
             margin-bottom: 20px;
         }
 
@@ -450,13 +452,20 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            /* Neon Beyaz Başlık */
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+        }
+        
+        .action-container h2 i {
+            color: #ffffff;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
         }
 
         .action-container textarea {
             width: 100%;
             height: 110px;
-            background: rgba(15, 23, 42, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 14px;
             color: #ffffff;
             padding: 16px;
@@ -465,9 +474,13 @@
             resize: none;
             margin-bottom: 20px;
             transition: 0.3s;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
         }
 
-        .action-container textarea:focus { border-color: rgba(255, 255, 255, 0.3); }
+        .action-container textarea:focus { 
+            border-color: rgba(255, 255, 255, 0.6); 
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
 
         .input-form-group {
             display: none;
@@ -479,35 +492,43 @@
         .input-form-group input {
             width: 100%;
             padding: 15px;
-            background: rgba(15, 23, 42, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 14px;
             color: #ffffff;
             font-size: 15px;
             outline: none;
             transition: 0.3s;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
         }
 
-        .input-form-group input:focus { border-color: rgba(255, 255, 255, 0.3); }
+        .input-form-group input:focus { 
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
 
         .submit-btn {
             width: 100%;
             padding: 15px;
-            background: #2563eb;
+            background: #ffffff; /* Neon beyaz temaya uygun temiz buton */
             border: none;
             border-radius: 14px;
-            color: #ffffff;
+            color: #000000; /* Yazısı siyah */
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: 0.2s;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
-        .submit-btn:hover { background: #1d4ed8; }
+        .submit-btn:hover { 
+            background: #e2e8f0;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+        }
     </style>
 </head>
 <body>
@@ -564,81 +585,83 @@
                 <h1>Angel Panel</h1>
             </div>
 
-            <!-- SAĞ ÜST KÖŞE PROFiL (DİNAMİK ROLLER İÇİN ID'LER GÜNCELLENDİ) -->
             <div class="nav-right-profile" id="founderProfileArea">
                 <span class="founder-badge" id="userRoleBadge">KURUCU</span>
                 <img class="founder-avatar" src="https://cdn.discordapp.com/attachments/1379499292556791900/1509897417993228298/1ffea959-e2f4-4771-9017-62b8ce6ad123.png?ex=6a1ad90c&is=6a19878c&hm=2a95909a969e7f8ea81d370bfd27d6b1cb8df75851139929f875f7dad532b655&" alt="Profil">
             </div>
         </nav>
 
-        <!-- SIDEBAR -->
+        <!-- SIDEBAR (BÜYÜTÜLMÜŞ, SİYAH VE NEON) -->
         <div class="sidebar" id="sidebar">
+            
+            <!-- EN ÜSTE EKLENEN BÜYÜK FOTOĞRAF -->
+            <img class="sidebar-top-logo" src="https://cdn.discordapp.com/attachments/1379499292556791900/1511039284088406096/file_00000000a7507209a824430b6b9e7b2c.png?ex=6a1f007f&is=6a1daeff&hm=c02b808ac338b5ec044165395bd64331a0f989754c3f78e2b976a7dedb153ac8&" alt="Angel Logo">
             
             <div class="menu-group-title">Çözümler</div>
             
-            <div class="menu-item logo-adsoyad" onclick="handleMenuClick('Ad Soyad Sorgu', 'fas fa-user-tag', 'adsoyad')">
+            <div class="menu-item" onclick="handleMenuClick('Ad Soyad Sorgu', 'fas fa-user-tag', 'adsoyad')">
                 <i class="fas fa-user-tag"></i> Ad Soyad Sorgu
             </div>
 
-            <div class="menu-item logo-aile" onclick="handleMenuClick('Aile Sorgu', 'fas fa-users', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('Aile Sorgu', 'fas fa-users', 'tc')">
                 <i class="fas fa-users"></i> Aile Sorgu
             </div>
 
-            <div class="menu-item logo-tel" onclick="handleMenuClick('Telefon Sorgu', 'fas fa-phone', 'telefon')">
+            <div class="menu-item" onclick="handleMenuClick('Telefon Sorgu', 'fas fa-phone', 'telefon')">
                 <i class="fas fa-phone"></i> Telefon Sorgu
             </div>
 
-            <div class="menu-item logo-saglik" onclick="handleMenuClick('Sağlık Sorgu', 'fas fa-heartbeat', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('Sağlık Sorgu', 'fas fa-heartbeat', 'tc')">
                 <i class="fas fa-heartbeat"></i> Sağlık Sorgu
             </div>
 
-            <div class="menu-item logo-vesika" onclick="handleMenuClick('Vesika Sorgu', 'fas fa-id-card-alt', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('Vesika Sorgu', 'fas fa-id-card-alt', 'tc')">
                 <i class="fas fa-id-card-alt"></i> Vesika Sorgu
             </div>
 
-            <div class="menu-item logo-isyeri" onclick="handleMenuClick('İş Yeri Sorgu', 'fas fa-briefcase', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('İş Yeri Sorgu', 'fas fa-briefcase', 'tc')">
                 <i class="fas fa-briefcase"></i> İş yeri Sorgu
             </div>
 
-            <div class="menu-item logo-hane" onclick="handleMenuClick('Hane Sorgu', 'fas fa-map-marker-alt', 'tc')">
+            <div class="menu-item" onclick="handleMenuClick('Hane Sorgu', 'fas fa-map-marker-alt', 'tc')">
                 <i class="fas fa-map-marker-alt"></i> Hane Sorgu
             </div>
 
             <div class="menu-group-title">Sızmalar</div>
 
-            <div class="menu-item logo-wp" onclick="handleMenuClick('Whatsapp Sızma', 'fab fa-whatsapp', 'whatsapp')">
+            <div class="menu-item" onclick="handleMenuClick('Whatsapp Sızma', 'fab fa-whatsapp', 'whatsapp')">
                 <i class="fab fa-whatsapp"></i> Whatsapp Sızma
             </div>
 
-            <div class="menu-item logo-tt" onclick="handleMenuClick('Tiktok Sızma', 'fab fa-tiktok', 'nick')">
+            <div class="menu-item" onclick="handleMenuClick('Tiktok Sızma', 'fab fa-tiktok', 'nick')">
                 <i class="fab fa-tiktok"></i> Tiktok Sızma
             </div>
 
-            <div class="menu-item logo-ig" onclick="handleMenuClick('Instagram Sızma', 'fab fa-instagram', 'nick')">
+            <div class="menu-item" onclick="handleMenuClick('Instagram Sızma', 'fab fa-instagram', 'nick')">
                 <i class="fab fa-instagram"></i> Instagram Sızma
             </div>
 
-            <div class="menu-item logo-dc" onclick="handleMenuClick('Discord Sızma', 'fab fa-discord', 'nick')">
+            <div class="menu-item" onclick="handleMenuClick('Discord Sızma', 'fab fa-discord', 'nick')">
                 <i class="fab fa-discord"></i> Discord Sızma
             </div>
 
-            <div class="menu-item logo-galeri" onclick="handleMenuClick('Galeri Sızma', 'fas fa-images', 'disabled')">
+            <div class="menu-item" onclick="handleMenuClick('Galeri Sızma', 'fas fa-images', 'disabled')">
                 <i class="fas fa-images"></i> Galeri Sızma
             </div>
 
             <div class="menu-group-title">Diğer İşlemler</div>
 
-            <div class="menu-item logo-kimlik" onclick="handleMenuClick('Kimlik Oluşturucu', 'fas fa-passport', 'disabled')">
+            <div class="menu-item" onclick="handleMenuClick('Kimlik Oluşturucu', 'fas fa-passport', 'disabled')">
                 <i class="fas fa-passport"></i> Kimlik Oluşturucu
             </div>
 
-            <div class="menu-item logo-bomb" onclick="handleMenuClick('Sms Bomb', 'fas fa-bomb', 'smsbomb')">
+            <div class="menu-item" onclick="handleMenuClick('Sms Bomb', 'fas fa-bomb', 'smsbomb')">
                 <i class="fas fa-bomb"></i> Sms Bomb
             </div>
 
         </div>
 
-        <!-- PANEL MERKEZİ İÇERİK -->
+        <!-- PANEL MERKEZİ İÇERİK (ORTA TARAF: KAPALI KIRMIZI) -->
         <main class="main-content">
             <div class="stats-card">
                 <h2>Toplam Üye Sayısı</h2>
@@ -649,6 +672,7 @@
                 <div class="vip-text" id="panelVipText">Admin Hesabı</div>
             </div>
 
+            <!-- İŞLEM ALANI (SİYAH EKRA - NEON BEYAZ YAZILI) -->
             <div class="action-container" id="actionContainer">
                 <h2 id="actionTitle"><i></i> İşlem Başlığı</h2>
                 
@@ -687,21 +711,19 @@
             const error = document.getElementById('loginError');
             const badge = document.getElementById('userRoleBadge');
 
-            // 1. KURUCU HESABI (luxy)
             if (user === "luxy" && pass === "dmax") {
                 currentLoginMode = "luxy";
                 badge.innerHTML = "KURUCU";
-                badge.className = "founder-badge"; // Orijinal stil
+                badge.className = "founder-badge"; 
                 openPanel("Kurucu Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.3)"); 
                 document.getElementById('founderProfileArea').style.display = 'flex'; 
                 return;
             }
 
-            // 2. YENİ ADMİN HESABI (hamitcan)
             if (user === "hamitcan" && pass === "adminim") {
                 currentLoginMode = "hamitcan";
                 badge.innerHTML = "ADMIN";
-                badge.className = "founder-badge admin-role"; // İstersen admin-role class'ı ile rengi ayrışabilir
+                badge.className = "founder-badge admin-role"; 
                 openPanel("Admin Hesabı", "#ffffff", "1px solid rgba(255, 255, 255, 0.3)");
                 document.getElementById('founderProfileArea').style.display = 'flex';
                 return;
