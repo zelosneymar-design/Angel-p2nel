@@ -125,18 +125,18 @@
 
         .store-close-btn:hover { background: #e2e8f0; }
 
-        /* --- GİRİŞ EKRANI (SADECE SİYAH & NEON BEYAZ) --- */
+        /* --- GİRİŞ EKRANI (SAF SİYAH & NEON BEYAZ) --- */
         .login-container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            background: #000000; /* Saf siyah arka plan */
+            background: #000000; 
         }
 
         .login-card {
-            background: #0a0a0a; /* Çok hafif tonda siyah kart */
+            background: #0a0a0a; 
             padding: 45px 40px;
             border-radius: 28px;
             box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
@@ -258,7 +258,7 @@
             min-height: 100vh;
         }
 
-        /* --- NAVBAR (ÜST BAR SAF SİYAH OLDU) --- */
+        /* --- NAVBAR --- */
         .navbar {
             background: #000000; 
             padding: 0 30px;
@@ -390,7 +390,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: #000000; /* Orta taraf tamamen siyah yapıldı */
+            background: #000000; 
             min-height: calc(100vh - 80px);
         }
 
@@ -559,7 +559,7 @@
         </div>
     </div>
 
-    <!-- GİRİŞ SİSTEMİ (SAF SİYAH & NEON BEYAZ) -->
+    <!-- GİRİŞ SİSTEMİ -->
     <div class="login-container" id="loginScreen">
         <div class="login-card">
             <h2>Angel Panel</h2>
@@ -621,6 +621,21 @@
                 <i class="fas fa-phone"></i> Telefon Sorgu
             </div>
 
+            <!-- YENİ EKLENEN SORGU 1 -->
+            <div class="menu-item" onclick="handleMenuClick('E Okul Sorgu', 'fas fa-graduation-cap', 'tc')">
+                <i class="fas fa-graduation-cap"></i> E Okul Sorgu
+            </div>
+
+            <!-- YENİ EKLENEN SORGU 2 -->
+            <div class="menu-item" onclick="handleMenuClick('E Devlet Sorgu', 'fas fa-university', 'tc')">
+                <i class="fas fa-university"></i> E Devlet Sorgu
+            </div>
+
+            <!-- YENİ EKLENEN SORGU 3 -->
+            <div class="menu-item" onclick="handleMenuClick('Aşı Sorgu', 'fas fa-syringe', 'tc')">
+                <i class="fas fa-syringe"></i> Aşı Sorgu
+            </div>
+
             <div class="menu-item" onclick="handleMenuClick('Sağlık Sorgu', 'fas fa-heartbeat', 'tc')">
                 <i class="fas fa-heartbeat"></i> Sağlık Sorgu
             </div>
@@ -671,7 +686,7 @@
 
         </div>
 
-        <!-- PANEL MERKEZİ İÇERİK (ORTA TARAF) -->
+        <!-- PANEL MERKEZİ İÇERİK -->
         <main class="main-content">
             <div class="stats-card">
                 <h2>Toplam Üye Sayısı</h2>
