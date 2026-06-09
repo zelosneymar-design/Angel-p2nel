@@ -125,7 +125,7 @@
 
         .store-close-btn:hover { background: #e2e8f0; }
 
-        /* --- GİRİŞ EKRANI (SAF SİYAH & NEON BEYAZ) --- */
+        /* --- GİRİŞ EKRANI --- */
         .login-container {
             display: flex;
             justify-content: center;
@@ -317,7 +317,7 @@
             object-fit: cover;
         }
 
-        /* --- SIDEBAR (SOL MENÜ - GENİŞ VE SAF SİYAH) --- */
+        /* --- SIDEBAR (SOL MENÜ - SAF SİYAH) --- */
         .sidebar {
             position: fixed;
             left: -380px; 
@@ -329,51 +329,41 @@
             transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow-y: auto;
             z-index: 99;
-            padding: 20px 16px 40px 16px;
+            padding: 10px 16px 40px 16px; /* Fotoğraf kalktığı için üst padding azaltıldı */
         }
 
         .sidebar.active { left: 0; }
 
-        .sidebar-top-logo {
-            width: 100%;
-            height: auto;
-            max-height: 160px;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto 20px auto;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 15px;
-        }
-
         .menu-group-title {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
             color: #ffffff; 
             letter-spacing: 2px;
-            margin: 25px 0 12px 12px;
+            margin: 20px 0 12px 12px;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
 
+        /* --- BÜYÜTÜLMÜŞ TUŞLAR/BUTONLAR --- */
         .menu-item {
             display: flex;
             align-items: center;
-            padding: 14px 16px;
-            border-radius: 12px;
-            margin-bottom: 6px;
+            padding: 18px 20px; /* Dikeyde ve yatayda butonlar büyütüldü */
+            border-radius: 14px;
+            margin-bottom: 8px; /* Butonlar arası boşluk artırıldı */
             cursor: pointer;
             transition: 0.2s all;
-            font-size: 15px;
-            font-weight: 500;
+            font-size: 16px; /* Yazı boyutu büyütüldü */
+            font-weight: 600;
             color: #ffffff;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         .menu-item i {
-            margin-right: 16px;
-            width: 20px;
+            margin-right: 18px;
+            width: 24px;
             text-align: center;
-            font-size: 18px;
+            font-size: 20px; /* İkonlar büyütüldü */
             color: #ffffff; 
             filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
         }
@@ -381,9 +371,10 @@
         .menu-item:hover {
             background: rgba(255, 255, 255, 0.15);
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.4);
+            transform: translateX(3px); /* Hafif sağa kayma efekti */
         }
 
-        /* --- ANA İÇERİK ALANI (ORTA TARAF - SAF SİYAH) --- */
+        /* --- ANA İÇERİK ALANI --- */
         .main-content {
             margin-top: 80px; 
             padding: 50px 20px;
@@ -441,7 +432,7 @@
             text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
         }
 
-        /* --- İŞLEM ALANI (EKRAN SİYAH - YAZILAR NEON BEYAZ) --- */
+        /* --- İŞLEM ALANI --- */
         .action-container {
             background: #000000; 
             border: 1px solid rgba(255, 255, 255, 0.4); 
@@ -601,11 +592,8 @@
             </div>
         </nav>
 
-        <!-- SIDEBAR (SOL MENÜ) -->
+        <!-- SIDEBAR (SOL MENÜ - FOTOĞRAF KALDIRILDI, TUŞLAR BÜYÜTÜLDÜ) -->
         <div class="sidebar" id="sidebar">
-            
-            <!-- EN ÜST LOGO -->
-            <img class="sidebar-top-logo" src="https://cdn.discordapp.com/attachments/1379499292556791900/1511039284088406096/file_00000000a7507209a824430b6b9e7b2c.png?ex=6a1f007f&is=6a1daeff&hm=c02b808ac338b5ec044165395bd64331a0f989754c3f78e2b976a7dedb153ac8&" alt="Angel Logo">
             
             <div class="menu-group-title">Çözümler</div>
             
@@ -621,17 +609,14 @@
                 <i class="fas fa-phone"></i> Telefon Sorgu
             </div>
 
-            <!-- YENİ EKLENEN SORGU 1 -->
             <div class="menu-item" onclick="handleMenuClick('E Okul Sorgu', 'fas fa-graduation-cap', 'tc')">
                 <i class="fas fa-graduation-cap"></i> E Okul Sorgu
             </div>
 
-            <!-- YENİ EKLENEN SORGU 2 -->
             <div class="menu-item" onclick="handleMenuClick('E Devlet Sorgu', 'fas fa-university', 'tc')">
                 <i class="fas fa-university"></i> E Devlet Sorgu
             </div>
 
-            <!-- YENİ EKLENEN SORGU 3 -->
             <div class="menu-item" onclick="handleMenuClick('Aşı Sorgu', 'fas fa-syringe', 'tc')">
                 <i class="fas fa-syringe"></i> Aşı Sorgu
             </div>
